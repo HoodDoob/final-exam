@@ -6,7 +6,7 @@ import igIcon from "../public/icons/icon_IG.svg";
 import spIcon from "../public/icons/icon_SP.svg";
 import ttIcon from "../public/icons/icon_TT.svg";
 
-export default function Layout({ children }) {
+export default function Layout(props) {
   const [burgerState, setBurgerState] = useState(false);
   function openBurger() {
     setBurgerState(!burgerState);
@@ -49,12 +49,12 @@ export default function Layout({ children }) {
               </button>
               <div id="burgerMenuCont" className="">
                 <ul id="burgerMenu">
-                  <li>Home</li>
-                  <li>about us</li>
-                  <li>shows</li>
-                  <li>contact</li>
-                  <li>ChairTV</li>
-                  <li>GloryHole®</li>
+                  <li onClick={() => props.changePage(1)}>Home</li>
+                  <li onClick={() => props.changePage(2)}>About Us</li>
+                  <li onClick={() => props.changePage(3)}>shows</li>
+                  <li onClick={() => props.changePage(4)}>contact</li>
+                  <li onClick={() => props.changePage(5)}>ChairTV</li>
+                  <li onClick={() => props.changePage(6)}>GloryHole®</li>
                   <li>ChairGame</li>
                   <li>store</li>
                   <li>BOOK US!</li>
@@ -65,8 +65,8 @@ export default function Layout({ children }) {
         </nav>
       </header>
 
-      <main>{children}</main>
-      {}
+      <main>{props.children}</main>
+
       <footer>
         <div>
           {/* Spotify Widget */}
@@ -76,7 +76,7 @@ export default function Layout({ children }) {
             width="100%"
             height="110"
             frameBorder="0"
-            allowfullscreen=""
+            allowFullScreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           ></iframe>
