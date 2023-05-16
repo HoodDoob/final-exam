@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://use.typekit.net/mdr5nwy.css");
-@import url('https://fonts.cdnfonts.com/css/fake-receipt');
+@import url("https://fonts.cdnfonts.com/css/fake-receipt");
 
 :root {
   --max-width: 1100px;
@@ -8,16 +8,18 @@
 
   //* FONTS *//
 
-  --font-primary: 'Owners XXWide';
-  --font-secondary: 'Cabin';
-  --font-newrelease: 'Fake Receipt', sans-serif;
+  --font-primary: "Owners XXWide";
+  --font-primary2: "Owners Wide";
+  --font-primary3: "Owners";
+  --font-secondary: "Cabin";
+  --font-newrelease: "Fake Receipt", sans-serif;
   --medium: 500;
   --light: 200;
 
   //* COLORS *//
 
-  --color-green: #7ad9c8; 
-  --color-red: #FD4747;
+  --color-green: #7ad9c8;
+  --color-red: #fd4747;
   --color-black: #2d2d2d;
   --color-white: #fefefe;
 }
@@ -34,7 +36,7 @@ body {
   overflow-x: hidden;
   background-image: url("../public/images/background.webp");
   background-size: cover;
-  background-position:top;
+  background-position: top;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -45,13 +47,13 @@ body {
 
 //* DESKTOP VERSION *//
 
-
 body {
   color: var(--color-white);
   margin: 30px;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: var(--color-green);
   font-family: var(--font-primary);
 }
