@@ -7,13 +7,21 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [pageState, setPageState] = useState(1);
+  const [burgerState, setBurgerState] = useState(false);
 
   function changePage(x) {
+    setBurgerState(!burgerState);
     setPageState(x);
     console.log("the funniest bumber ever is " + pageState);
   }
+  function openBurger() {
+    setBurgerState(!burgerState);
+    console.log("burger menu is open " + burgerState);
+  }
   return (
     <Layout
+      burgerState={burgerState}
+      openBurger={openBurger}
       pageState={pageState}
       setPageState={setPageState}
       changePage={changePage}

@@ -70,6 +70,9 @@ h2 {
 
 //* MOBILE VERSION *//
 @media screen and (max-width: 414px) {
+  footer {
+    flex-direction: column-reverse;
+  }
   body {
     color: var(--color-white);
     margin: 10px;
