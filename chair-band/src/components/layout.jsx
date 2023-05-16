@@ -41,6 +41,7 @@ export default function Layout({ children }) {
 
       <footer>
         <div>
+          {/* Spotify Widget */}
           <iframe
             title="myFrame"
             src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
