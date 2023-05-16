@@ -23,7 +23,7 @@ export default function Layout({ children }) {
           </div>
           <div className="navLogo hidden">Chair</div>
           <div className="navburger">=</div>
-          <ul className="hidden">
+          <ul id="burgerMenu" className="">
             <li>Home</li>
             <li>about us</li>
             <li>shows</li>

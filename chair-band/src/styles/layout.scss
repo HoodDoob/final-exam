@@ -3,12 +3,17 @@ nav {
   list-style-type: none;
   color: var(--color-white);
   justify-content: space-between;
+  font-family: var(--font-primary3);
+  font-weight: 600;
 }
 footer {
   display: flex;
   list-style-type: none;
   color: var(--color-white);
   justify-content: space-between;
+}
+.hidden {
+  display: none;
 }
 
 .navSocials {
@@ -21,7 +26,16 @@ footer {
   display: flex;
   list-style-type: none;
   justify-content: space-between;
+  font-size: 20px;
 }
-.hidden {
-  display: none;
+#burgerMenu {
+  background-color: rgb(0, 0, 0, 0.8);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  list-style-type: none;
+  color: var(--color-red);
+  font-weight: 300;
+  font-size: 26px;
 }
