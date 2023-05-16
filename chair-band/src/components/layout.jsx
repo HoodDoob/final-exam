@@ -66,7 +66,7 @@ export default function Layout({ children }) {
       </header>
 
       <main>{children}</main>
-
+      {}
       <footer>
         <div>
           {/* Spotify Widget */}
@@ -74,7 +74,7 @@ export default function Layout({ children }) {
             title="myFrame"
             src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
             width="100%"
-            height="152"
+            height="110"
             frameBorder="0"
             allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
