@@ -1,9 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/page.module.scss";
 import Link from "next/link";
-//import Layout from "../components/layout"
-
 import Layout from "../components/layout";
+import Outnow from "@/components/outnow";
 
 export default function Home() {
   return (
@@ -14,10 +13,13 @@ export default function Home() {
           <link rel="icon" href="../public/images/chair.webp" />
         </Head>
 
-        <main>
-          <h1 className={styles.title}>
-            <Link href="/newrelease">OUT NOW</Link>
-          </h1>
+        <main className={styles.landing_main}>
+          <div className={styles.title}>
+            <h1>Chair</h1>
+            <h2>website</h2>
+          </div>
+
+          <Outnow></Outnow>
         </main>
       </div>{" "}
     </Layout>
