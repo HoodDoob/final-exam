@@ -1,12 +1,19 @@
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
 import fbIcon from "../public/icons/icon_FB.svg";
 import igIcon from "../public/icons/icon_IG.svg";
 import spIcon from "../public/icons/icon_SP.svg";
 import ttIcon from "../public/icons/icon_TT.svg";
 
 export default function Layout({ children }) {
+  const [burgerState, setBurgerState] = useState(false);
+  function openBurger() {
+    setBurgerState(!burgerState);
+    console.log("burger menu is open " + burgerState);
+  }
   return (
-    <>
+    <div className="layout">
       <header>
         <nav>
           <div>
@@ -17,23 +24,44 @@ export default function Layout({ children }) {
               <Image priority src={ttIcon} alt="IG" />
             </div>
           </div>
+          {/* Language switch */}
           <div className="navLang">
             <div className="greyedOut">PL /</div>
             <div>/ ENG</div>
           </div>
           <div className="navLogo hidden">Chair</div>
-          <div className="navburger">=</div>
-          <ul id="burgerMenu" className="">
-            <li>Home</li>
-            <li>about us</li>
-            <li>shows</li>
-            <li>contact</li>
-            <li>ChairTV</li>
-            <li>GloryHole®</li>
-            <li>ChairGame</li>
-            <li>store</li>
-            <li>BOOK US!</li>
-          </ul>
+          {/* Burger menu switch */}
+          <button
+            onClick={() => openBurger()}
+            // className="navBurger"
+            button-name="klosburg"
+          >
+            =
+          </button>
+          {burgerState && (
+            <>
+              <button
+                onClick={() => openBurger()}
+                className="navBurger"
+                button-name="klosburg"
+              >
+                =
+              </button>
+              <div id="burgerMenuCont" className="">
+                <ul id="burgerMenu">
+                  <li>Home</li>
+                  <li>about us</li>
+                  <li>shows</li>
+                  <li>contact</li>
+                  <li>ChairTV</li>
+                  <li>GloryHole®</li>
+                  <li>ChairGame</li>
+                  <li>store</li>
+                  <li>BOOK US!</li>
+                </ul>
+              </div>
+            </>
+          )}{" "}
         </nav>
       </header>
 
@@ -47,6 +75,7 @@ export default function Layout({ children }) {
             src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
             width="100%"
             height="152"
+            frameBorder="0"
             allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
@@ -54,6 +83,6 @@ export default function Layout({ children }) {
         </div>
         <div>The newsletter</div>
       </footer>
-    </>
+    </div>
   );
 }
