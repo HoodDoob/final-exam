@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/page.module.scss";
 import Link from "next/link";
 import Layout from "../components/layout";
+import Outnow from "@/components/outnow";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
             <h1>Chair</h1>
             <h2>website</h2>
           </div>
+
+          <Outnow></Outnow>
         </main>
       </div>{" "}
     </Layout>
