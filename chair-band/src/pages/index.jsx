@@ -3,6 +3,10 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import Landing from "../components/landing";
 import AboutUs from "../components/aboutus";
+import Shows from "@/components/shows";
+import Contact from "../components/contact";
+import ChairTV from "@/components/chairtv";
+import GloryHole from "@/components/gloryhole";
 
 export default function Home() {
   const [pageState, setPageState] = useState(1);
@@ -31,7 +35,12 @@ export default function Home() {
 
       {pageState == 1 ? <Landing /> : ""}
       {pageState == 2 ? <AboutUs /> : ""}
-      
+      {pageState == 3 ? <Shows /> : ""}
+      {pageState == 4 ? <Contact /> : ""}
+      {pageState == 5 ? <ChairTV /> : ""}
+      {pageState == 6 ? <GloryHole /> : ""}
+
+
     </Layout>
   );
 }

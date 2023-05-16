@@ -10,7 +10,7 @@ export default function AboutUs() {
 
       <div className={styles.aboutus_div}>
         <div className={styles.title}>
-          <h1>About us</h1>
+          <h1>about us</h1>
           <h2>(the band called Chair)</h2>
         </div>
       </div>

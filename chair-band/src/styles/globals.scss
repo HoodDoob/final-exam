@@ -57,15 +57,15 @@ h2 {
 }
 h1 {
   font-family: var(--font-primary);
-  font-size: 120px;
+  font-size: 80px;
   font-weight: var(--medium);
-  line-height: 100px;
+  line-height: 80px;
 }
 h2 {
   font-family: var(--font-primary2);
-  font-size: 35px;
+  font-size: 25px;
   font-weight: var(--light);
-  line-height: 30px;
+  line-height: 20px;
 }
 
 //* MOBILE VERSION *//
@@ -80,15 +80,14 @@ h2 {
 
   h1,
   h2 {
-    color: var(--color-green);
-    font-family: var(--font-primary);
+    color: var(--color-red);
   }
   h1 {
-    font-size: 90px;
-    line-height: 70px;
+    font-size: 50px;
+    line-height: 50px;
   }
   h2 {
-    font-size: 22px;
+    font-size: 18px;
     line-height: 20px;
   }
 }
