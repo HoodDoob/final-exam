@@ -7,11 +7,6 @@ import spIcon from "../public/icons/icon_SP.svg";
 import ttIcon from "../public/icons/icon_TT.svg";
 
 export default function Layout(props) {
-  const [burgerState, setBurgerState] = useState(false);
-  function openBurger() {
-    setBurgerState(!burgerState);
-    console.log("burger menu is open " + burgerState);
-  }
   return (
     <div className="layout">
       <header>
@@ -32,16 +27,16 @@ export default function Layout(props) {
           <div className="navLogo hidden">Chair</div>
           {/* Burger menu switch */}
           <button
-            onClick={() => openBurger()}
+            onClick={() => props.openBurger()}
             // className="navBurger"
             button-name="klosburg"
           >
             =
           </button>
-          {burgerState && (
+          {props.burgerState && (
             <>
               <button
-                onClick={() => openBurger()}
+                onClick={() => props.openBurger()}
                 className="navBurger"
                 button-name="klosburg"
               >
@@ -66,23 +61,24 @@ export default function Layout(props) {
       </header>
 
       <main>{props.children}</main>
-
-      <footer>
-        <div>
-          {/* Spotify Widget */}
-          <iframe
-            title="myFrame"
-            src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
-            width="100%"
-            height="152"
-            frameBorder="0"
-            allowFullScreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
-        <div>The newsletter</div>
-      </footer>
+      {props.pageState != 1 && (
+        <footer>
+          <div>The newsletter</div>
+          <div>
+            {/* Spotify Widget */}
+            <iframe
+              title="myFrame"
+              src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
+              width="100%"
+              height="110"
+              frameBorder="0"
+              allowFullScreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </footer>
+      )}
     </div>
   );
 }
