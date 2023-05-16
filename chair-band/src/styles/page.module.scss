@@ -1,6 +1,8 @@
+//* DESKTOP VERSION *//
+
 .landing_main {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   .title {
     position: relative;
     display: flex;
@@ -44,5 +46,25 @@
   }
   .dots {
     font-size: 10px;
+  }
+}
+
+
+
+//* MOBILE VERSION *//
+@media screen and (max-width: 414px){
+  .landing_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    .title {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+  
+      margin-left: 0;
+    }
   }
 }
