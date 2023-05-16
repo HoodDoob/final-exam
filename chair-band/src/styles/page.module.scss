@@ -1,3 +1,11 @@
-.title {
-  color: antiquewhite;
+.landing_main {
+display: flex;
+  .title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    margin-left: 10%;
+  }
 }
