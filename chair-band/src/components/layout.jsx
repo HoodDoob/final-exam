@@ -8,7 +8,7 @@ export default function Layout({ children }) {
               <li>FB</li>
               <li>IG</li>
               <li>SP</li>
-              <li>TT</li>
+              <li>TTs</li>
             </ul>
           </div>
           <div className="navLang">
