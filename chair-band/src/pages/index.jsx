@@ -1,9 +1,8 @@
-import Head from "next/head";
-import styles from "../styles/page.module.scss";
-import Link from "next/link";
 import Layout from "../components/layout";
-import Outnow from "@/components/outnow";
+import Head from "next/head";
 import { useState, useEffect } from "react";
+import Landing from "../components/landing";
+import AboutUs from "../components/aboutus";
 
 export default function Home() {
   const [pageState, setPageState] = useState(1);
@@ -16,23 +15,15 @@ export default function Home() {
     <Layout
       pageState={pageState}
       setPageState={setPageState}
-      changePage={changePage}
-    >
-      <div className={styles.container}>
-        <Head>
-          <title>Chair Website</title>
-          <link rel="icon" href="../public/images/chair.webp" />
-        </Head>
+      changePage={changePage}>
+      <Head>
+        <title>Chair Website</title>
+        <link rel="icon" href="../public/images/chair.webp" />
+      </Head>
 
-        <div className={styles.landing_div}>
-          <div className={styles.title}>
-            <h1>Chair</h1>
-            <h2>website</h2>
-          </div>
-
-          <Outnow></Outnow>
-        </div>
-      </div>
+      {pageState == 1 ? <Landing /> : ""}
+      {pageState == 2 ? <AboutUs /> : ""}
+      
     </Layout>
   );
 }
