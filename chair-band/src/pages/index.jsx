@@ -1,6 +1,6 @@
 import Layout from "../components/layout";
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Landing from "../components/landing";
 import AboutUs from "../components/aboutus";
 
@@ -23,7 +23,8 @@ export default function Home() {
       openBurger={openBurger}
       pageState={pageState}
       setPageState={setPageState}
-      changePage={changePage}>
+      changePage={changePage}
+    >
       <Head>
         <title>Chair Website</title>
         <link rel="icon" href="../public/images/chair.webp" />
@@ -31,7 +32,6 @@ export default function Home() {
 
       {pageState == 1 ? <Landing /> : ""}
       {pageState == 2 ? <AboutUs /> : ""}
-      
     </Layout>
   );
 }
