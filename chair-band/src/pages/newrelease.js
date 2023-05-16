@@ -1,20 +1,16 @@
-import Link from 'next/link';
-import Head from 'next/head';
+import Link from "next/link";
+import Head from "next/head";
 
-
-export default function FirstPost() {
+export default function NewRelease() {
   return (
     <>
       <Head>
-        <title>New sdfsdf</title>
+        <title>Chair New Release</title>
       </Head>
       <h1>New release heehee</h1>
       <h2>
         <Link href="/">Back to home</Link>
       </h2>
-      <h1>
-        Read <Link href="/posts/second-post">another thing!</Link>
-      </h1>
     </>
   );
 }
