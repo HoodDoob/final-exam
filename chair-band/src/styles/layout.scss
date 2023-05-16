@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  list-style-type: none;
+  color: var(--color-white);
+  justify-content: space-between;
+}
+footer {
+  display: flex;
+  list-style-type: none;
+  color: var(--color-white);
+  justify-content: space-between;
+}
+
+.navSocials {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  gap: 10px;
+}
+.navLang {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.hidden {
+  display: none;
+}
