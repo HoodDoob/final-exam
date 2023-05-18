@@ -29,6 +29,12 @@ export default function Home() {
       setPageState={setPageState}
       changePage={changePage}
     >
+      <div
+        className={pageState == 1 ? "background" : "background bckDark"}
+      ></div>
+      {/* className={
+            !singleBandState ? "NavBarCont navBar1" : "NavBarCont navBar2"
+          } */}
       <Head>
         <title>Chair Website</title>
         <link rel="icon" href="../public/images/chair.webp" />
@@ -40,8 +46,6 @@ export default function Home() {
       {pageState == 4 ? <Contact /> : ""}
       {pageState == 5 ? <ChairTV /> : ""}
       {pageState == 6 ? <GloryHole /> : ""}
-
-
     </Layout>
   );
 }
