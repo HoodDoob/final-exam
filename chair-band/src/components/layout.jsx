@@ -11,6 +11,7 @@ import arrow from "../public/icons/icon_arrow.svg";
 
 export default function Layout(props) {
   const [footerState, setFooterState] = useState(true);
+  const [navbarState, setNavbarState] = useState(true);
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
@@ -24,6 +25,15 @@ export default function Layout(props) {
       }
     } else {
       setFooterState(true);
+    }
+  });
+
+  useEffect(() => {
+    if (width <= 414) {
+      setNavbarState(false);
+      console.log("burger menu open");
+    } else {
+      setNavbarState(true);
     }
   });
 
@@ -44,31 +54,12 @@ export default function Layout(props) {
               <Image priority src={ttIcon} alt="IG" />
             </div>
           </div>
-          {/* Language switch */}
-          <div className="navLang">
-            <div className="greyedOut">PL /</div>
-            <div>/ ENG</div>
-          </div>
-          <div className="navLogo hidden">Chair</div>
+
           {/* Burger menu switch */}
-          <button
-            onClick={() => props.openBurger()}
-            // className="navBurger"
-            button-name="klosburg"
-          >
-            =
-          </button>
-          {props.burgerState && (
+          {navbarState == true ? (
             <>
-              <button
-                onClick={() => props.openBurger()}
-                className="navBurger"
-                button-name="klosburg"
-              >
-                =
-              </button>
-              <div id="burgerMenuCont" className="">
-                <ul id="burgerMenu">
+              <div id="navbarCont" className="">
+                <ul id="navbar">
                   <li onClick={() => props.changePage(1)}>home</li>
                   <li onClick={() => props.changePage(2)}>about us</li>
                   <li onClick={() => props.changePage(3)}>shows</li>
@@ -80,8 +71,53 @@ export default function Layout(props) {
                   <li>BOOK US!</li>
                 </ul>
               </div>
+              {/* Language switch */}
+              <div className="navLang">
+                <div className="greyedOut">PL /</div>
+                <div>/ ENG</div>
+              </div>
+              <div className="navLogo hidden">Chair</div>
             </>
-          )}{" "}
+          ) : (
+            <>
+              {/* Language switch */}
+              <div className="navLang">
+                <div className="greyedOut">PL /</div>
+                <div>/ ENG</div>
+              </div>
+              <div className="navLogo hidden">Chair</div>
+              <button
+                onClick={() => props.openBurger()}
+                // className="navBurger"
+                button-name="klosburg">
+                =
+              </button>
+
+              {props.burgerState && (
+                <>
+                  <button
+                    onClick={() => props.openBurger()}
+                    className="navBurger"
+                    button-name="klosburg">
+                    =
+                  </button>
+                  <div id="burgerMenuCont" className="">
+                    <ul id="burgerMenu">
+                      <li onClick={() => props.changePage(1)}>home</li>
+                      <li onClick={() => props.changePage(2)}>about us</li>
+                      <li onClick={() => props.changePage(3)}>shows</li>
+                      <li onClick={() => props.changePage(4)}>contact</li>
+                      <li onClick={() => props.changePage(5)}>ChairTV</li>
+                      <li onClick={() => props.changePage(6)}>GloryHole®</li>
+                      <li>ChairGame</li>
+                      <li>store</li>
+                      <li>BOOK US!</li>
+                    </ul>
+                  </div>
+                </>
+              )}
+            </>
+          )}
         </nav>
       </header>
 
@@ -115,8 +151,7 @@ export default function Layout(props) {
               frameBorder="0"
               allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
+              loading="lazy"></iframe>
           </div>
         </footer>
       )}
