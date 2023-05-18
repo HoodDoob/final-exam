@@ -20,7 +20,7 @@ footer {
   display: none;
 }
 .layout {
-  height: 93vh;
+  height: 96vh;
   display: flex;
   flex-direction: column;
 }
@@ -40,6 +40,20 @@ footer {
 .navBurger {
   z-index: 20;
 }
+
+#navbarCont {
+ ul {
+  display: flex;
+  list-style: none;
+
+  li {
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+  }
+}
+}
+
+
 #burgerMenuCont {
   left: 0;
   top: 0;
