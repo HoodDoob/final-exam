@@ -1,10 +1,12 @@
 import Image from "next/image";
+import styles from "../styles/newsletter.module.scss";
 import { useState, useEffect } from "react";
 
 import fbIcon from "../public/icons/icon_FB.svg";
 import igIcon from "../public/icons/icon_IG.svg";
 import spIcon from "../public/icons/icon_SP.svg";
 import ttIcon from "../public/icons/icon_TT.svg";
+import arrow from "../public/icons/icon_arrow.svg";
 
 export default function Layout(props) {
   return (
@@ -61,24 +63,40 @@ export default function Layout(props) {
       </header>
 
       <main>{props.children}</main>
-      {props.pageState != 1 && (
-        <footer>
-          <div>The newsletter</div>
+      {/* {props.pageState == 1 && ( */}
+      <footer>
+        <div className={styles.newsletter}>
           <div>
-            {/* Spotify Widget */}
-            <iframe
-              title="myFrame"
-              src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
-              width="100%"
-              height="110"
-              frameBorder="0"
-              allowFullScreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
+            Don't miss out on <br></br> <span> Chair </span> drama.
           </div>
-        </footer>
-      )}
+          <p className={styles.p}>Subscribe to our newsletter</p>
+          <div className={styles.inputCont}>
+            <input
+              className={styles.input}
+              type="email"
+              name="newsEmail"
+              id="form-newsEmail"
+              placeholder="Your email..."
+              // onInput={popNumber}
+            />
+            <Image priority src={arrow} alt="FB" />
+          </div>
+        </div>
+        <div className={styles.widget}>
+          {/* Spotify Widget */}
+          <iframe
+            title="myFrame"
+            src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
+            width="100%"
+            height="80px"
+            frameBorder="0"
+            allowFullScreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </footer>
+      {/* )} */}
     </div>
   );
 }

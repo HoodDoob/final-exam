@@ -12,7 +12,7 @@ nav {
 footer {
   display: flex;
   //   list-style-type: none;
-  color: var(--color-white);
+  // color: var(--color-white);
   justify-content: space-between;
   margin-top: auto;
 }
@@ -20,7 +20,7 @@ footer {
   display: none;
 }
 .layout {
-  min-height: 100vh;
+  height: 93vh;
   display: flex;
   flex-direction: column;
 }
@@ -41,6 +41,8 @@ footer {
   z-index: 20;
 }
 #burgerMenuCont {
+  left: 0;
+  top: 0;
   position: fixed;
   width: 100vw;
   height: 100vh;
