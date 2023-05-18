@@ -15,7 +15,7 @@ export default function Layout(props) {
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    if (width <= 414) {
+    if (width <= 500) {
       console.log(width);
       if (props.pageState == 1) {
         setFooterState(false);
@@ -29,7 +29,7 @@ export default function Layout(props) {
   });
 
   useEffect(() => {
-    if (width <= 414) {
+    if (width <= 500) {
       setNavbarState(false);
       console.log("burger menu open");
     } else {
