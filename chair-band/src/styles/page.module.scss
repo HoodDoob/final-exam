@@ -28,7 +28,8 @@
 
 .aboutus_div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 6fr 4fr;
+  grid-gap: 5vw 5vw;
 
   .title {
     grid-column: 1 / 2;
@@ -37,24 +38,35 @@
 
   #firstimage {
     grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    grid-row: 1 / 4;
+    overflow: hidden;
+    // max-height: 100px;
+    // min-width: 100%;
+    // object-fit: cover;
   }
   #secondimage {
     grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    grid-row: 3 / 5;
+    overflow: hidden;
+    min-height: 300px;
   }
   #firsttext {
     grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  #secondtext {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
   }
 
   .imgcont {
+    border-radius: 50px;
     position: relative;
-    width: 110%;
-    height: 320px;
-    right: 12px;
+    width: 100%;
+    height: auto;
+    // right: 12px;
     img {
-      position: relative;
+      position: absolute;
       max-width: 100%;
       max-height: 100%;
       object-fit: cover;
@@ -114,7 +126,6 @@
     justify-content: space-between;
     height: 65vh;
 
-
     margin-top: 5%;
     padding-top: 0;
     padding-right: 10%;
@@ -123,7 +134,7 @@
 }
 
 //* MOBILE VERSION *//
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 700px) {
   .title {
     position: relative;
     display: flex;
@@ -180,14 +191,16 @@
     margin-top: 10%;
 
     .imgcont {
+      border-radius: 0px;
       position: relative;
-      width: 110%;
-      height: 320px;
-      right: 12px;
+      width: 110vw;
+      height: 70vw;
+      // max-height: (50%, 100px);
+      // right: 12px;
       img {
         position: relative;
-        max-width: 100%;
-        max-height: 100%;
+        // max-width: 100%;
+        // max-height: 100%;
         object-fit: cover;
       }
     }

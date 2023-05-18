@@ -61,14 +61,18 @@ p {
   color: var(--color-white);
 }
 
-
 //* DESKTOP VERSION *//
 
 body {
   color: var(--color-white);
   padding: 25px;
 }
-
+main {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
 h1,
 h2 {
   color: var(--color-green);
@@ -90,9 +94,6 @@ button {
   cursor: pointer;
 }
 
-
-
-
 //* MOBILE VERSION *//
 @media screen and (max-width: 414px) {
   footer {
@@ -101,7 +102,7 @@ button {
   body {
     color: var(--color-white);
     padding: 10px;
-    background-position-x: 60%;    
+    background-position-x: 60%;
   }
 
   h1,
@@ -109,7 +110,7 @@ button {
     color: var(--color-red);
   }
   h1 {
-    font-size: 50px;
+    font-size: 45px;
     line-height: 50px;
   }
   h2 {
