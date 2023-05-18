@@ -7,8 +7,7 @@ import Link from "next/link";
 export default function AboutUs() {
   return (
     <div className={styles.aboutus_div}>
-      <div className={styles.container}>
-        <div className={styles.imgcont}>
+        <div className={styles.imgcont} id={styles.firstimage}>
           <Image priority src={aboutus_1} alt="" />
         </div>
 
@@ -17,7 +16,7 @@ export default function AboutUs() {
           <h2>(the band called Chair)</h2>
         </div>
 
-        <div className={styles.content_div}>
+        <div className={styles.text_div} id={styles.firsttext}>
           <p>
             Chair is an international duo of multimedia artists, Cura and Hubert
             Kurkiewicz. In their works, they include observations of everyday
@@ -27,10 +26,13 @@ export default function AboutUs() {
             aspect of their work, confidently using social media and appearing
             within art galleries.
           </p>
+          </div>
 
-          <div className={styles.imgcont}>
+          <div className={styles.imgcont} id={styles.secondimage}>
             <Image priority src={aboutus_2} alt="" />
           </div>
+
+          <div className={styles.text_div} id={styles.secondtext}>
           <p>
             In June 2022, a year after the band was founded, they debut with the
             EP “Po Co Muzyka” (“Why bother with music”, eng.). The mini-album,
@@ -41,6 +43,5 @@ export default function AboutUs() {
           </p>
         </div>
       </div>
-    </div>
   );
 }
