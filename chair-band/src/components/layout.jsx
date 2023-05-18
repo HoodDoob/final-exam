@@ -6,6 +6,7 @@ import fbIcon from "../public/icons/icon_FB.svg";
 import igIcon from "../public/icons/icon_IG.svg";
 import spIcon from "../public/icons/icon_SP.svg";
 import ttIcon from "../public/icons/icon_TT.svg";
+import arrow from "../public/icons/icon_arrow.svg";
 
 export default function Layout(props) {
   return (
@@ -69,14 +70,25 @@ export default function Layout(props) {
             Don't miss out on <br></br> <span> Chair </span> drama.
           </div>
           <p className={styles.p}>Subscribe to our newsletter</p>
+          <div className={styles.inputCont}>
+            <input
+              className={styles.input}
+              type="email"
+              name="newsEmail"
+              id="form-newsEmail"
+              placeholder="Your email..."
+              // onInput={popNumber}
+            />
+            <Image priority src={arrow} alt="FB" />
+          </div>
         </div>
-        <div>
+        <div className={styles.widget}>
           {/* Spotify Widget */}
           <iframe
             title="myFrame"
             src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
             width="100%"
-            height="110"
+            height="80px"
             frameBorder="0"
             allowFullScreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
