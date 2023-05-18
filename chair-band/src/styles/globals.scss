@@ -14,6 +14,7 @@
   --font-secondary: "Cabin";
   --font-newrelease: "Fake Receipt", sans-serif;
   --medium: 500;
+  --regular: 400;
   --light: 200;
 
   //* COLORS *//
@@ -44,6 +45,22 @@ body {
   background-attachment: fixed;
 }
 
+h1 {
+  font-family: var(--font-primary);
+  font-weight: var(--medium);
+}
+h2 {
+  font-family: var(--font-primary2);
+  font-weight: var(--light);
+}
+p {
+  font-family: var(--font-secondary);
+  font-weight: var(--regular);
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+}
+
 
 //* DESKTOP VERSION *//
 
@@ -57,15 +74,11 @@ h2 {
   color: var(--color-green);
 }
 h1 {
-  font-family: var(--font-primary);
   font-size: 80px;
-  font-weight: var(--medium);
   line-height: 80px;
 }
 h2 {
-  font-family: var(--font-primary2);
   font-size: 25px;
-  font-weight: var(--light);
   line-height: 20px;
 }
 
@@ -77,6 +90,9 @@ button {
   cursor: pointer;
 }
 
+
+
+
 //* MOBILE VERSION *//
 @media screen and (max-width: 414px) {
   footer {
@@ -85,6 +101,7 @@ button {
   body {
     color: var(--color-white);
     margin: 10px;
+    background-position-x: 60%;    
   }
 
   h1,
