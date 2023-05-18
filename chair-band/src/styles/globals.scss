@@ -40,7 +40,7 @@ body {
   background-image: url("../public/images/background.webp");
   background-size: cover;
   background-position: top;
-  min-height: 100vh;
+  min-height: 97vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -60,7 +60,6 @@ p {
   letter-spacing: 0.05em;
   color: var(--color-white);
 }
-
 
 //* DESKTOP VERSION *//
 
@@ -90,9 +89,6 @@ button {
   cursor: pointer;
 }
 
-
-
-
 //* MOBILE VERSION *//
 @media screen and (max-width: 414px) {
   footer {
@@ -101,7 +97,7 @@ button {
   body {
     color: var(--color-white);
     padding: 10px;
-    background-position-x: 60%;    
+    // background-position-x: 60%;
   }
 
   h1,
