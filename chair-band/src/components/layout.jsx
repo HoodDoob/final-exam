@@ -66,9 +66,9 @@ export default function Layout(props) {
       <footer>
         <div className={styles.newsletter}>
           <div>
-            Don't miss out on <b>Chair</b> drama.
+            Don't miss out on <br></br> <span> Chair </span> drama.
           </div>
-          <div>Subscribe to our newsletter</div>
+          <p className={styles.p}>Subscribe to our newsletter</p>
         </div>
         <div>
           {/* Spotify Widget */}
