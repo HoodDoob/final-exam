@@ -69,8 +69,8 @@ export default function Layout(props) {
               </button>
               <div id="burgerMenuCont" className="">
                 <ul id="burgerMenu">
-                  <li onClick={() => props.changePage(1)}>Home</li>
-                  <li onClick={() => props.changePage(2)}>About Us</li>
+                  <li onClick={() => props.changePage(1)}>home</li>
+                  <li onClick={() => props.changePage(2)}>about us</li>
                   <li onClick={() => props.changePage(3)}>shows</li>
                   <li onClick={() => props.changePage(4)}>contact</li>
                   <li onClick={() => props.changePage(5)}>ChairTV</li>

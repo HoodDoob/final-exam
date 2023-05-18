@@ -11,6 +11,7 @@ export default function AboutUs() {
         <div className={styles.imgcont}>
           <Image priority src={aboutus_1} alt="" />
         </div>
+
         <div className={styles.title}>
           <h1>about us</h1>
           <h2>(the band called Chair)</h2>
