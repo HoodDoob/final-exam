@@ -13,8 +13,9 @@
   --font-primary3: "Owners";
   --font-secondary: "Cabin";
   --font-newrelease: "Fake Receipt", sans-serif;
+  --black: 700;
   --medium: 500;
-  --regular: 400;
+  --regular: 300;
   --light: 200;
 
   //* COLORS *//
@@ -86,6 +87,7 @@ body {
 main {
   padding-left: 5vw;
   padding-right: 5vw;
+  padding-top: 7vh;
 }
 h1,
 h2 {

@@ -29,11 +29,14 @@ export default function Layout(props) {
   });
 
   useEffect(() => {
-    if (width <= 500) {
+    if (width <= 930) {
       setNavbarState(false);
       console.log("burger menu open");
     } else {
       setNavbarState(true);
+      if (props.burgerState == true) {
+        props.setBurgerState(false)
+      }
     }
   });
 
@@ -60,12 +63,12 @@ export default function Layout(props) {
             <>
               <div id="navbarCont" className="">
                 <ul id="navbar">
-                  <li onClick={() => props.changePage(1)}>home</li>
-                  <li onClick={() => props.changePage(2)}>about us</li>
-                  <li onClick={() => props.changePage(3)}>shows</li>
-                  <li onClick={() => props.changePage(4)}>contact</li>
-                  <li onClick={() => props.changePage(5)}>ChairTV</li>
-                  <li onClick={() => props.changePage(6)}>GloryHole®</li>
+                  <li onClick={() => props.changePage(1)} className={props.pageState == 1 ? "weAreHere" : ""}>home</li>
+                  <li onClick={() => props.changePage(2)} className={props.pageState == 2 ? "weAreHere" : ""}>about us</li>
+                  <li onClick={() => props.changePage(3)} className={props.pageState == 3 ? "weAreHere" : ""}>shows</li>
+                  <li onClick={() => props.changePage(4)} className={props.pageState == 4 ? "weAreHere" : ""}>contact</li>
+                  <li onClick={() => props.changePage(5)} className={props.pageState == 5 ? "weAreHere" : ""}>ChairTV</li>
+                  <li onClick={() => props.changePage(6)} className={props.pageState == 6 ? "weAreHere" : ""}>GloryHole®</li>
                   <li>ChairGame</li>
                   <li>store</li>
                   <li>BOOK US!</li>
