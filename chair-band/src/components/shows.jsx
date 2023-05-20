@@ -12,7 +12,7 @@ export default function Shows() {
   }
 
   return (
-    <div className={styles.gridSetup}>
+    <div className={`${styles.gridSetup} ${styles.grid2}`}>
       <div className={styles.imgcont} id={styles.showsimage}>
         <Image priority src={shows_1} alt=""/>
       </div>
