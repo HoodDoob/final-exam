@@ -8,13 +8,13 @@ import Link from "next/link";
 
 export default function GloryHole() {
   return (
-    <div className={`${styles.gridSetup} ${styles.grid4}`}>
+    <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       {/* <div className={styles.ghLine}></div> */}
       <div className={styles.title}>
         <h1>GloryHole®</h1>
         <h2>(your secrets are safe with us)</h2>
       </div>
-      <div className={styles.mrgLEFT} id={styles.ghText}>
+      <div className={styles.ghText}>
         <p>
           GloryHole® is a system of anonymous messages that you can send
           directly to our band. It sdiujk sdsdgjjsdg sdjsdgkjsd gou asofiuafd .
