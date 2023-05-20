@@ -7,6 +7,7 @@ nav {
   color: var(--color-red);
   justify-content: space-between;
   font-family: var(--font-primary3);
+  font-weight: var(--regular);
 }
 footer {
   display: flex;
@@ -34,7 +35,14 @@ footer {
   display: flex;
   list-style-type: none;
   justify-content: space-between;
+
+  font-weight: var(--black);
   font-size: 20px;
+  color: var(--color-white);
+
+  .greyedOut {
+    opacity: 50%;
+  }
 }
 .navBurger {
   z-index: 20;
@@ -49,6 +57,11 @@ footer {
       padding: 0 10px 0 10px;
       cursor: pointer;
     }
+  }
+
+  .weAreHere {
+    font-weight: var(--black);
+    text-decoration: underline;
   }
 }
 
@@ -70,4 +83,12 @@ footer {
   color: var(--color-red);
   font-weight: 300;
   font-size: 26px;
+}
+
+
+//* TABLET VERSION *//
+@media screen and (max-width: 1200px) {
+  .navLang {
+    font-size: 15px;
+  }
 }

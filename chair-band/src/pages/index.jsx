@@ -24,6 +24,7 @@ export default function Home() {
   return (
     <Layout
       burgerState={burgerState}
+      setBurgerState={setBurgerState}
       openBurger={openBurger}
       pageState={pageState}
       setPageState={setPageState}
