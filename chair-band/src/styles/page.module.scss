@@ -294,7 +294,45 @@ p {
     // width: 10%;
   }
 }
-
+// contact
+.contText {
+  text-align: center;
+}
+.cont1 {
+  font-family: var(--font-primary2);
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.cont2 {
+  font-family: var(--font-primary2);
+  font-size: 16px;
+}
+.cont3 {
+  a {
+    font-weight: var(--regular);
+    font-family: var(--font-primary2);
+    color: var(--color-white);
+    font-size: 16px;
+  }
+}
+.cont4 {
+  margin: 30px;
+  font-family: var(--font-primary2);
+  font-size: 20px;
+  a {
+    color: var(--color-white);
+    text-decoration: underline 1px;
+  }
+}
+.cont5 {
+  a {
+    margin-top: auto;
+    font-family: var(--font-primary2);
+    font-size: 30px;
+    color: var(--color-red);
+    text-decoration: underline 1px;
+  }
+}
 //* TABLET VERSION *//
 @media screen and (max-width: 1200px) {
   // GloryHole
