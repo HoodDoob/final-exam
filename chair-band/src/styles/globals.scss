@@ -58,6 +58,7 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position-x: 60%;
 }
 .bckDark {
   filter: brightness(40%);
@@ -70,6 +71,9 @@ h1 {
 h2 {
   font-family: var(--font-primary2);
   font-weight: var(--light);
+}
+h3 {
+  font-family: var(--font-primary3);
 }
 p {
   font-family: var(--font-secondary);
@@ -123,7 +127,6 @@ button {
   body {
     color: var(--color-white);
     padding: 10px;
-    background-position-x: 60%;
   }
 
   h1,
