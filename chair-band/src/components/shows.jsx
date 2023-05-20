@@ -26,8 +26,9 @@ export default function Shows() {
 
       <div id={styles.showsTable}>
         <div className={styles.showsButtons}>
-          <button onClick={() => changeShowState(1)}>upcoming</button>
-          <button onClick={() => changeShowState(2)}>past</button>
+          <button onClick={() => changeShowState(1)} className={showState == 1 ? "weAreHere_shows" : "notHere_shows"}>upcoming</button>
+          <div id={styles.line}></div>
+          <button onClick={() => changeShowState(2)} className={showState == 2 ? "weAreHere_shows" : "notHere_shows"}>past</button>
         </div>
 
         {showState == 1 ? (

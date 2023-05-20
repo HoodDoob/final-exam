@@ -121,6 +121,8 @@
   //*? SHOWS *//
   #showsimage {
     grid-row: 2 / 3;
+    height: 40vw;
+    align-self: center;
   }
 
   #showsTable {
@@ -132,12 +134,32 @@
     align-items: center;
     gap: 1em;
 
+    .showsButtons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      button {
+        font-size: 22px;
+        margin: 1em;
+      }
+      button:hover {
+        opacity: 100%;
+      }
+  
+      #line {
+        height: 2em;
+        border-left: 1px solid var(--color-white);
+      }
+    }
+
+
     ul {
       display: flex;
       flex-direction: column;
       gap: 1em;
       h3 {
-        font-size: 24px;
+        font-size: 18px;
       }
       p {
         font-family: var(--font-primary3);
@@ -162,21 +184,21 @@
           height: 90px;
 
           p {
-            font-size: 18px;
+            font-size: 15px;
           }
         }
 
         .showName {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          gap: 1em;
           h3 {
             color: var(--color-green);
             text-decoration: underline;
             cursor: pointer;
           }
           p {
-            font-size: 20px;
+            font-size: 15px;
           }
         }
       }

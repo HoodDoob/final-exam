@@ -39,10 +39,6 @@ body {
   flex-direction: column;
   max-width: 100vw;
   overflow-x: hidden;
-  // filter: blur(5px);
-  // background-image: url("../public/images/background.webp");
-  // background-size: cover;
-  // background-position: top;
   min-height: 100vh;
 }
 
@@ -87,7 +83,7 @@ p {
 
 body {
   color: var(--color-white);
-  padding: 25px;
+  padding: 25px 25px 0 25px;
 }
 main {
   padding-left: 5vw;
@@ -109,14 +105,40 @@ h2 {
 
 button {
   cursor: pointer;
+  background: none;
+  border: none;
+
+  font-family: var(--font-primary3);
+  color: var(--color-white);
+  font-size: 30px;
+}
+
+.weAreHere_shows {
+  color: var(--color-green);
+}
+.notHere_shows {
+  opacity: 70%;
 }
 
 #burgerMenu li {
   cursor: pointer;
 }
 
+//* TABLET VERSION *//
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 60px;
+    line-height: 50px;
+  }
+  h2 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+
 //* MOBILE VERSION *//
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 500px) {
   main {
     padding-left: 0;
     padding-right: 0;
