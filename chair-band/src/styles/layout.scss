@@ -38,7 +38,7 @@ footer {
   justify-content: space-between;
 
   font-weight: var(--black);
-  font-size: 20px;
+  font-size: 14px;
   color: var(--color-white);
 
   .greyedOut {
@@ -55,7 +55,8 @@ footer {
     list-style: none;
 
     li {
-      padding: 0 10px 0 10px;
+      font-size: 18px;
+      padding: 0 8px 0 8px;
       cursor: pointer;
     }
   }
@@ -90,6 +91,6 @@ footer {
 //* TABLET VERSION *//
 @media screen and (max-width: 1200px) {
   .navLang {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
