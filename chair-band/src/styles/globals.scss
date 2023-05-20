@@ -110,6 +110,9 @@ button {
 
 //* MOBILE VERSION *//
 @media screen and (max-width: 414px) {
+  main {
+    padding: 0;
+  }
   footer {
     flex-direction: column-reverse;
   }

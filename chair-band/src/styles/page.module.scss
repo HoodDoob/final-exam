@@ -118,7 +118,57 @@
     font-size: 10px;
   }
 }
-
+// GloryHole
+.inputForm {
+  max-width: 500px;
+  margin: auto;
+  padding-top: 8vh;
+  // margin-bottom: 10rem;
+  // border: #11ff00 2px solid;
+  label {
+    width: 100%;
+    display: block;
+    margin-top: 25px;
+    text-align: left;
+    color: var(--color-green);
+    font-weight: var(--medium);
+    font-size: 16px;
+    font-family: var(--font-primary2);
+    span {
+      display: block;
+      font-size: small;
+      text-align: right;
+    }
+  }
+  input,
+  textarea {
+    // display: block;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    border: none;
+    color: black;
+    vertical-align: top;
+  }
+  .ghMessage {
+    height: 135px;
+    font-family: var(--font-secondary);
+  }
+  button {
+    color: var(--color-red);
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: var(--font-primary2);
+    text-decoration: underline;
+    margin-top: 20px;
+    width: 10%;
+  }
+}
 //* TABLET VERSION *//
 @media screen and (max-width: 1200px) {
   .landing_div {
@@ -136,14 +186,20 @@
 }
 
 @media screen and (max-width: 700px) {
+  .inputForm {
+    input,
+    textarea {
+      border-radius: 0px;
+    }
+  }
   .aboutus_div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-  
+
     margin-top: 10%;
-  
+
     .imgcont {
       border-radius: 0px;
       position: relative;
