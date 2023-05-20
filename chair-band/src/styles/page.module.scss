@@ -118,10 +118,15 @@
   }
 }
 // GloryHole
+p {
+  #ghList {
+    font-weight: var(--bold);
+  }
+}
 .inputForm {
   max-width: 500px;
   margin: auto;
-  padding-top: 8vh;
+  // padding-top: 8vh;
   // margin-bottom: 10rem;
   // border: #11ff00 2px solid;
   label {
@@ -168,6 +173,33 @@
     width: 10%;
   }
 }
+.gloryHole_div {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  grid-gap: 5vw 5vw;
+
+  .title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  p {
+    grid-column: 2 / 3;
+  }
+  .imgcont {
+    border-radius: 0px;
+    position: relative;
+    width: 110vw;
+    height: 70vw;
+    // max-height: (50%, 100px);
+    // right: 12px;
+    img {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+}
 //* TABLET VERSION *//
 @media screen and (max-width: 1200px) {
   .landing_div {
@@ -192,7 +224,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-top: 10%;
 
+    .imgcont {
+      border-radius: 0px;
+      position: relative;
+      width: 110vw;
+      height: 70vw;
+      // max-height: (50%, 100px);
+      // right: 12px;
+      img {
+        position: relative;
+        // max-width: 100%;
+        // max-height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .gloryHole_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 10%;
 
     .imgcont {
@@ -286,14 +339,35 @@
         object-fit: cover;
       }
     }
+    .gloryHole_div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10%;
+      .imgcont {
+        border-radius: 0px;
+        position: relative;
+        width: 110vw;
+        height: 70vw;
+        // max-height: (50%, 100px);
+        // right: 12px;
+        img {
+          padding: -10px;
+          position: relative;
+          // max-width: 100%;
+          // max-height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
   }
 
   .shows_div {
-
     .title {
       padding-top: 100px;
     }
-    
+
     .imgcont {
       position: relative;
       width: 110%;
