@@ -462,4 +462,13 @@ p {
       height: 70vw;
     }
   }
+
+  .chairTV {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
 }
