@@ -63,7 +63,11 @@
   .dots {
     font-size: 10px;
   }
+  a:hover {
+    scale: 1.1;
+  }
 }
+
 .grid2 {
   grid-template-columns: 6fr 4fr;
 }
@@ -325,12 +329,8 @@ p {
       position: relative;
       width: 110vw;
       height: 70vw;
-      // max-height: (50%, 100px);
-      // right: 12px;
       img {
         position: relative;
-        // max-width: 100%;
-        // max-height: 100%;
         object-fit: cover;
       }
     }
@@ -391,8 +391,6 @@ p {
     align-items: center;
     justify-content: space-between;
 
-    //margin-top: 10%;
-
     .title {
       padding-top: 100px;
     }
@@ -402,33 +400,14 @@ p {
       position: relative;
       width: 110vw;
       height: 70vw;
-      // max-height: (50%, 100px);
-      // right: 12px;
       img {
         position: relative;
-        // max-width: 100%;
-        // max-height: 100%;
         object-fit: cover;
       }
     }
-  }
 
-  .shows_div {
-    .title {
-      padding-top: 100px;
-    }
-
-    .imgcont {
-      position: relative;
-      width: 110%;
-      height: 320px;
-      right: 12px;
-      img {
-        position: relative;
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: cover;
-      }
+    #showsimage {
+      height: 70vw;
     }
   }
 }

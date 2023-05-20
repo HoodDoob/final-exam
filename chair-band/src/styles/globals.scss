@@ -118,6 +118,9 @@ button {
   color: var(--color-white);
   font-size: 30px;
 }
+button:hover {
+  scale: 1.1;
+}
 
 .weAreHere_shows {
   color: var(--color-green);
