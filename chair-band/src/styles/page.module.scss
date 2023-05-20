@@ -67,7 +67,7 @@
 .grid2 {
   grid-template-columns: 6fr 4fr;
 }
-.grid4 {
+.gridGH {
   grid-template-columns: 1fr 6fr 4fr 1fr;
 }
 .gridSetup {
@@ -84,8 +84,8 @@
     border-radius: 50px;
     position: relative;
     width: 100%;
-    height: auto;
-    // right: 12px;
+    height: 30vw;
+    margin-top: auto; // right: 12px;
     img {
       position: absolute;
       max-width: 100%;
@@ -128,11 +128,7 @@
   //   grid-column: 1/2;
   //   grid-row: 2/4;
   // }
-  #ghText {
-    grid-column: 2/3;
-    grid-row: 2/4;
-    // margin-left: 20%;
-  }
+
   // .mrgLEFT {
   //   margin-left: 20%;
   // }
@@ -243,6 +239,11 @@ p {
     font-weight: var(--bold);
   }
 }
+.ghText {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  // margin-left: 20%;
+}
 .ghInputForm {
   width: 100%;
   // max-width: 500px;
@@ -289,13 +290,24 @@ p {
     font-size: 20px;
     font-family: var(--font-primary2);
     text-decoration: underline;
-    margin-top: 20px;
-    width: 10%;
+    // margin-top: 20px;
+    // width: 10%;
   }
 }
 
 //* TABLET VERSION *//
 @media screen and (max-width: 1200px) {
+  // GloryHole
+  .gridGH {
+    grid-template-columns: 6fr 4fr;
+  }
+  .ghText {
+    grid-column: 1/2;
+  }
+  .ghInputForm {
+    grid-column: 2/3;
+  }
+
   .landing_div {
     display: flex;
     flex-direction: column;
