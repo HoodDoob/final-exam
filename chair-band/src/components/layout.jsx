@@ -15,7 +15,7 @@ export default function Layout(props) {
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    if (width <= 500) {
+    if (width <= 600) {
       console.log(width);
       if (props.pageState == 1) {
         setFooterState(false);
