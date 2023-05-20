@@ -24,7 +24,7 @@
   --color-green: #7ad9c8;
   --color-red: #fd4747;
   --color-black: #2d2d2d;
-  --color-white: #fefefe;
+  --color-white: #efefef;
 }
 
 * {
@@ -91,6 +91,11 @@ main {
   padding-top: 7vh;
   padding-bottom: 15vh;
 }
+.mainPad {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  // padding-top: 7vh;
+}
 h1,
 h2 {
   color: var(--color-green);
@@ -140,7 +145,6 @@ button {
   }
 }
 
-
 //* MOBILE VERSION *//
 @media screen and (max-width: 500px) {
   main {
@@ -153,7 +157,8 @@ button {
   }
   body {
     color: var(--color-white);
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   h1,

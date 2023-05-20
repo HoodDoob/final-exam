@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <div className={styles.gridSetup}>
+    <div className={`${styles.gridSetup} ${styles.grid2}`}>
       <div className={styles.imgcont} id={styles.firstimage}>
         <Image priority src={aboutus_1} alt="" />
       </div>
