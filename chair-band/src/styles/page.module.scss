@@ -221,7 +221,6 @@
     align-items: center;
 
     margin-left: 0;
-    padding-top: 100px;
   }
 
   .text_div {
@@ -237,7 +236,7 @@
     align-items: center;
     justify-content: space-between;
 
-    margin-top: 10%;
+    height: 70vh;
     padding-top: 0;
     padding-right: 10%;
     padding-left: 10%;
@@ -269,6 +268,10 @@
 
     margin-top: 10%;
 
+    .title {
+      padding-top: 100px;
+    }
+
     .imgcont {
       border-radius: 0px;
       position: relative;
@@ -286,6 +289,11 @@
   }
 
   .shows_div {
+
+    .title {
+      padding-top: 100px;
+    }
+    
     .imgcont {
       position: relative;
       width: 110%;
