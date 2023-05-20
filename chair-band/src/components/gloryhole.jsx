@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function GloryHole() {
   return (
-    <div className={styles.gloryHole_div}>
+    <div className={styles.gridSetup}>
       <div className={styles.title}>
         <h1>GloryHole®</h1>
         <h2>(your secrets are safe with us)</h2>
