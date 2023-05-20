@@ -13,8 +13,8 @@ export default function Shows() {
 
   return (
     <div className={styles.gridSetup}>
-      <div className={styles.imgcont}>
-        <Image priority src={shows_1} alt="" />
+      <div className={styles.imgcont} id={styles.showsimage}>
+        <Image priority src={shows_1} alt=""/>
       </div>
 
       <div className={styles.title}>
@@ -24,7 +24,7 @@ export default function Shows() {
 
       {/* shows table */}
 
-      <div className={styles.showsTable}>
+      <div id={styles.showsTable}>
         <div className={styles.showsButtons}>
           <button onClick={() => changeShowState(1)}>upcoming</button>
           <button onClick={() => changeShowState(2)}>past</button>
@@ -35,8 +35,60 @@ export default function Shows() {
             <li>
               <div className={styles.oneShow}>
                 <div className={styles.showDate}>
-                  <h3>day and month</h3>
-                  <p>year</p>
+                  <h3>20.05</h3>
+                  <p>2023</p>
+                </div>
+
+                <div className={styles.showName}>
+                  <h3>an upcoming show</h3>
+                  <p>location</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className={styles.oneShow}>
+                <div className={styles.showDate}>
+                  <h3>20.05</h3>
+                  <p>2023</p>
+                </div>
+
+                <div className={styles.showName}>
+                  <h3>an upcoming show</h3>
+                  <p>location</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className={styles.oneShow}>
+                <div className={styles.showDate}>
+                  <h3>20.05</h3>
+                  <p>2023</p>
+                </div>
+
+                <div className={styles.showName}>
+                  <h3>an upcoming show</h3>
+                  <p>location</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className={styles.oneShow}>
+                <div className={styles.showDate}>
+                  <h3>20.05</h3>
+                  <p>2023</p>
+                </div>
+
+                <div className={styles.showName}>
+                  <h3>an upcoming show</h3>
+                  <p>location</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className={styles.oneShow}>
+                <div className={styles.showDate}>
+                  <h3>20.05</h3>
+                  <p>2023</p>
                 </div>
 
                 <div className={styles.showName}>
