@@ -64,14 +64,19 @@
     font-size: 10px;
   }
 }
-
+.grid2 {
+  grid-template-columns: 6fr 4fr;
+}
+.grid4 {
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+}
 .gridSetup {
   display: grid;
-  grid-template-columns: 6fr 4fr;
+  // grid-template-columns: 6fr 4fr;
   grid-gap: 5vw 5vw;
 
   .title {
-    grid-column: 1 / 2;
+    grid-column: 1/-1;
     grid-row: 1 / 2;
   }
 
@@ -87,7 +92,7 @@
     grid-column: 1 / 2;
     grid-row: 3 / 5;
     overflow: hidden;
-    min-height: 300px;
+    // min-height: 300px;
   }
   #firsttext {
     grid-column: 1 / 2;
@@ -116,6 +121,33 @@
     grid-column: 1 / 2;
     grid-row: 2 / 3;
   }
+
+  // gloryHole
+  // #ghImg {
+  //   grid-column: 1/2;
+  //   grid-row: 2/4;
+  // }
+  #ghText {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    // margin-left: 20%;
+  }
+  // .mrgLEFT {
+  //   margin-left: 20%;
+  // }
+  // .mrgRIGHT {
+  //   margin-right: 20%;
+  // }
+
+  // .ghLine {
+  //   margin: auto;
+
+  //   height: 100%;
+  //   width: 1px;
+  //   background: var(--color-white);
+  //   grid-column: 2/3;
+  //   grid-row: 2/5;
+  // }
 }
 
 .shows_div {
@@ -140,16 +172,16 @@ p {
     font-weight: var(--bold);
   }
 }
-.inputForm {
-  max-width: 500px;
+.ghInputForm {
+  width: 100%;
+  // max-width: 500px;
   margin: auto;
-  // padding-top: 8vh;
-  // margin-bottom: 10rem;
-  // border: #11ff00 2px solid;
+  grid-column: 3/4;
+  grid-row: 2/4;
   label {
     width: 100%;
     display: block;
-    margin-top: 25px;
+    // margin-top: 25px;
     text-align: left;
     color: var(--color-green);
     font-weight: var(--medium);
@@ -163,7 +195,7 @@ p {
   }
   input,
   textarea {
-    // display: block;
+    margin-bottom: 25px;
     width: 100%;
     height: 35px;
     border-radius: 10px;

@@ -15,7 +15,7 @@ export default function Layout(props) {
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    if (width <= 500) {
+    if (width <= 600) {
       console.log(width);
       if (props.pageState == 1) {
         setFooterState(false);
@@ -35,7 +35,7 @@ export default function Layout(props) {
     } else {
       setNavbarState(true);
       if (props.burgerState == true) {
-        props.setBurgerState(false)
+        props.setBurgerState(false);
       }
     }
   });
@@ -63,12 +63,42 @@ export default function Layout(props) {
             <>
               <div id="navbarCont" className="">
                 <ul id="navbar">
-                  <li onClick={() => props.changePage(1)} className={props.pageState == 1 ? "weAreHere" : ""}>home</li>
-                  <li onClick={() => props.changePage(2)} className={props.pageState == 2 ? "weAreHere" : ""}>about us</li>
-                  <li onClick={() => props.changePage(3)} className={props.pageState == 3 ? "weAreHere" : ""}>shows</li>
-                  <li onClick={() => props.changePage(4)} className={props.pageState == 4 ? "weAreHere" : ""}>contact</li>
-                  <li onClick={() => props.changePage(5)} className={props.pageState == 5 ? "weAreHere" : ""}>ChairTV</li>
-                  <li onClick={() => props.changePage(6)} className={props.pageState == 6 ? "weAreHere" : ""}>GloryHole®</li>
+                  <li
+                    onClick={() => props.changePage(1)}
+                    className={props.pageState == 1 ? "weAreHere" : ""}
+                  >
+                    home
+                  </li>
+                  <li
+                    onClick={() => props.changePage(2)}
+                    className={props.pageState == 2 ? "weAreHere" : ""}
+                  >
+                    about us
+                  </li>
+                  <li
+                    onClick={() => props.changePage(3)}
+                    className={props.pageState == 3 ? "weAreHere" : ""}
+                  >
+                    shows
+                  </li>
+                  <li
+                    onClick={() => props.changePage(4)}
+                    className={props.pageState == 4 ? "weAreHere" : ""}
+                  >
+                    contact
+                  </li>
+                  <li
+                    onClick={() => props.changePage(5)}
+                    className={props.pageState == 5 ? "weAreHere" : ""}
+                  >
+                    ChairTV
+                  </li>
+                  <li
+                    onClick={() => props.changePage(6)}
+                    className={props.pageState == 6 ? "weAreHere" : ""}
+                  >
+                    GloryHole®
+                  </li>
                   <li>ChairGame</li>
                   <li>store</li>
                   <li>BOOK US!</li>
@@ -92,7 +122,8 @@ export default function Layout(props) {
               <button
                 onClick={() => props.openBurger()}
                 // className="navBurger"
-                button-name="klosburg">
+                button-name="klosburg"
+              >
                 =
               </button>
 
@@ -101,7 +132,8 @@ export default function Layout(props) {
                   <button
                     onClick={() => props.openBurger()}
                     className="navBurger"
-                    button-name="klosburg">
+                    button-name="klosburg"
+                  >
                     =
                   </button>
                   <div id="burgerMenuCont" className="">
@@ -124,7 +156,7 @@ export default function Layout(props) {
         </nav>
       </header>
 
-      <main>{props.children}</main>
+      <main className={width > 600 ? "" : ""}>{props.children}</main>
       {footerState == true && (
         <footer>
           <div className={styles.newsletter}>
@@ -154,7 +186,8 @@ export default function Layout(props) {
               frameBorder="0"
               allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
+              loading="lazy"
+            ></iframe>
           </div>
         </footer>
       )}

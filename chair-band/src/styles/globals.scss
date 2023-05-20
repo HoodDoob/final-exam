@@ -24,7 +24,7 @@
   --color-green: #7ad9c8;
   --color-red: #fd4747;
   --color-black: #2d2d2d;
-  --color-white: #fefefe;
+  --color-white: #efefef;
 }
 
 * {
@@ -87,12 +87,19 @@ p {
 
 body {
   color: var(--color-white);
-  padding: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
 }
 main {
+  // padding-left: 5vw;
+  // padding-right: 5vw;
+  padding-top: 7vh;
+}
+.mainPad {
   padding-left: 5vw;
   padding-right: 5vw;
-  padding-top: 7vh;
+  // padding-top: 7vh;
 }
 h1,
 h2 {
@@ -116,7 +123,7 @@ button {
 }
 
 //* MOBILE VERSION *//
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 500px) {
   main {
     padding-left: 0;
     padding-right: 0;
@@ -126,7 +133,8 @@ button {
   }
   body {
     color: var(--color-white);
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   h1,
