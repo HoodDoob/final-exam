@@ -29,7 +29,7 @@ export default function Layout(props) {
   });
 
   useEffect(() => {
-    if (width <= 930) {
+    if (width <= 950) {
       setNavbarState(false);
       console.log("burger menu open");
     } else {
@@ -134,7 +134,7 @@ export default function Layout(props) {
                     className="navBurger"
                     button-name="klosburg"
                   >
-                    =
+                    {props.openBurger ? <p>x</p> : <p>=</p>}
                   </button>
                   <div id="burgerMenuCont" className="">
                     <ul id="burgerMenu">
