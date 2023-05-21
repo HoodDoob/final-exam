@@ -71,9 +71,6 @@
 .grid2 {
   grid-template-columns: 6fr 4fr;
 }
-.gridGH {
-  grid-template-columns: 1fr 6fr 4fr 1fr;
-}
 
 .gridSetup {
   display: grid;
@@ -292,7 +289,11 @@
   }
 }
 
-// GloryHole
+//*? GloryHole *//
+.gridGH {
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+}
+
 p {
   #ghList {
     font-weight: var(--bold);
@@ -353,7 +354,8 @@ p {
     // width: 10%;
   }
 }
-// contact
+
+//*? contact *//
 .contText {
   text-align: center;
 }
@@ -392,6 +394,7 @@ p {
     text-decoration: underline 1px;
   }
 }
+
 //* TABLET VERSION *//
 @media screen and (max-width: 1200px) {
   // GloryHole
@@ -446,7 +449,6 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding-top: 30px;
 
     .imgcont {
       border-radius: 50px;
@@ -488,7 +490,6 @@ p {
     justify-content: space-between;
 
     height: 70vh;
-    padding-top: 10%;
     padding-right: 10%;
     padding-left: 10%;
 
@@ -534,6 +535,12 @@ p {
 
     #showsimage {
       height: 70vw;
+    }
+  }
+
+  .gridGH {
+    .title {
+      padding-top: 0;
     }
   }
 }

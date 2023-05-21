@@ -89,7 +89,7 @@ footer {
   background-color: rgb(0, 0, 0, 0.9);
 }
 #burgerMenu {
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
@@ -103,5 +103,16 @@ footer {
 @media screen and (max-width: 1200px) {
   .navLang {
     font-size: 14px;
+  }
+}
+
+//* MOBILE VERSION *//
+@media screen and (max-width: 500px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    margin-top: auto;
+    padding-bottom: 25px;
   }
 }
