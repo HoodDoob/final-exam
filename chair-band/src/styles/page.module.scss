@@ -439,6 +439,28 @@ p {
       }
     }
   }
+
+  .chairTV {
+    display: flex;
+    gap: 4em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+
+    .imgcont {
+      border-radius: 50px;
+      position: relative;
+      width: 100%;
+      height: auto;
+
+      img {
+        object-fit: contain;
+        height: 40vw;
+        width: 100%;
+      }
+    }
+  }
 }
 
 //* MOBILE VERSION *//
@@ -513,14 +535,5 @@ p {
     #showsimage {
       height: 70vw;
     }
-  }
-
-  .chairTV {
-    display: flex;
-    gap: 2em;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 30px;
   }
 }
