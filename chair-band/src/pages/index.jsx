@@ -7,13 +7,16 @@ import Shows from "@/components/shows";
 import Contact from "../components/contact";
 import ChairTV from "@/components/chairtv";
 import GloryHole from "@/components/gloryhole";
+import Clips from "@/components/clips";
+import Liveshows from "@/components/liveshows";
+import SillyStuff from "@/components/sillystuff";
 
 export default function Home() {
   const [pageState, setPageState] = useState(1);
   const [burgerState, setBurgerState] = useState(false);
 
   function changePage(x) {
-    setBurgerState(!burgerState);
+    setBurgerState(false);
     setPageState(x);
     console.log("the funniest bumber ever is " + pageState);
   }
@@ -21,7 +24,7 @@ export default function Home() {
     setBurgerState(!burgerState);
     console.log("burger menu is open " + burgerState);
   }
-  
+
   return (
     <Layout
       burgerState={burgerState}
@@ -29,11 +32,9 @@ export default function Home() {
       openBurger={openBurger}
       pageState={pageState}
       setPageState={setPageState}
-      changePage={changePage}
-    >
+      changePage={changePage}>
       <div
-        className={pageState == 1 ? "background" : "background bckDark"}
-      ></div>
+        className={pageState == 1 ? "background" : "background bckDark"}></div>
       {/* className={
             !singleBandState ? "NavBarCont navBar1" : "NavBarCont navBar2"
           } */}
@@ -46,8 +47,11 @@ export default function Home() {
       {pageState == 2 ? <AboutUs /> : ""}
       {pageState == 3 ? <Shows /> : ""}
       {pageState == 4 ? <Contact /> : ""}
-      {pageState == 5 ? <ChairTV /> : ""}
+      {pageState == 5 ? <ChairTV changePage={changePage} /> : ""}
       {pageState == 6 ? <GloryHole /> : ""}
+      {pageState == 7 ? <Clips changePage={changePage}/> : ""}
+      {pageState == 8 ? <Liveshows changePage={changePage}/> : ""}
+      {pageState == 9 ? <SillyStuff changePage={changePage}/> : ""}
     </Layout>
   );
 }

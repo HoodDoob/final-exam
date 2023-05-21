@@ -258,6 +258,7 @@
       cursor: pointer;
 
       margin: -1.5em;
+      z-index: 2;
     }
   }
 
@@ -285,7 +286,7 @@
 
   #tv_3 {
     grid-column: 3 / 4;
-    grid-row: 3 / 5;
+    grid-row: 4 / 6;
   }
 }
 
