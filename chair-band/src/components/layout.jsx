@@ -46,15 +46,25 @@ export default function Layout(props) {
         <nav>
           <div>
             <div className="navSocials">
-              <Image
-                priority
-                src={fbIcon}
-                alt="FB"
-                // onClick={() => checkSize()}
-              />
-              <Image priority src={igIcon} alt="IG" />
-              <Image priority src={spIcon} alt="FB" />
-              <Image priority src={ttIcon} alt="IG" />
+              {" "}
+              <a href="https://www.facebook.com/Chair.The.Band" target="_blank">
+                <Image priority src={fbIcon} alt="Facebook" />
+              </a>{" "}
+              <a href="https://www.instagram.com/kocham.chair/" target="_blank">
+                <Image priority src={igIcon} alt="Instagram" />
+              </a>
+              <a
+                href="https://open.spotify.com/artist/1Lo9afReVMAV0luzxUdHX1?si=XH4TbMElSGuCJ1-CJdFR0g"
+                target="_blank"
+              >
+                <Image priority src={spIcon} alt="Spotify" />
+              </a>{" "}
+              <a
+                href="https://www.tiktok.com/@chair.band?_t=8cVT9ADObSk&"
+                target="_blank"
+              >
+                <Image priority src={ttIcon} alt="Tik Tok" />
+              </a>
             </div>
           </div>
 

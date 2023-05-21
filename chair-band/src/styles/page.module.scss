@@ -3,7 +3,35 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  // margin-bottom: 30px;
+  // padding-left: 5vw;
+  // padding-right: 5vw;
 }
+.title {
+  // margin-top: 100px;
+  // position: relative;
+  // background-color: black;
+  // width: 100vw;
+  h1 {
+    position: relative;
+  }
+  h2 {
+    position: relative;
+  }
+}
+// .title::before {
+//   top: -10px;
+//   content: "";
+//   background: rgb(0, 0, 0);
+//   background: linear-gradient(
+//     90deg,
+//     rgba(0, 0, 0, 1) 0%,
+//     rgba(0, 0, 0, 0) 100%
+//   );
+//   width: 80vw;
+//   height: 130%;
+//   position: absolute;
+// }
 
 .landing_div {
   display: flex;
@@ -71,11 +99,21 @@
 .grid2 {
   grid-template-columns: 6fr 4fr;
 }
+.gridShows {
+  grid-template-columns: 6fr 4fr;
+  grid-template-rows: auto 1fr;
+}
 .gridGH {
   grid-template-columns: 1fr 6fr 4fr 1fr;
 }
 
 .gridSetup {
+  background-color: rgba(17, 17, 17, 0.8);
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vw;
+  padding-bottom: 4vw;
+  border-radius: 20px;
   display: grid;
   // grid-template-columns: 6fr 4fr;
   grid-gap: 5vw 5vw;
@@ -86,7 +124,7 @@
   }
 
   .imgcont {
-    border-radius: 50px;
+    border-radius: 20px;
     position: relative;
     width: 100%;
     height: 30vw;
@@ -104,6 +142,7 @@
     grid-column: 2 / 3;
     grid-row: 1 / 4;
     overflow: hidden;
+    z-index: 1;
     // max-height: 100px;
     // min-width: 100%;
     // object-fit: cover;
@@ -114,6 +153,11 @@
     overflow: hidden;
     // min-height: 300px;
   }
+  #thirdimage {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    overflow: hidden;
+  }
   #firsttext {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -121,6 +165,10 @@
   #secondtext {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
+  }
+  #thirdtext {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
   }
 
   .text_div {
@@ -153,9 +201,15 @@
 
   //*? SHOWS *//
   #showsimage {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     grid-row: 2 / 3;
-    height: 40vw;
+    min-height: 50%;
     align-self: center;
+    min-width: 300px;
+    overflow: hidden;
   }
 
   #showsTable {
@@ -228,6 +282,8 @@
             color: var(--color-green);
             text-decoration: underline;
             cursor: pointer;
+            font-weight: 500;
+            text-decoration-thickness: 1px;
           }
           p {
             font-size: 15px;
@@ -267,7 +323,7 @@
   .imgcont {
     border-radius: 50px;
     position: relative;
-    width: 100%;
+    width: 110%;
     height: auto;
 
     img {
@@ -353,9 +409,21 @@ p {
     // width: 10%;
   }
 }
-// contact
+//? CONTACT
+#contImg {
+  min-height: 40vw;
+  max-height: 400px;
+  overflow: hidden;
+  grid-column: 2/3;
+}
+
 .contText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  grid-column: 3/4;
 }
 .cont1 {
   font-family: var(--font-primary2);
@@ -376,6 +444,7 @@ p {
 }
 .cont4 {
   margin: 30px;
+  margin-top: 50px;
   font-family: var(--font-primary2);
   font-size: 20px;
   a {
@@ -384,8 +453,8 @@ p {
   }
 }
 .cont5 {
+  margin-top: 50px;
   a {
-    margin-top: auto;
     font-family: var(--font-primary2);
     font-size: 30px;
     color: var(--color-red);
@@ -403,6 +472,12 @@ p {
   }
   .ghInputForm {
     grid-column: 2/3;
+  }
+  .contText {
+    grid-column: 2/3;
+  }
+  #contImg {
+    grid-column: 1/2;
   }
 
   .landing_div {
@@ -422,6 +497,9 @@ p {
     }
   }
   .gridSetup {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -431,7 +509,7 @@ p {
     .imgcont {
       border-radius: 0px;
       position: relative;
-      width: 110vw;
+      width: 120%;
       height: 70vw;
       img {
         position: relative;
@@ -470,7 +548,6 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin-left: 0;
   }
 
@@ -518,18 +595,22 @@ p {
     justify-content: space-between;
 
     .title {
-      padding-top: 100px;
-    }
-
-    .imgcont {
-      border-radius: 0px;
+      margin-top: 100px;
       position: relative;
-      width: 110vw;
-      height: 70vw;
-      img {
+      // background-color: black;
+      // width: 100vw;
+      h1 {
         position: relative;
-        object-fit: cover;
       }
+      h2 {
+        position: relative;
+      }
+    }
+    hr {
+      // margin-top: 10px;
+      // margin-bottom: 10px;
+      width: 150%;
+      border-width: 0.5px;
     }
 
     #showsimage {
