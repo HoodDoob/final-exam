@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Contact() {
   return (
-    <div className={`${styles.gridSetup} ${styles.grid2}`}>
+    <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       <div className={styles.imgcont} id={styles.contImg}>
         <Image priority src={aboutus_1} alt="" />
       </div>
