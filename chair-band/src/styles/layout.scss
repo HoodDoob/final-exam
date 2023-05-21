@@ -95,15 +95,18 @@ footer {
 }
 
 #anotherCont {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  right: 8%;
 }
 
 #navbarCont {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:center;
+
   flex-grow: 1;
   ul {
     display: flex;
@@ -154,6 +157,7 @@ footer {
 .navLogo {
   font-family: var(--font-primary);
   font-weight: var(--black);
+  margin-left: 5%;
 }
 
 //* TABLET VERSION *//
@@ -161,6 +165,19 @@ footer {
 @media screen and (max-width: 1200px) {
   .navLang {
     font-size: 14px;
+  }
+
+  #anotherCont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 3%;
+  }
+  .navLogo {
+    font-family: var(--font-primary);
+    font-weight: var(--black);
+    margin-left: 1%;
   }
 }
 

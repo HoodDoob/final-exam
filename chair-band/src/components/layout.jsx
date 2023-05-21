@@ -78,15 +78,14 @@ export default function Layout(props) {
               </div>
             </div>
 
+            <div
+              className={`navLogo ${props.pageState == 1 ? "invisible" : ""}`}>
+              Chair
+            </div>
+
             {/* Burger menu switch */}
             {navbarState == true ? (
               <>
-                <div
-                  className={`navLogo ${
-                    props.pageState == 1 ? "invisible" : ""
-                  }`}>
-                  Chair
-                </div>
                 <div id="navbarCont" className="">
                   <div id="anotherCont">
                     <ul id="navbar">
@@ -135,17 +134,6 @@ export default function Layout(props) {
               </>
             ) : (
               <>
-                <div
-                  className={`navLogo ${props.pageState == 1 ? "hidden" : ""}`}>
-                  Chair
-                </div>
-
-                {/* Language switch */}
-                <div className="navLang">
-                  <div className="greyedOut">PL /</div>
-                  <div>/ ENG</div>
-                </div>
-                <div className="navLogo hidden">Chair</div>
                 <button
                   onClick={() => props.openBurger()}
                   className={props.burgerState ? "hidden" : "navBurger"}
@@ -155,7 +143,11 @@ export default function Layout(props) {
 
                 {props.burgerState && (
                   <>
-                  
+                    {/* Language switch */}
+                    <div className="navLang">
+                      <div className="greyedOut">PL /</div>
+                      <div>/ ENG</div>
+                    </div>
                     <button
                       onClick={() => props.openBurger()}
                       className="navBurger"
