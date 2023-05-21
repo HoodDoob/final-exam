@@ -43,120 +43,117 @@ export default function Layout(props) {
   return (
     <div className="layout">
       <header>
-        <nav>
-          <div>
-            <div className="navSocials">
-              <Image
-                priority
-                src={fbIcon}
-                alt="FB"
-                // onClick={() => checkSize()}
-              />
-              <Image priority src={igIcon} alt="IG" />
-              <Image priority src={spIcon} alt="FB" />
-              <Image priority src={ttIcon} alt="IG" />
+        <div className="nav_gradient"> </div>
+        <div className="fixed">
+          <nav>
+            <div>
+              <div className="navSocials">
+                <Image
+                  priority
+                  src={fbIcon}
+                  alt="FB"
+                  // onClick={() => checkSize()}
+                />
+                <Image priority src={igIcon} alt="IG" />
+                <Image priority src={spIcon} alt="FB" />
+                <Image priority src={ttIcon} alt="IG" />
+              </div>
             </div>
-          </div>
 
-          {/* Burger menu switch */}
-          {navbarState == true ? (
-            <>
-              <div id="navbarCont" className="">
-                <ul id="navbar">
-                  <li
-                    onClick={() => props.changePage(1)}
-                    className={props.pageState == 1 ? "weAreHere" : ""}
-                  >
-                    home
-                  </li>
-                  <li
-                    onClick={() => props.changePage(2)}
-                    className={props.pageState == 2 ? "weAreHere" : ""}
-                  >
-                    about us
-                  </li>
-                  <li
-                    onClick={() => props.changePage(3)}
-                    className={props.pageState == 3 ? "weAreHere" : ""}
-                  >
-                    shows
-                  </li>
-                  <li
-                    onClick={() => props.changePage(4)}
-                    className={props.pageState == 4 ? "weAreHere" : ""}
-                  >
-                    contact
-                  </li>
-                  <li
-                    onClick={() => props.changePage(5)}
-                    className={props.pageState == 5 ? "weAreHere" : ""}
-                  >
-                    ChairTV
-                  </li>
-                  <li
-                    onClick={() => props.changePage(6)}
-                    className={props.pageState == 6 ? "weAreHere" : ""}
-                  >
-                    GloryHole®
-                  </li>
-                  <li>ChairGame</li>
-                  <li>store</li>
-                  <li>BOOK US!</li>
-                </ul>
-              </div>
-              {/* Language switch */}
-              <div className="navLang">
-                <div className="greyedOut">PL /</div>
-                <div>/ ENG</div>
-              </div>
-              <div className="navLogo hidden">Chair</div>
-            </>
-          ) : (
-            <>
-              {/* Language switch */}
-              <div className="navLang">
-                <div className="greyedOut">PL /</div>
-                <div>/ ENG</div>
-              </div>
-              <div className="navLogo hidden">Chair</div>
-              <button
-                onClick={() => props.openBurger()}
-                // className="navBurger"
-                button-name="klosburg"
-              >
-                =
-              </button>
+            {/* Burger menu switch */}
+            {navbarState == true ? (
+              <>
+                <div id="navbarCont" className="">
+                  <ul id="navbar">
+                    <li
+                      onClick={() => props.changePage(1)}
+                      className={props.pageState == 1 ? "weAreHere" : ""}>
+                      home
+                    </li>
+                    <li
+                      onClick={() => props.changePage(2)}
+                      className={props.pageState == 2 ? "weAreHere" : ""}>
+                      about us
+                    </li>
+                    <li
+                      onClick={() => props.changePage(3)}
+                      className={props.pageState == 3 ? "weAreHere" : ""}>
+                      shows
+                    </li>
+                    <li
+                      onClick={() => props.changePage(4)}
+                      className={props.pageState == 4 ? "weAreHere" : ""}>
+                      contact
+                    </li>
+                    <li
+                      onClick={() => props.changePage(5)}
+                      className={props.pageState == 5 ? "weAreHere" : ""}>
+                      ChairTV
+                    </li>
+                    <li
+                      onClick={() => props.changePage(6)}
+                      className={props.pageState == 6 ? "weAreHere" : ""}>
+                      GloryHole®
+                    </li>
+                    <li>ChairGame</li>
+                    <li>store</li>
+                    <li>BOOK US!</li>
+                  </ul>
+                </div>
+                {/* Language switch */}
+                <div className="navLang">
+                  <div className="greyedOut">PL /</div>
+                  <div>/ ENG</div>
+                </div>
+                <div className="navLogo hidden">Chair</div>
+              </>
+            ) : (
+              <>
+                {/* Language switch */}
+                <div className="navLang">
+                  <div className="greyedOut">PL /</div>
+                  <div>/ ENG</div>
+                </div>
+                <div className="navLogo hidden">Chair</div>
+                <button
+                  onClick={() => props.openBurger()}
+                  // className="navBurger"
+                  button-name="klosburg">
+                  =
+                </button>
 
-              {props.burgerState && (
-                <>
-                  <button
-                    onClick={() => props.openBurger()}
-                    className="navBurger"
-                    button-name="klosburg"
-                  >
-                    {props.openBurger ? <p>x</p> : <p>=</p>}
-                  </button>
-                  <div id="burgerMenuCont" className="">
-                    <ul id="burgerMenu">
-                      <li onClick={() => props.changePage(1)}>home</li>
-                      <li onClick={() => props.changePage(2)}>about us</li>
-                      <li onClick={() => props.changePage(3)}>shows</li>
-                      <li onClick={() => props.changePage(4)}>contact</li>
-                      <li onClick={() => props.changePage(5)}>ChairTV</li>
-                      <li onClick={() => props.changePage(6)}>GloryHole®</li>
-                      <li>ChairGame</li>
-                      <li>store</li>
-                      <li>BOOK US!</li>
-                    </ul>
-                  </div>
-                </>
-              )}
-            </>
-          )}
-        </nav>
+                {props.burgerState && (
+                  <>
+                    <button
+                      onClick={() => props.openBurger()}
+                      className="navBurger"
+                      button-name="klosburg">
+                      {props.openBurger ? <p>x</p> : <p>=</p>}
+                    </button>
+                    <div id="burgerMenuCont" className="">
+                      <ul id="burgerMenu">
+                        <li onClick={() => props.changePage(1)}>home</li>
+                        <li onClick={() => props.changePage(2)}>about us</li>
+                        <li onClick={() => props.changePage(3)}>shows</li>
+                        <li onClick={() => props.changePage(4)}>contact</li>
+                        <li onClick={() => props.changePage(5)}>ChairTV</li>
+                        <li onClick={() => props.changePage(6)}>GloryHole®</li>
+                        <li>ChairGame</li>
+                        <li>store</li>
+                        <li>BOOK US!</li>
+                      </ul>
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+          </nav>
+        </div>
       </header>
 
       <main className={width > 600 ? "" : ""}>{props.children}</main>
+      <div className="footer_gradient"> </div>
+
       {footerState == true && (
         <footer>
           <div className={styles.newsletter}>
@@ -186,8 +183,7 @@ export default function Layout(props) {
               frameBorder="0"
               allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
+              loading="lazy"></iframe>
           </div>
         </footer>
       )}
