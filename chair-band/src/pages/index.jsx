@@ -21,6 +21,7 @@ export default function Home() {
     setBurgerState(!burgerState);
     console.log("burger menu is open " + burgerState);
   }
+  
   return (
     <Layout
       burgerState={burgerState}

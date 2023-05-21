@@ -13,6 +13,7 @@ export default function Layout(props) {
   const [footerState, setFooterState] = useState(true);
   const [navbarState, setNavbarState] = useState(true);
   const { width, height } = useWindowDimensions();
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (width <= 600) {
@@ -40,10 +41,27 @@ export default function Layout(props) {
     }
   });
 
+  //function to make the navbar background visible on scroll //*! not working yet *//
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const shouldShow = scrollTop > 0;
+
+      setIsVisible(shouldShow);
+      console.log("they see me scrollin they hatin")
+    };
+
+    document.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="layout">
       <header>
-        <div className="nav_gradient"> </div>
+        <div className={`nav_gradient ${isVisible ? 'visible' : ''}`}></div>
         <div className="fixed">
           <nav>
             <div>
