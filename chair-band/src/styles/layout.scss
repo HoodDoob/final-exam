@@ -25,7 +25,7 @@ nav {
   position: fixed;
   width: 95vw;
   z-index: 10;
-  //   list-style-type: none;
+
   color: var(--color-red);
   justify-content: center;
   align-items: center;
@@ -163,9 +163,6 @@ footer {
 //* TABLET VERSION *//
 
 @media screen and (max-width: 1200px) {
-  .navLang {
-    font-size: 14px;
-  }
 
   #anotherCont {
     position: relative;
@@ -194,6 +191,12 @@ footer {
     font-family: var(--font-primary3);
     font-weight: var(--regular);
     padding-bottom: 7vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    width: 90vw;
   }
 }
 
