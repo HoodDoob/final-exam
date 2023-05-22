@@ -61,31 +61,32 @@ export default function Layout(props) {
   return (
     <div className="layout">
       <header>
-
         <div className="nav_gradient"></div>
         <div className="fixed">
           <nav>
             <div>
               <div className="navSocials">
-              {" "}
-              <a href="https://www.facebook.com/Chair.The.Band" target="_blank">
-                <Image priority src={fbIcon} alt="Facebook" />
-              </a>{" "}
-              <a href="https://www.instagram.com/kocham.chair/" target="_blank">
-                <Image priority src={igIcon} alt="Instagram" />
-              </a>
-              <a
-                href="https://open.spotify.com/artist/1Lo9afReVMAV0luzxUdHX1?si=XH4TbMElSGuCJ1-CJdFR0g"
-                target="_blank"
-              >
-                <Image priority src={spIcon} alt="Spotify" />
-              </a>{" "}
-              <a
-                href="https://www.tiktok.com/@chair.band?_t=8cVT9ADObSk&"
-                target="_blank"
-              >
-                <Image priority src={ttIcon} alt="Tik Tok" />
-              </a>
+                {" "}
+                <a
+                  href="https://www.facebook.com/Chair.The.Band"
+                  target="_blank">
+                  <Image priority src={fbIcon} alt="Facebook" />
+                </a>{" "}
+                <a
+                  href="https://www.instagram.com/kocham.chair/"
+                  target="_blank">
+                  <Image priority src={igIcon} alt="Instagram" />
+                </a>
+                <a
+                  href="https://open.spotify.com/artist/1Lo9afReVMAV0luzxUdHX1?si=XH4TbMElSGuCJ1-CJdFR0g"
+                  target="_blank">
+                  <Image priority src={spIcon} alt="Spotify" />
+                </a>{" "}
+                <a
+                  href="https://www.tiktok.com/@chair.band?_t=8cVT9ADObSk&"
+                  target="_blank">
+                  <Image priority src={ttIcon} alt="Tik Tok" />
+                </a>
               </div>
             </div>
 
@@ -122,7 +123,14 @@ export default function Layout(props) {
                       </li>
                       <li
                         onClick={() => props.changePage(5)}
-                        className={props.pageState == 5 ? "weAreHere" : ""}>
+                        className={
+                          props.pageState == 5 ||
+                          props.pageState == 7 ||
+                          props.pageState == 8 ||
+                          props.pageState == 9
+                            ? "weAreHere"
+                            : ""
+                        }>
                         ChairTV
                       </li>
                       <li
