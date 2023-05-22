@@ -22,35 +22,27 @@ export default function Clips(props) {
         <button onClick={() => props.changePage(5)}>back</button>
       </div>
 
-      <div onClick={() => openPopup(mcGonagall)} className={styles.thumbnailCont}>
+      <div
+        onClick={() => openPopup(mcGonagall)}
+        className={styles.thumbnailCont}>
         <p>open video here</p>
       </div>
 
-      <div onClick={() => openPopup(stringTheory)} className={styles.thumbnailCont}>
+      <div
+        onClick={() => openPopup(stringTheory)}
+        className={styles.thumbnailCont}>
         <p>open video here</p>
       </div>
 
       {popupState && (
-          <div
-          onClick={() => openPopup()}
-          className={styles.popupCont}>
-        <YouTubeEmbed
-          videoId={videoId}
-          popupState={popupState}
-          openPopup={openPopup}
-        />
-         </div>
+        <div onClick={() => openPopup()} className={styles.popupCont}>
+          <YouTubeEmbed
+            videoId={videoId}
+            popupState={popupState}
+            openPopup={openPopup}
+          />
+        </div>
       )}
-
-      {/* <div
-        onClick={() => openPopup()}
-        className={popupState ? `${styles.popupCont}` : "hidden"}>
-       <YouTubeEmbed
-          videoId={videoId}
-          popupState={popupState}
-          openPopup={openPopup}
-        />
-      </div> */}
     </div>
   );
 }

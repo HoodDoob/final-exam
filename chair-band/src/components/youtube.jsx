@@ -8,7 +8,7 @@ export default function YouTubeEmbed(props) {
     height: "",
     width: "",
     playerVars: {
-      autoplay: 2,
+      autoplay: 0,
       controls: 0, // Disable player controls
       showinfo: 0, // Hide video title and uploader info
       modestbranding: 0, // Hide YouTube logo
