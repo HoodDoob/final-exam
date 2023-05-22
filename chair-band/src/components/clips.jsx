@@ -2,7 +2,7 @@ import styles from "../styles/page.module.scss";
 import YouTubeEmbed from "./youtube";
 
 export default function Clips(props) {
-  const videoId = 'YOUR_YOUTUBE_VIDEO_ID';
+  const videoId = '1dDwdhgxZ8M';
 
   return (
     <div className={`${styles.gridSetup} ${styles.gridVideos}`}>
@@ -12,6 +12,12 @@ export default function Clips(props) {
       </div>
       
       <YouTubeEmbed videoId={videoId} />
+      <YouTubeEmbed videoId={videoId} />
+      <YouTubeEmbed videoId={videoId} />
+      <YouTubeEmbed videoId={videoId} />
+      <YouTubeEmbed videoId={videoId} />
+      <YouTubeEmbed videoId={videoId} />
+
     </div>
   );
 }
