@@ -1,4 +1,6 @@
 import YouTube from 'react-youtube';
+//npm install react-youtube
+
 
 export default function YouTubeEmbed({videoId}) {
         // YouTube options (e.g., player size, autoplay, etc.)
