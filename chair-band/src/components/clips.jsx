@@ -4,11 +4,13 @@ import YouTubeEmbed from "./youtube";
 
 export default function Clips(props) {
   const [popupState, setPopupState] = useState(false);
+  const [videoState, setVideoState] = useState();
   let videoId;
   const mcGonagall = "1dDwdhgxZ8M";
   const stringTheory = "n7cOlBxtKSo";
 
   function openPopup(id) {
+    setVideoState(id);
     videoId = id;
     console.log(videoId);
     setPopupState(!popupState);
@@ -24,20 +26,22 @@ export default function Clips(props) {
 
       <div
         onClick={() => openPopup(mcGonagall)}
-        className={styles.thumbnailCont}>
+        className={styles.thumbnailCont}
+      >
         <p>open video here</p>
       </div>
 
       <div
         onClick={() => openPopup(stringTheory)}
-        className={styles.thumbnailCont}>
+        className={styles.thumbnailCont}
+      >
         <p>open video here</p>
       </div>
 
       {popupState && (
-        <div onClick={() => openPopup()} className={styles.popupCont}>
+        <div className={styles.popupCont}>
           <YouTubeEmbed
-            videoId={videoId}
+            videoId={videoState}
             popupState={popupState}
             openPopup={openPopup}
           />
