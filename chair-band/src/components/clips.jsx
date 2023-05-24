@@ -1,20 +1,16 @@
 import styles from "../styles/page.module.scss";
 import { useState } from "react";
 import YouTubeEmbed from "./youtube";
+import SingleVideo from "./singlevideo";
 
 export default function Clips(props) {
-  const [popupState, setPopupState] = useState(false);
-  const [videoState, setVideoState] = useState();
-  let videoId;
+
   const mcGonagall = "1dDwdhgxZ8M";
   const stringTheory = "n7cOlBxtKSo";
 
-  function openPopup(id) {
-    setVideoState(id);
-    videoId = id;
-    console.log(videoId);
-    setPopupState(!popupState);
-    console.log("popup open", popupState);
+  function closePopup() {
+    props.setPopupState(false);
+    console.log("popup closed");
   }
 
   return (
@@ -24,26 +20,33 @@ export default function Clips(props) {
         <button onClick={() => props.changePage(5)}>back</button>
       </div>
 
-      <div
+      <div>
+        {props.videos.map((video, i) => (
+          <SingleVideo 
+          video={video}
+          key={i}
+          openVideo={props.openVideo}
+          />
+        ))}
+      </div>
+
+ {/*      <div
         onClick={() => openPopup(mcGonagall)}
-        className={styles.thumbnailCont}
-      >
+        className={styles.thumbnailCont}>
         <p>open video here</p>
       </div>
 
       <div
         onClick={() => openPopup(stringTheory)}
-        className={styles.thumbnailCont}
-      >
+        className={styles.thumbnailCont}>
         <p>open video here</p>
-      </div>
+      </div> */}
 
-      {popupState && (
-        <div className={styles.popupCont}>
+      {props.popupState && (
+        <div className={styles.popupCont} onClick={() => closePopup()}>
           <YouTubeEmbed
-            videoId={videoState}
-            popupState={popupState}
-            openPopup={openPopup}
+            popupState={props.popupState}
+            video={props.openedVideo}
           />
         </div>
       )}

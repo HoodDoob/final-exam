@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import Head from "next/head";
 import { useState } from "react";
+import { useEffect } from "react";
 import Landing from "../components/landing";
 import AboutUs from "../components/aboutus";
 import Shows from "@/components/shows";
@@ -11,9 +12,13 @@ import Clips from "@/components/clips";
 import Liveshows from "@/components/liveshows";
 import SillyStuff from "@/components/sillystuff";
 
-export default function Home() {
+export default function Home({videodata}) {
   const [pageState, setPageState] = useState(1);
   const [burgerState, setBurgerState] = useState(false);
+  const [videos, setVideos] = useState([]);
+  const [openedVideo, setOpenedVideo] = useState();
+  const [popupState, setPopupState] = useState(false);
+  const [videoState, setVideoState] = useState();
 
   function changePage(x) {
     setBurgerState(false);
@@ -23,6 +28,25 @@ export default function Home() {
   function openBurger() {
     setBurgerState(!burgerState);
     console.log("burger menu is open " + burgerState);
+  }
+
+   useEffect(() => {
+      function getData() {
+      setVideos(videodata);
+
+    }
+    getData();
+  }, []);
+
+  function openVideo(video) {
+    setPopupState(true);
+    videos.map((item) => {
+      if (item.name === video) setOpenedVideo(item);
+    });
+
+    setVideoState(video);
+    console.log(video);
+    setPopupState(true);
   }
 
   return (
@@ -49,9 +73,33 @@ export default function Home() {
       {pageState == 4 ? <Contact /> : ""}
       {pageState == 5 ? <ChairTV changePage={changePage} /> : ""}
       {pageState == 6 ? <GloryHole /> : ""}
-      {pageState == 7 ? <Clips changePage={changePage}/> : ""}
-      {pageState == 8 ? <Liveshows changePage={changePage}/> : ""}
-      {pageState == 9 ? <SillyStuff changePage={changePage}/> : ""}
+      {pageState == 7 ? (
+        <Clips
+          changePage={changePage}
+          openVideo={openVideo}
+          openedVideo={openedVideo}
+          videos={videos}
+          popupState={popupState}
+          setPopupState={setPopupState}
+          videoState={videoState}
+          setVideoState={setVideoState}
+        />
+      ) : (
+        ""
+      )}
+      {pageState == 8 ? <Liveshows changePage={changePage} /> : ""}
+      {pageState == 9 ? <SillyStuff changePage={changePage} /> : ""}
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://bitter-grass-7071.fly.dev/bands");
+  const data = await res.json();
+
+  return {
+      props: {
+          videodata: data
+      }
+  }
 }

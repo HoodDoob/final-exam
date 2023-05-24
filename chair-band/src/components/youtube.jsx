@@ -8,7 +8,7 @@ export default function YouTubeEmbed(props) {
     height: "",
     width: "",
     playerVars: {
-      autoplay: 0,
+      autoplay: true,
       controls: 0, // Disable player controls
       showinfo: 0, // Hide video title and uploader info
       modestbranding: 0, // Hide YouTube logo
@@ -17,8 +17,9 @@ export default function YouTubeEmbed(props) {
   };
 
   return (
-  
-      <YouTube videoId={props.videoId} opts={opts} />
-   
+
+    <h1>{props.video.name}</h1>
+      // <YouTube videoId={props.videoId} opts={opts} />
+
   );
 }
