@@ -4,8 +4,23 @@ import aboutus_1 from "../public/images/aboutus_1.jpg";
 import aboutus_2 from "../public/images/aboutus_2.jpg";
 import aboutus_3 from "../public/images/aboutus_3.jpg";
 import Link from "next/link";
+import fetchPosts from "./wordpress";
+require("isomorphic-fetch");
+// npm install --save isomorphic-fetch
 
 export default function AboutUs() {
+  // const url = `https://lucaszago.dk/vlp/wp-json/wp/v2/artworks`;
+  // fetch(url)
+  //   .then(function (response) {
+  //     if (response.status >= 400) {
+  //       throw new Error("Bad response from server");
+  //     }
+  //     return response.json();
+  //   })
+  //   .then(function (stories) {
+  //     console.log(stories);
+  //   });
+
   return (
     <div>
       <div className={`${styles.gridSetup} ${styles.grid2}`}>
