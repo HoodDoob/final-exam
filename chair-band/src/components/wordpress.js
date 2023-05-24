@@ -6,6 +6,7 @@ const fetchPosts = async () => {
     return posts;
 };
 export async function getStaticProps() {
+
     const posts = await fetchPosts();
     return {
         props: {
