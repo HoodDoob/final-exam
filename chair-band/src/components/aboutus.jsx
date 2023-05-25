@@ -22,7 +22,7 @@ export default function AboutUs({ images }) {
         <div className={styles.imgcont} id={styles.firstimage}>
           <Image
             src={
-              images[0]._embedded["wp:featuredmedia"][0].media_details.sizes
+              images[2]._embedded["wp:featuredmedia"][0].media_details.sizes
                 .full.source_url
             }
             alt=""
@@ -98,13 +98,13 @@ export default function AboutUs({ images }) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch("https://lucaszago.dk/vlp/wp-json/wp/v2/artworks");
-  const data = await res.json();
-  console.log(data);
-  return {
-    props: {
-      data,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const res = await fetch("https://lucaszago.dk/vlp/wp-json/wp/v2/artworks");
+//   const data = await res.json();
+//   console.log(data);
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }
