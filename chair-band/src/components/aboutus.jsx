@@ -3,15 +3,36 @@ import Image from "next/image";
 import aboutus_1 from "../public/images/aboutus_1.jpg";
 import aboutus_2 from "../public/images/aboutus_2.jpg";
 import aboutus_3 from "../public/images/aboutus_3.jpg";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Wordpress from "./wordpress";
+import fetchPosts from "./wordpress";
+require("isomorphic-fetch");
+// npm install --save isomorphic-fetch
 
-export default function AboutUs() {
+export default function AboutUs({ images }) {
+  console.log(
+    images[0]._embedded["wp:featuredmedia"][0].media_details.sizes.full
+      .source_url
+  );
+
   return (
     <div>
       <div className={`${styles.gridSetup} ${styles.grid2}`}>
         <div className={styles.imgcont} id={styles.firstimage}>
-          <Image priority src={aboutus_1} alt="" />
+          <Image
+            src={
+              images[0]._embedded["wp:featuredmedia"][0].media_details.sizes
+                .full.source_url
+            }
+            alt=""
+            // width={`100`}
+            // height={100}
+            layout="fill"
+            // objectFit="contain"
+          />
         </div>
+        {/* <Wordpress images={images} /> */}
         <div className={styles.title}>
           <h1>about us</h1>
           <h2>(the band called Chair)</h2>
@@ -29,7 +50,14 @@ export default function AboutUs() {
           </p>
         </div>
         <div className={styles.imgcont} id={styles.secondimage}>
-          <Image priority src={aboutus_2} alt="" />
+          <Image
+            // loader={() => src}
+            // priority
+            src={aboutus_2}
+            // width={300}
+            // height={300}
+            alt=""
+          />
         </div>
         <div className={styles.text_div} id={styles.secondtext}>
           <p>
@@ -55,4 +83,15 @@ export default function AboutUs() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://lucaszago.dk/vlp/wp-json/wp/v2/artworks");
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: {
+      data,
+    },
+  };
 }
