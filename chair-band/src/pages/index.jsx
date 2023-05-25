@@ -101,7 +101,9 @@ export async function getStaticProps() {
   const resImg = await fetch(
     "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
   );
-  // const dataImg = await resImg.json();
+  const dataImg = await resImg.json();
+
+  // test
   const resImg2 = await fetch(
     "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
   );
