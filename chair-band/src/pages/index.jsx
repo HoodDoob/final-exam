@@ -10,9 +10,8 @@ import GloryHole from "@/components/gloryhole";
 import Clips from "@/components/clips";
 import Liveshows from "@/components/liveshows";
 import SillyStuff from "@/components/sillystuff";
-import Wordpress from "@/components/wordpress";
 
-export default function Home(props) {
+export default function Home({props}) {
   const [pageState, setPageState] = useState(1);
   const [burgerState, setBurgerState] = useState(false);
   const [images, setImages] = useState([]);
@@ -100,7 +99,7 @@ export default function Home(props) {
 export async function getServerSideProps() {
   // Get data from api
   const res = await fetch(
-    "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
+    "https://chair.band/wp-json/wp/v2"
   );
   // https://chair.band/index.php/wp-json/wp/v2
   const data = await res.json();
