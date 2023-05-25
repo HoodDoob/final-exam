@@ -5,6 +5,6 @@ module.exports = nextConfig
 module.exports = {
     reactStrictMode: false,
     images: {
-        domains: ['chair.band'],
+        domains: ['chair.band', 'i.ytimg.com'],
     },
 }
