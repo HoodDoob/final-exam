@@ -12,18 +12,15 @@ import Liveshows from "@/components/liveshows";
 import SillyStuff from "@/components/sillystuff";
 import Wordpress from "@/components/wordpress";
 
-export default function Home({ data }) {
+export default function Home(props) {
   const [pageState, setPageState] = useState(1);
   const [burgerState, setBurgerState] = useState(false);
   const [images, setImages] = useState([]);
-  // const url = `https://lucaszago.dk/vlp/wp-json/wp/v2/artworks`;
-  useEffect(() => {
-    function getData() {
-      setImages(data);
-    }
-    getData();
-  }, []);
-
+  const [videos, setVideos] = useState([]);
+  const [openedVideo, setOpenedVideo] = useState();
+  const [popupState, setPopupState] = useState(false);
+  const [videoState, setVideoState] = useState();
+ 
   function changePage(x) {
     setBurgerState(false);
     setPageState(x);
@@ -31,6 +28,33 @@ export default function Home({ data }) {
   function openBurger() {
     setBurgerState(!burgerState);
     console.log("burger menu is open " + burgerState);
+  }
+
+    // const url = `https://lucaszago.dk/vlp/wp-json/wp/v2/artworks`;
+    useEffect(() => {
+      function getData() {
+        setImages(props.data);
+      }
+      getData();
+    }, []);
+
+   useEffect(() => {
+      function getData() {
+      setVideos(props.videodata);
+
+    }
+    getData();
+  }, []);
+
+  function openVideo(video) {
+    setPopupState(true);
+    videos.map((item) => {
+      if (item.name === video) setOpenedVideo(item);
+    });
+
+    setVideoState(video);
+    console.log(video);
+    setPopupState(true);
   }
 
   return (
@@ -59,12 +83,26 @@ export default function Home({ data }) {
       {pageState == 4 ? <Contact /> : ""}
       {pageState == 5 ? <ChairTV changePage={changePage} /> : ""}
       {pageState == 6 ? <GloryHole /> : ""}
-      {pageState == 7 ? <Clips changePage={changePage} /> : ""}
+      {pageState == 7 ? (
+        <Clips
+          changePage={changePage}
+          openVideo={openVideo}
+          openedVideo={openedVideo}
+          videos={videos}
+          popupState={popupState}
+          setPopupState={setPopupState}
+          videoState={videoState}
+          setVideoState={setVideoState}
+        />
+      ) : (
+        ""
+      )}
       {pageState == 8 ? <Liveshows changePage={changePage} /> : ""}
       {pageState == 9 ? <SillyStuff changePage={changePage} /> : ""}
     </Layout>
   );
 }
+
 export async function getServerSideProps() {
   // Get data from api
   const res = await fetch(
@@ -80,3 +118,14 @@ export async function getServerSideProps() {
     },
   };
 }
+
+// export async function getStaticProps() {
+//   const res = await fetch("https://bitter-grass-7071.fly.dev/bands");
+//   const data = await res.json();
+
+//   return {
+//       props: {
+//           videodata: data
+//       }
+//   }
+// }
