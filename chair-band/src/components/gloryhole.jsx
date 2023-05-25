@@ -1,12 +1,22 @@
 import styles from "../styles/page.module.scss";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import aboutus_2 from "../public/images/aboutus_2.jpg";
+// import aboutus_2 from "../public/images/aboutus_2.jpg";
 
-import abutus_1 from "../public/images/aboutus_1.jpg";
+// import abutus_1 from "../public/images/aboutus_1.jpg";
 
+import { sendGloryHole } from "./database";
 import Link from "next/link";
 
 export default function GloryHole() {
+  const theForm = useRef(null);
+  function prepareData(e) {
+    e.preventDefault();
+    sendGloryHole({
+      nickname: theForm.current.elements.nickname.value,
+      message: theForm.current.elements.message.value,
+    });
+  }
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       {/* <div className={styles.ghLine}></div> */}
@@ -31,32 +41,41 @@ export default function GloryHole() {
       </div>
 
       {/* form below */}
-      <form className={styles.ghInputForm}>
+      <form
+        className={styles.ghInputForm}
+        ref={theForm}
+        onSubmit={(e) => {
+          prepareData(e);
+          // props.changePage({
+          //   preventDefault: () => {},
+          //   target: {
+          //     name: "next",
+          //   },
+          // });
+        }}
+      >
         <div className="form-control">
-          <label htmlFor="form-name">Your name (fake one, please)</label>
+          <label htmlFor="form-nickname">Your name (fake one, please)</label>
           <input
-            // defaultValue="hello"
+            defaultValue={""}
             type="text"
-            name="name"
-            id="form-name"
-            // placeholder="How much time do you spend on Instagram daily?"
-            // onInput={popNumber}
+            name="nickname"
+            id="form-nickname"
+            required
           />
         </div>
-
         <div className="form-control">
-          <label htmlFor="form-email">Your anonymous message to Chair</label>
-          <textarea className={styles.ghMessage} name="obs"></textarea>
+          <label htmlFor="form-message">Your anonymous message to Chair</label>
+          <textarea
+            defaultValue={""}
+            className={styles.ghMessage}
+            name="message"
+            id="form-message"
+            required
+          ></textarea>
         </div>
         <button id={styles.ghButt}>Send</button>
       </form>
-
-      {/* <div className={styles.imgcont} id={styles.ghImg}>
-        <Image priority src={aboutus_2} alt="" />
-      </div> */}
-      {/* <div className={styles.imgcont} id={styles.ghImg}>
-        <Image priority src={abutus_1} alt="" />
-      </div> */}
     </div>
   );
 }

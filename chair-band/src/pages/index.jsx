@@ -33,7 +33,7 @@ export default function Home(props) {
   // const url = `https://lucaszago.dk/vlp/wp-json/wp/v2/artworks`;
   useEffect(() => {
     function getData() {
-      setImages(props.data);
+      setImages(props.dataImg);
       setVideos(props.videodata);
     }
     getData();
