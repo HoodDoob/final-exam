@@ -85,7 +85,7 @@ export default function AboutUs({ images }) {
         </div>{" "}
         <div className={styles.text_div} id={styles.thirdtext}>
           <p>
-            In June 2022, a year after the band was founded, we debuted with the
+            In June 2022, a year after the band was founded, we debuted with an
             EP “Po Co Muzyka”(“Why bother with music”, eng.). The mini-album,
             despite being quite absurd, was met with a very positive feedback,
             becoming the album of the week of most Polish radio stations, thus

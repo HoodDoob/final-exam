@@ -20,7 +20,7 @@ export default function Home(props) {
   const [openedVideo, setOpenedVideo] = useState();
   const [popupState, setPopupState] = useState(false);
   const [videoState, setVideoState] = useState();
- 
+
   function changePage(x) {
     setBurgerState(false);
     setPageState(x);
@@ -30,15 +30,14 @@ export default function Home(props) {
     console.log("burger menu is open " + burgerState);
   }
 
-    // const url = `https://lucaszago.dk/vlp/wp-json/wp/v2/artworks`;
-    useEffect(() => {
-      function getData() {
-        setImages(props.data);
-        setVideos(props.videodata);
-      }
-      getData();
-    }, []);
-
+  // const url = `https://lucaszago.dk/vlp/wp-json/wp/v2/artworks`;
+  useEffect(() => {
+    function getData() {
+      setImages(props.data);
+      setVideos(props.videodata);
+    }
+    getData();
+  }, []);
 
   function openVideo(video) {
     setPopupState(true);
@@ -97,18 +96,22 @@ export default function Home(props) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Get data from api
-  const res = await fetch(
+  const resImg = await fetch(
     "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
   );
-  // https://chair.band/index.php/wp-json/wp/v2
-  const data = await res.json();
+  // const dataImg = await resImg.json();
+  const resImg2 = await fetch(
+    "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
+  );
+  const dataImg2 = await resImg2.json();
 
   // Return the data inside props
   return {
     props: {
-      data,
+      dataImg,
+      dataImg2,
     },
   };
 }
