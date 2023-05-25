@@ -18,7 +18,7 @@ export default function YouTubeEmbed(props) {
 
   return (
 
-    <h1>{props.video.name}</h1>
+    <h1>{props.video.title.rendered}</h1>
       // <YouTube videoId={props.videoId} opts={opts} />
 
   );
