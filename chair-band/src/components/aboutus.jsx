@@ -51,12 +51,15 @@ export default function AboutUs({ images }) {
         </div>
         <div className={styles.imgcont} id={styles.secondimage}>
           <Image
-            // loader={() => src}
-            // priority
-            src={aboutus_2}
-            // width={300}
-            // height={300}
+            src={
+              images[1]._embedded["wp:featuredmedia"][0].media_details.sizes
+                .full.source_url
+            }
             alt=""
+            // width={`100`}
+            // height={100}
+            layout="fill"
+            // objectFit="contain"
           />
         </div>
         <div className={styles.text_div} id={styles.secondtext}>
@@ -68,7 +71,17 @@ export default function AboutUs({ images }) {
           </p>
         </div>
         <div className={styles.imgcont} id={styles.thirdimage}>
-          <Image priority src={aboutus_3} alt="" />
+          <Image
+            src={
+              images[0]._embedded["wp:featuredmedia"][0].media_details.sizes
+                .full.source_url
+            }
+            alt=""
+            // width={`100`}
+            // height={100}
+            layout="fill"
+            // objectFit="contain"
+          />
         </div>{" "}
         <div className={styles.text_div} id={styles.thirdtext}>
           <p>
