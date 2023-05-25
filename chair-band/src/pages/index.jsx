@@ -142,13 +142,3 @@ export async function getStaticProps() {
   };
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch("https://bitter-grass-7071.fly.dev/bands");
-//   const data = await res.json();
-
-//   return {
-//       props: {
-//           videodata: data
-//       }
-//   }
-// }
