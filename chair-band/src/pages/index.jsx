@@ -34,17 +34,11 @@ export default function Home(props) {
     useEffect(() => {
       function getData() {
         setImages(props.data);
+        setVideos(props.videodata);
       }
       getData();
     }, []);
 
-   useEffect(() => {
-      function getData() {
-      setVideos(props.videodata);
-
-    }
-    getData();
-  }, []);
 
   function openVideo(video) {
     setPopupState(true);
