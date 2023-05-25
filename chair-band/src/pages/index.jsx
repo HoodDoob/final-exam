@@ -20,6 +20,7 @@ export default function Home({ imagedata, videodata }) {
   const [popupState, setPopupState] = useState(false);
   const [videoState, setVideoState] = useState();
 
+
   function changePage(x) {
     setBurgerState(false);
     setPageState(x);
@@ -44,7 +45,7 @@ export default function Home({ imagedata, videodata }) {
     });
 
     setVideoState(video);
-    console.log(video);
+    console.log(openedVideo);
     setPopupState(true);
   }
 
