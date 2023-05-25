@@ -91,7 +91,16 @@ footer {
 }
 
 .navBurger {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   z-index: 3;
+  width: 25px;
+
+  img {
+    width: 25px;
+    height: auto;
+  }
 }
 
 #anotherCont {

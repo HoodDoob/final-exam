@@ -8,6 +8,8 @@ import igIcon from "../public/icons/icon_IG.svg";
 import spIcon from "../public/icons/icon_SP.svg";
 import ttIcon from "../public/icons/icon_TT.svg";
 import arrow from "../public/icons/icon_arrow.svg";
+import burger_icon from "../public/icons/burger_icon.png";
+import closed_burger from "../public/icons/closed_burger.png";
 
 export default function Layout(props) {
   const [footerState, setFooterState] = useState(true);
@@ -90,14 +92,15 @@ export default function Layout(props) {
               </div>
             </div>
 
-            <div
-              className={`navLogo ${props.pageState == 1 ? "invisible" : ""}`}>
-              Chair
-            </div>
-
             {/* Burger menu switch */}
             {navbarState == true ? (
               <>
+                <div
+                  className={`navLogo ${
+                    props.pageState == 1 ? "invisible" : ""
+                  }`}>
+                  Chair
+                </div>
                 <div id="navbarCont" className="">
                   <div id="anotherCont">
                     <ul id="navbar">
@@ -153,11 +156,17 @@ export default function Layout(props) {
               </>
             ) : (
               <>
+                <div
+                  className={`navLogo ${
+                    props.pageState == 1 ? "hidden" : ""
+                  }`}>
+                  Chair
+                </div>
                 <button
                   onClick={() => props.openBurger()}
                   className={props.burgerState ? "hidden" : "navBurger"}
                   button-name="klosburg">
-                  =
+                  <Image priority src={burger_icon} alt="" />
                 </button>
 
                 {props.burgerState && (
@@ -171,7 +180,7 @@ export default function Layout(props) {
                       onClick={() => props.openBurger()}
                       className="navBurger"
                       button-name="klosburg">
-                      x
+                      <Image priority src={closed_burger} alt="" />
                     </button>
                     <div id="burgerMenuCont" className="">
                       <ul id="burgerMenu">
