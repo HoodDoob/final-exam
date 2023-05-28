@@ -18,7 +18,7 @@ export default function Layout(props) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (width <= 600) {
+    if (width <= 610) {
       console.log(width);
       if (props.pageState == 1) {
         setFooterState(false);
@@ -203,7 +203,7 @@ export default function Layout(props) {
         </div>
       </header>
 
-      <main className={width > 600 ? "" : ""}>{props.children}</main>
+      <main>{props.children}</main>
       <div className="footer_gradient"> </div>
 
       {footerState == true && (

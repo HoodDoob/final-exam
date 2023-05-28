@@ -3,8 +3,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
+  padding-top: 20px;
+
   h1 {
     position: relative;
+
   }
   h2 {
     position: relative;
@@ -86,6 +90,8 @@
 
 .gridSetup {
   background-color: rgba(17, 17, 17, 0.8);
+  box-shadow: inset -1px -1px 0 0 var(--color-black),
+    5px 5px 0 #0003;
   padding-left: 5vw;
   padding-right: 5vw;
   padding-top: 2vw;
@@ -508,34 +514,47 @@ p {
   }
 
   .landing_div {
+ padding-left: 5%;
+ padding-right: 5%;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .landing_div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 65vh;
-      padding-top: 5vh;
+    padding-top: 0;
 
 
     .newrelbox {
       position: relative;
       display: flex;
       flex-direction: column;
-      background-color: rgba(17, 17, 17, 0.402); /* Set the background color with transparency */
-      // border-radius: 30px;
-      border: 1px solid #000;
-      box-shadow: inset -1px -1px 0 0 var(--color-black),inset 1px 1px 0 0 #fff,5px 5px 0 #0003;
+      border-radius: 30px;
+     // border: 1px solid #000;
+      //box-shadow: inset -1px -1px 0 0 var(--color-black), 5px 5px 0 #0003;
       padding: 2em;
+
+      h3 {
+        text-shadow: 4px 0px 1px var(--color-black),
+      }
+      h4, p, a {
+        text-shadow: 2px 0px 1px var(--color-black),
+      }
     }
   }
 }
 
-@media screen and (max-width: 1040px) {
-  .landing_div {
-    padding-top: 0;
-  }
-}
-
 @media screen and (max-width: 700px) {
+
+  .title {
+    align-items: center;
+    gap: 0.5em;
+    padding-top: 50px;
+  }
   .inputForm {
     input,
     textarea {
@@ -565,12 +584,16 @@ p {
   }
 
   .gridGH {
-    gap: 3em;
+    gap: 5vh;
     .title {
       h1 {
         font-size: 50px;
       }
     }
+  }
+
+  .contText {
+    padding-top: 5vh;
   }
 
   .chairTV {
@@ -614,7 +637,7 @@ p {
     flex-direction: column;
     align-items: center;
     margin-left: 0;
-    margin-top: 25px;
+
   }
 
   .text_div {
@@ -662,7 +685,7 @@ p {
     justify-content: space-between;
 
     .title {
-      margin-top: 100px;
+      padding-top: 100px;
       position: relative;
       // background-color: black;
       // width: 100vw;
@@ -688,8 +711,7 @@ p {
   .gridGH {
     gap: 3em;
     .title {
-      padding-top: 0;
-      margin-top: 25px;
+      padding-top: 50px;
       width: 100%;
 
       h1 {

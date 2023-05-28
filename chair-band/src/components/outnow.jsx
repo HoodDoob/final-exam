@@ -4,11 +4,11 @@ import Link from "next/link";
 export default function Outnow() {
   return (
     <div className={styles.newrelbox}>
-      <h3>Our new song</h3>
+      <h4>Our new song</h4>
       <p className={styles.dots}>****************************************</p>
       <div>
-        <h4>Korolowo</h4>
-        <h4>(3.23)</h4>
+        <h3>Korolowo</h3>
+        {/* <h3>(3.23)</h3> */}
       </div>
       <p className={styles.dots}>----------------------------------------</p>
       <div>
