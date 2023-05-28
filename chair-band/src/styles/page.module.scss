@@ -8,7 +8,6 @@
 
   h1 {
     position: relative;
-
   }
   h2 {
     position: relative;
@@ -91,8 +90,7 @@
 
 .gridSetup {
   background-color: rgba(17, 17, 17, 0.8);
-  box-shadow: inset -1px -1px 0 0 var(--color-black),
-    5px 5px 0 #0003;
+  box-shadow: inset -1px -1px 0 0 var(--color-black), 5px 5px 0 #0003;
   padding-left: 5vw;
   padding-right: 5vw;
   padding-top: 2vw;
@@ -285,8 +283,7 @@
   grid-gap: 0;
 
   background-color: rgba(17, 17, 17, 0.8);
-  box-shadow: inset -1px -1px 0 0 var(--color-black),
-    5px 5px 0 #0003;
+  box-shadow: inset -1px -1px 0 0 var(--color-black), 5px 5px 0 #0003;
   padding-left: 5vw;
   padding-right: 5vw;
   padding-top: 2vw;
@@ -309,13 +306,12 @@
       text-decoration: underline;
       cursor: pointer;
 
-    //  margin: -1.5em;
+      //  margin: -1.5em;
       z-index: 2;
     }
   }
 
   .imgcont {
-
     img {
       object-fit: contain;
       height: 20vw;
@@ -361,6 +357,8 @@
     justify-content: center;
     align-items: center;
     background-color: #0000009a;
+
+    z-index: 21;
   }
 
   .videoGrid {
@@ -371,14 +369,33 @@
 }
 
 .singlevideoCont {
+  position: relative;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     align-self: stretch;
+  }
+
+  .hiddencontent {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 2em;
+    
   }
 }
 
@@ -528,8 +545,8 @@ p {
   }
 
   .landing_div {
- padding-left: 5%;
- padding-right: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 
@@ -542,21 +559,22 @@ p {
     height: 65vh;
     padding-top: 0;
 
-
     .newrelbox {
       position: relative;
       display: flex;
       flex-direction: column;
       border-radius: 30px;
-     // border: 1px solid #000;
+      // border: 1px solid #000;
       //box-shadow: inset -1px -1px 0 0 var(--color-black), 5px 5px 0 #0003;
       padding: 2em;
 
       h3 {
-        text-shadow: 4px 0px 1px var(--color-black),
+        text-shadow: 4px 0px 1px var(--color-black);
       }
-      h4, p, a {
-        text-shadow: 2px 0px 1px var(--color-black),
+      h4,
+      p,
+      a {
+        text-shadow: 2px 0px 1px var(--color-black);
       }
     }
   }
@@ -570,7 +588,6 @@ p {
 }
 
 @media screen and (max-width: 700px) {
-
   .title {
     align-items: center;
     gap: 0.5em;
@@ -630,7 +647,6 @@ p {
     }
 
     .imgcont {
-
       img {
         object-fit: contain;
         height: 40vw;
@@ -662,7 +678,6 @@ p {
     flex-direction: column;
     align-items: center;
     margin-left: 0;
-
   }
 
   .text_div {

@@ -8,8 +8,8 @@ export default function YouTubeEmbed(props) {
   const opts = {
     playerVars: {
       autoplay: 1,
-      controls: 0, // Disable player controls
-      showinfo: 0, // Hide video title and uploader info
+      controls: 1, // Disable player controls
+      showinfo: 1, // Hide video title and uploader info
       modestbranding: 0, // Hide YouTube logo
       fs: 0, // Disable fullscreen button
     },

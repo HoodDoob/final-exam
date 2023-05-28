@@ -3,7 +3,7 @@ const nextConfig = {}
 module.exports = nextConfig
 
 module.exports = {
-    reactStrictMode: false,
+    reactStrictMode: true,
     images: {
         domains: ['chair.band', 'i.ytimg.com'],
     },
