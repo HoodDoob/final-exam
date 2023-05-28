@@ -6,8 +6,6 @@ export default function YouTubeEmbed(props) {
   console.log(props.video)
   // YouTube options (e.g., player size, autoplay, etc.)
   const opts = {
-    height: "",
-    width: "",
     playerVars: {
       autoplay: 1,
       controls: 0, // Disable player controls
@@ -17,5 +15,5 @@ export default function YouTubeEmbed(props) {
     },
   };
 
-  return <YouTube videoId={props.video.video_id} opts={opts} />;
+  return <YouTube videoId={props.video.video_id} opts={opts} className={styles.youtubeEmbed} />;
 }

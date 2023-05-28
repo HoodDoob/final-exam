@@ -18,6 +18,7 @@
 .landing_div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   padding-top: 5vh;
   padding-right: 10%;
@@ -283,6 +284,15 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0;
 
+  background-color: rgba(17, 17, 17, 0.8);
+  box-shadow: inset -1px -1px 0 0 var(--color-black),
+    5px 5px 0 #0003;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vw;
+  padding-bottom: 4vw;
+  border-radius: 20px;
+
   .title {
     grid-column: 1/-1;
     grid-row: 1 / 2;
@@ -299,21 +309,17 @@
       text-decoration: underline;
       cursor: pointer;
 
-      margin: -1.5em;
+    //  margin: -1.5em;
       z-index: 2;
     }
   }
 
   .imgcont {
-    border-radius: 50px;
-    position: relative;
-    width: 110%;
-    height: auto;
 
     img {
       object-fit: contain;
       height: 20vw;
-      width: 100%;
+      width: auto;
     }
   }
   #tv_1 {
@@ -340,6 +346,7 @@
 
   button {
     color: var(--color-red);
+    font-size: 20px;
     text-decoration: underline;
   }
 
@@ -372,6 +379,13 @@
     height: 100%;
     object-fit: contain;
     align-self: stretch;
+  }
+}
+
+.youtubeEmbed {
+  iframe {
+    width: 900px;
+    height: 504px;
   }
 }
 
@@ -546,6 +560,13 @@ p {
       }
     }
   }
+
+  .youtubeEmbed {
+    iframe {
+      width: 600px;
+      height: 338px;
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -602,21 +623,18 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 4em;
 
     h2 {
       font-size: 25px;
     }
 
     .imgcont {
-      border-radius: 50px;
-      position: relative;
-      width: 100%;
-      height: auto;
 
       img {
         object-fit: contain;
         height: 40vw;
-        width: 100%;
+        width: auto;
       }
     }
   }
@@ -625,6 +643,13 @@ p {
     .title {
       width: 100%;
       align-items: flex-start;
+    }
+  }
+
+  .youtubeEmbed {
+    iframe {
+      width: 450px;
+      height: 253px;
     }
   }
 }
@@ -748,7 +773,7 @@ p {
     .title {
       width: 100%;
       align-items: flex-start;
-      margin-top: 25px;
+      padding-top: 1em;
     }
 
     button {
