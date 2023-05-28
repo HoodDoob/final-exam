@@ -30,7 +30,7 @@ export default function Clips(props) {
         <button onClick={() => props.changePage(5)}>back</button>
       </div>
 
-      <div>
+      <div className={styles.videoGrid}>
         {clips.map((video, i) => (
           <SingleVideo video={video} key={i} openVideo={props.openVideo} />
         ))}

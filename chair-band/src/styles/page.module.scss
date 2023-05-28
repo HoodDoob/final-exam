@@ -328,9 +328,6 @@
 
 //*? CLISP, LIVE SHOWS, SILLY STUFF *//
 .gridVideos {
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-
   .title {
     align-items: flex-start;
   }
@@ -340,24 +337,35 @@
     text-decoration: underline;
   }
 
-  .thumbnailCont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
   .popupCont {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#0000009a;
+    background-color: #0000009a;
+  }
+
+  .videoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+}
+
+.singlevideoCont {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    align-self: stretch;
   }
 }
 
@@ -479,9 +487,8 @@ p {
   }
 }
 
-
-
 //* TABLET VERSION *//
+
 @media screen and (max-width: 1200px) {
   // GloryHole
   .gridGH {
@@ -506,17 +513,25 @@ p {
     align-items: center;
     justify-content: space-between;
     height: 65vh;
+      padding-top: 5vh;
+
 
     .newrelbox {
       position: relative;
       display: flex;
       flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.218); /* Set the background color with transparency */
-      backdrop-filter: blur(3px);
-      border: 1px solid var(--color-white);
-      border-radius: 30px;
+      background-color: rgba(17, 17, 17, 0.402); /* Set the background color with transparency */
+      // border-radius: 30px;
+      border: 1px solid #000;
+      box-shadow: inset -1px -1px 0 0 var(--color-black),inset 1px 1px 0 0 #fff,5px 5px 0 #0003;
       padding: 2em;
     }
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .landing_div {
+    padding-top: 0;
   }
 }
 
@@ -549,12 +564,25 @@ p {
     }
   }
 
+  .gridGH {
+    gap: 3em;
+    .title {
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+
   .chairTV {
     display: flex;
     gap: 4em;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    h2 {
+      font-size: 25px;
+    }
 
     .imgcont {
       border-radius: 50px;
@@ -567,6 +595,13 @@ p {
         height: 40vw;
         width: 100%;
       }
+    }
+  }
+
+  .gridVideos {
+    .title {
+      width: 100%;
+      align-items: flex-start;
     }
   }
 }
@@ -598,6 +633,7 @@ p {
     height: 70vh;
     padding-right: 10%;
     padding-left: 10%;
+    padding-top: 5vh;
 
     .title {
       align-items: flex-end;
@@ -650,9 +686,83 @@ p {
   }
 
   .gridGH {
+    gap: 3em;
     .title {
       padding-top: 0;
-      margin-top: 0;
+      margin-top: 25px;
+      width: 100%;
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+
+  //*? Contact *//
+
+  .cont1 {
+    font-size: 20px;
+  }
+  .cont2,
+  .cont3 {
+    font-size: 16px;
+  }
+  .cont5 {
+    margin-top: 30px;
+
+    a {
+      font-size: 20px;
+    }
+  }
+
+  //*? CLISP, LIVE SHOWS, SILLY STUFF *//
+  .chairTV {
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .gridVideos {
+    .title {
+      width: 100%;
+      align-items: flex-start;
+      margin-top: 25px;
+    }
+
+    button {
+      font-size: 20px;
+      color: var(--color-green);
+    }
+
+    .popupCont {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0000009a;
+    }
+
+    .videoGrid {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
+
+  .singlevideoCont {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      align-self: stretch;
     }
   }
 }

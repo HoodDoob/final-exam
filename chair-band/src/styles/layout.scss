@@ -48,6 +48,7 @@ footer {
   justify-content: space-between;
   margin-top: auto;
   padding-bottom: 25px;
+  padding-top: 25px;
   z-index: 2;
 }
 .hidden {
@@ -210,8 +211,10 @@ footer {
 }
 
 //* MOBILE VERSION *//
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   footer {
+    padding-top: 2em;
+    flex-direction: column-reverse;
     display: flex;
     justify-content: space-between;
     gap: 2em;

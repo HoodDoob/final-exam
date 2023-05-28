@@ -31,7 +31,7 @@ export default function SillyStuff(props) {
         <button  onClick={() => props.changePage(5)}>back</button>
       </div>
 
-      <div>
+      <div  className={styles.videoGrid}>
         {sillystuff.map((video, i) => (
           <SingleVideo video={video} key={i} openVideo={props.openVideo} />
         ))}
