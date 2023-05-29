@@ -12,10 +12,36 @@ import chair5 from "../public/flying_chairs/flying_5.png";
 export default function FlyingChairs() {
   return (
     <div>
-      <Image className={styles.floatingElement} src={chair1} alt="Facebook" />
-      <Image className={styles.floatingElement} src={chair2} alt="Facebook" />
-      <Image className={styles.floatingElement} src={chair3} alt="Facebook" />
-      <Image className={styles.floatingElement} src={chair4} alt="Facebook" />
+      <div className={styles.contTest}>
+        <Image
+          className={`${styles.floatingElement} ${styles.pos1}`}
+          src={chair1}
+          alt="Facebook"
+        />
+      </div>
+      <Image
+        className={`${styles.floatingElement} ${styles.pos2}`}
+        src={chair2}
+        alt="Facebook"
+      />
+      <Image
+        className={`${styles.floatingElement} ${styles.pos3}`}
+        src={chair3}
+        alt="Facebook"
+      />
+      <Image
+        className={`${styles.floatingElement} ${styles.pos4}`}
+        src={chair4}
+        alt="Facebook"
+      />
+      <Image
+        className={`${styles.floatingElement} ${styles.pos5}`}
+        src={chair5}
+        alt="Facebook"
+      />
     </div>
   );
+}
+{
+  /* <div className={`${styles.gridSetup} ${styles.grid2}`}></div> */
 }

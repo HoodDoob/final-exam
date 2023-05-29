@@ -89,6 +89,7 @@
 }
 
 .gridSetup {
+  position: relative;
   z-index: 1;
   background-color: rgba(17, 17, 17, 0.8);
   box-shadow: inset -1px -1px 0 0 var(--color-black), 5px 5px 0 #0003;
@@ -279,6 +280,8 @@
 
 //*? CHAIR TV *//
 .chairTV {
+  z-index: 1;
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0;
@@ -307,7 +310,6 @@
       font-weight: var(--medium);
       color: var(--color-red);
       text-decoration: underline;
-
 
       margin: -1.5em;
       z-index: 2;
@@ -405,7 +407,6 @@
     h3 {
       text-align: center;
     }
-    
   }
 }
 
@@ -431,7 +432,7 @@ p {
   grid-row: 2/4;
   // margin-left: 20%;
 }
-.ghButt{
+.ghButt {
   color: var(--color-red);
   background-color: transparent;
   border: none;
@@ -481,7 +482,6 @@ p {
     height: 135px;
     font-family: var(--font-secondary);
   }
-
 }
 
 .confirmationCont {
@@ -505,7 +505,6 @@ p {
     line-height: 1em;
   }
 }
-
 
 //? CONTACT
 #contImg {
@@ -653,6 +652,7 @@ p {
     z-index: 1;
     padding-left: 5vw;
     padding-right: 5vw;
+    padding-top: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -701,14 +701,12 @@ p {
       }
     }
 
-
-      .tv_container {
-        h2 {
-          font-size: 25px;
-          margin: -0.5em;
-        }
+    .tv_container {
+      h2 {
+        font-size: 25px;
+        margin: -0.5em;
       }
-    
+    }
   }
 
   .gridVideos {
@@ -892,7 +890,7 @@ p {
     .confirmationCont {
       padding: 2em;
       h2 {
-        color: var(--color-green)
+        color: var(--color-green);
       }
     }
   }

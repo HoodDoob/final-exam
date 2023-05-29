@@ -188,6 +188,7 @@ export default function Layout(props) {
               <>
                 <div
                   className={`navLogo ${props.pageState == 1 ? "hidden" : ""}`}
+                  onClick={() => props.changePage(1)}
                 >
                   Chair
                 </div>
@@ -242,8 +243,8 @@ export default function Layout(props) {
           {confirmation ? (
             <div className={styles.confirmationCont}>
               <div>
-               <h3>Thank you for subscribing.</h3>
-               <h2>All the drama is coming your way now.</h2>
+                <h3>Thank you for subscribing.</h3>
+                <h2>All the drama is coming your way now.</h2>
               </div>
             </div>
           ) : (

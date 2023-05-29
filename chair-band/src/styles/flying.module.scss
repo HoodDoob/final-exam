@@ -2,21 +2,72 @@
   z-index: 0;
   scale: 0.3;
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: floatAnimation 20s infinite linear;
+
+  // animation: floatAnimation1 2s infinite linear;
+}
+.pos1 {
+  animation: floatAnimation1 22s infinite linear;
+  top: -10%;
+}
+.pos2 {
+  animation: floatAnimation2 20s infinite linear;
+  top: 20%;
+}
+.pos3 {
+  animation: floatAnimation3 24s infinite linear;
+  top: 50%;
+}
+.pos4 {
+  animation: floatAnimation4 26s infinite linear;
+  top: 60%;
+}
+.pos5 {
+  animation: floatAnimation5 28s infinite linear;
+  top: 75%;
 }
 
-@keyframes floatAnimation {
+@keyframes floatAnimation1 {
   0% {
-    transform: translate(500%, -30%);
-  }
-  50% {
-    transform: translate(-150%, 50%);
+    transform: translate(350vw, -10vh);
   }
 
   100% {
-    transform: translate(-800%, -30%);
+    transform: translate(-150vw, 30vh);
+  }
+}
+@keyframes floatAnimation2 {
+  0% {
+    transform: translate(300vw, 0vh);
+  }
+
+  100% {
+    transform: translate(-150vw, 20vh);
+  }
+}
+@keyframes floatAnimation3 {
+  0% {
+    transform: translate(350vw, 0vh);
+  }
+
+  100% {
+    transform: translate(-150vw, -40vh);
+  }
+}
+@keyframes floatAnimation4 {
+  0% {
+    transform: translate(450vw, 0vh);
+  }
+
+  100% {
+    transform: translate(-180vw, 80vh);
+  }
+}
+@keyframes floatAnimation5 {
+  0% {
+    transform: translate(600vw, 0vh);
+  }
+
+  100% {
+    transform: translate(-180vw, -100vh);
   }
 }

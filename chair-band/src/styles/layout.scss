@@ -11,9 +11,9 @@ ul {
   left: 0;
   height: 10vh;
   width: 100vw;
-  background:  linear-gradient(180deg, #000000eb 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(180deg, #000000eb 0%, rgba(0, 0, 0, 0) 100%);
   /* background-color: rgba(26, 26, 26, 0); /* Set the background color with transparency */
-  /* backdrop-filter: blur(5px); /* Apply a blur effect to the background */ 
+  /* backdrop-filter: blur(5px); /* Apply a blur effect to the background */
   z-index: 9;
 }
 .visible {
@@ -115,7 +115,7 @@ footer {
 #navbarCont {
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
 
   flex-grow: 1;
   ul {
@@ -168,12 +168,12 @@ footer {
   font-family: var(--font-primary);
   font-weight: var(--black);
   margin-left: 5%;
+  cursor: pointer;
 }
 
 //* TABLET VERSION *//
 
 @media screen and (max-width: 1200px) {
-
   #anotherCont {
     position: relative;
     display: flex;
