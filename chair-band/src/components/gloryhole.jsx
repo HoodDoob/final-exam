@@ -1,12 +1,19 @@
 import styles from "../styles/page.module.scss";
 import Image from "next/image";
-import aboutus_2 from "../public/images/aboutus_2.jpg";
-
-import abutus_1 from "../public/images/aboutus_1.jpg";
-
+import { useState, useRef } from "react";
 import Link from "next/link";
 
 export default function GloryHole() {
+  const [confirmation, setConfirmation] = useState(false);
+  const nameInput = useRef(null);
+  const textInput = useRef(null);
+
+  function confirmMessage() {
+    setConfirmation(true);
+    nameInput.current.value = "";
+    textInput.current.value = "";
+  }
+
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       {/* <div className={styles.ghLine}></div> */}
@@ -36,6 +43,7 @@ export default function GloryHole() {
           <label htmlFor="form-name">Your name (fake one, please)</label>
           <input
             // defaultValue="hello"
+            ref={nameInput}
             type="text"
             name="name"
             id="form-name"
@@ -46,9 +54,14 @@ export default function GloryHole() {
 
         <div className="form-control">
           <label htmlFor="form-email">Your anonymous message to Chair</label>
-          <textarea className={styles.ghMessage} name="obs"></textarea>
+          <textarea
+            ref={textInput}
+            className={styles.ghMessage}
+            name="obs"></textarea>
         </div>
-        <button id={styles.ghButt}>Send</button>
+        <button id={styles.ghButt} onClick={() => confirmMessage()}>
+          Send
+        </button>
       </form>
 
       {/* <div className={styles.imgcont} id={styles.ghImg}>

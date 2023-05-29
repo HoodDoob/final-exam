@@ -299,14 +299,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
+    padding-bottom: 2em;
 
     h2 {
       font-weight: var(--medium);
       color: var(--color-red);
       text-decoration: underline;
-      cursor: pointer;
 
-      //  margin: -1.5em;
+
+      margin: -1.5em;
       z-index: 2;
     }
   }
@@ -668,6 +670,7 @@ p {
       .tv_container {
         h2 {
           font-size: 25px;
+          margin: -0.5em;
         }
       }
     
