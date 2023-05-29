@@ -44,10 +44,9 @@ export default function Layout(props) {
     }
   });
 
- function confirmMessage() {
-  setConfirmation(true);
-
- }
+  function confirmMessage() {
+    setConfirmation(true);
+  }
 
   return (
     <div className="layout">
@@ -146,9 +145,7 @@ export default function Layout(props) {
             ) : (
               <>
                 <div
-                  className={`navLogo ${
-                    props.pageState == 1 ? "hidden" : ""
-                  }`}>
+                  className={`navLogo ${props.pageState == 1 ? "hidden" : ""}`}>
                   Chair
                 </div>
                 <button
@@ -197,23 +194,38 @@ export default function Layout(props) {
 
       {footerState == true && (
         <footer>
-          <div className={styles.newsletter}>
-            <div>
-              Don't miss out on <br></br> <span> Chair </span> drama.
+          {confirmation ? (
+            <div className={styles.confirmationCont}>
+              <div>
+               <h3>Thank you for subscribing.</h3>
+               <h2>All the drama is coming your way now.</h2>
+              </div>
             </div>
-            <p className={styles.p}>Subscribe to our newsletter</p>
-            <div className={styles.inputCont}>
-              <input
-                className={styles.input}
-                type="email"
-                name="newsEmail"
-                id="form-newsEmail"
-                placeholder="Your email..."
-                // onInput={popNumber}
-              />
-              <Image priority src={arrow} alt="FB" onClick={() => confirmMessage()}/>
+          ) : (
+            <div className={styles.newsletter}>
+              <div>
+                Don't miss out on <br></br> <span> Chair </span> drama.
+              </div>
+              <p className={styles.p}>Subscribe to our newsletter</p>
+              <div className={styles.inputCont}>
+                <input
+                  className={styles.input}
+                  type="email"
+                  name="newsEmail"
+                  id="form-newsEmail"
+                  placeholder="Your email..."
+                  // onInput={popNumber}
+                />
+                <Image
+                  priority
+                  src={arrow}
+                  alt="FB"
+                  onClick={() => confirmMessage()}
+                />
+              </div>
             </div>
-          </div>
+          )}
+
           <div className={styles.widget}>
             {/* Spotify Widget */}
             <iframe
