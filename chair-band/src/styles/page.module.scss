@@ -392,9 +392,13 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 30px;
+    font-size: 25px;
     text-transform: uppercase;
     padding: 2em;
+
+    h3 {
+      text-align: center;
+    }
     
   }
 }
@@ -585,6 +589,16 @@ p {
       height: 338px;
     }
   }
+
+  .singlevideoCont {
+    .hiddencontent {
+      display: flex;
+      align-items: center;
+      font-size: 17px;
+      text-transform: uppercase;
+      padding: 2em;
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -642,10 +656,6 @@ p {
     justify-content: space-between;
     padding-bottom: 4em;
 
-    h2 {
-      font-size: 25px;
-    }
-
     .imgcont {
       img {
         object-fit: contain;
@@ -653,6 +663,14 @@ p {
         width: auto;
       }
     }
+
+
+      .tv_container {
+        h2 {
+          font-size: 25px;
+        }
+      }
+    
   }
 
   .gridVideos {
@@ -666,6 +684,16 @@ p {
     iframe {
       width: 450px;
       height: 253px;
+    }
+  }
+
+  .singlevideoCont {
+    .hiddencontent {
+      display: flex;
+      align-items: center;
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 2em;
     }
   }
 }
@@ -778,11 +806,6 @@ p {
   }
 
   //*? CLISP, LIVE SHOWS, SILLY STUFF *//
-  .chairTV {
-    h2 {
-      font-size: 18px;
-    }
-  }
 
   .gridVideos {
     .title {
