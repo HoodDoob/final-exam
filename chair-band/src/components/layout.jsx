@@ -15,9 +15,12 @@ import { sendNewsletter } from "./database";
 export default function Layout(props) {
   const [footerState, setFooterState] = useState(true);
   const [navbarState, setNavbarState] = useState(true);
+  const [confirmation, setConfirmation] = useState(false);
   const { width, height } = useWindowDimensions();
   const [isVisible, setIsVisible] = useState(false);
   const newsletter = useRef(null);
+
+
   function prepareData(e) {
     e.preventDefault();
     sendNewsletter({
@@ -51,22 +54,9 @@ export default function Layout(props) {
     }
   });
 
-  //*! function to make the navbar background visible on scroll - not working yet *//
-  /*   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const shouldShow = scrollTop > 0;
-
-      setIsVisible(shouldShow);
-      console.log("they see me scrollin they hatin")
-    };
-
-    document.addEventListener('scroll', handleScroll);
-
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, []); */
+  function confirmMessage() {
+    setConfirmation(true);
+  }
 
   return (
     <div className="layout">
@@ -251,7 +241,7 @@ export default function Layout(props) {
               />
             </div>{" "}
             <button>
-              <Image priority src={arrow} alt="FB" />
+              <Image priority src={arrow} alt="FB" onClick={() => confirmMessage()}/>
             </button>
             {/* <button id={styles.ghButt}>Send</button> */}
           </form>

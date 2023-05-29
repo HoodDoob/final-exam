@@ -31,6 +31,10 @@
   .inputCont {
     display: flex;
     justify-content: space-between;
+
+    img {
+      cursor: pointer;
+    }
   }
   span {
     color: var(--color-white);
