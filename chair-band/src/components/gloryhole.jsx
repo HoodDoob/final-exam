@@ -4,7 +4,17 @@ import { useRef, useState } from "react";
 import { sendGloryHole } from "./database";
 
 export default function GloryHole() {
+  const [confirmation, setConfirmation] = useState(false);
   const theForm = useRef(null);
+  const nameInput = useRef(null);
+  const textInput = useRef(null);
+
+  function confirmMessage() {
+    setConfirmation(true);
+    nameInput.current.value = "";
+    textInput.current.value = "";
+  }
+
   function prepareData(e) {
     e.preventDefault();
     sendGloryHole({
