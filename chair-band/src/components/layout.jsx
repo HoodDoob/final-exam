@@ -111,6 +111,7 @@ export default function Layout(props) {
                   className={`navLogo ${
                     props.pageState == 1 ? "invisible" : ""
                   }`}
+                  onClick={() => props.changePage(1)}
                 >
                   Chair
                 </div>
