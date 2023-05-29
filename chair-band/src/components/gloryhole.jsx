@@ -4,15 +4,6 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 
 export default function GloryHole() {
-  const [confirmation, setConfirmation] = useState(false);
-  const nameInput = useRef(null);
-  const textInput = useRef(null);
-
-  function confirmMessage() {
-    setConfirmation(true);
-    nameInput.current.value = "";
-    textInput.current.value = "";
-  }
 
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
