@@ -14,6 +14,7 @@ import closed_burger from "../public/icons/closed_burger.png";
 export default function Layout(props) {
   const [footerState, setFooterState] = useState(true);
   const [navbarState, setNavbarState] = useState(true);
+  const [confirmation, setConfirmation] = useState(false);
   const { width, height } = useWindowDimensions();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -43,22 +44,10 @@ export default function Layout(props) {
     }
   });
 
-  //*! function to make the navbar background visible on scroll - not working yet *//
-  /*   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const shouldShow = scrollTop > 0;
+ function confirmMessage() {
+  setConfirmation(true);
 
-      setIsVisible(shouldShow);
-      console.log("they see me scrollin they hatin")
-    };
-
-    document.addEventListener('scroll', handleScroll);
-
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, []); */
+ }
 
   return (
     <div className="layout">
@@ -222,7 +211,7 @@ export default function Layout(props) {
                 placeholder="Your email..."
                 // onInput={popNumber}
               />
-              <Image priority src={arrow} alt="FB" />
+              <Image priority src={arrow} alt="FB" onClick={() => confirmMessage()}/>
             </div>
           </div>
           <div className={styles.widget}>
