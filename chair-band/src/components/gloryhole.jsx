@@ -1,12 +1,7 @@
 import styles from "../styles/page.module.scss";
 import { useRef, useState } from "react";
-import Image from "next/image";
-// import aboutus_2 from "../public/images/aboutus_2.jpg";
-
-// import abutus_1 from "../public/images/aboutus_1.jpg";
 
 import { sendGloryHole } from "./database";
-import Link from "next/link";
 
 export default function GloryHole() {
   const theForm = useRef(null);
