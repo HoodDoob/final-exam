@@ -13,25 +13,25 @@ export default function ChairTV(props) {
         <h2>(no funny undertext this time)</h2>
       </div>
 
-      <div className={styles.tv_container} id={styles.tv_1}>
+      <div className={styles.tv_container} id={styles.tv_1} onClick={() => props.changePage(7)}>
         <div className={styles.imgcont}>
           <Image priority src={tv_2} alt="" />
         </div>
-        <h2 onClick={() => props.changePage(7)}>clips</h2>
+        <h2>clips</h2>
       </div>
 
-      <div className={styles.tv_container} id={styles.tv_2}>
+      <div className={styles.tv_container} id={styles.tv_2} onClick={() => props.changePage(8)}>
         <div className={styles.imgcont}>
           <Image priority src={tv_3} alt="" />
         </div>
-        <h2 onClick={() => props.changePage(8)}>live shows</h2>
+        <h2>live shows</h2>
       </div>
 
-      <div className={styles.tv_container} id={styles.tv_3}>
+      <div className={styles.tv_container} id={styles.tv_3} onClick={() => props.changePage(9)}>
         <div className={styles.imgcont}>
           <Image priority src={tv_1} alt="" />
         </div>
-        <h2 onClick={() => props.changePage(9)}>silly stuff</h2>
+        <h2>silly stuff</h2>
       </div>
     </div>
   );

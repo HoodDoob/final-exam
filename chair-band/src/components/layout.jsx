@@ -49,8 +49,8 @@ export default function Layout(props) {
   }
 
   useEffect(() => {
-    if (width <= 600) {
-      // console.log(width);
+    if (width <= 610) {
+      console.log(width);
       if (props.pageState == 1) {
         setFooterState(false);
         // console.log(footerState);
@@ -234,42 +234,43 @@ export default function Layout(props) {
         </div>
       </header>
 
-      <main className={width > 600 ? "" : ""}>{props.children}</main>
+      <main>{props.children}</main>
       <div className="footer_gradient"> </div>
 
       {footerState == true && (
         <footer>
-          <form
-            className={styles.newsletter}
-            ref={newsletter}
-            onSubmit={(e) => {
-              prepareData(e);
-            }}
-          >
-            <div>
-              Don't miss out on <br></br> <span> Chair </span> drama.
+          {confirmation ? (
+            <div className={styles.confirmationCont}>
+              <div>
+               <h3>Thank you for subscribing.</h3>
+               <h2>All the drama is coming your way now.</h2>
+              </div>
             </div>
-            <p className={styles.p}>Subscribe to our newsletter</p>
-            <div className={styles.inputCont}>
-              <input
-                className={styles.input}
-                type="email"
-                name="newsemail"
-                id="form-newsEmail"
-                placeholder="Your email..."
-                // onInput={popNumber}
-              />
-            </div>{" "}
-            <button>
-              <Image
-                priority
-                src={arrow}
-                alt="FB"
-                onClick={() => confirmMessage()}
-              />
-            </button>
-            {/* <button id={styles.ghButt}>Send</button> */}
-          </form>
+          ) : (
+            <div className={styles.newsletter}>
+              <div>
+                Don't miss out on <br></br> <span> Chair </span> drama.
+              </div>
+              <p className={styles.p}>Subscribe to our newsletter</p>
+              <div className={styles.inputCont}>
+                <input
+                  className={styles.input}
+                  type="email"
+                  name="newsEmail"
+                  id="form-newsEmail"
+                  placeholder="Your email..."
+                  // onInput={popNumber}
+                />
+                <Image
+                  priority
+                  src={arrow}
+                  alt="FB"
+                  onClick={() => confirmMessage()}
+                />
+              </div>
+            </div>
+          )}
+
           <div className={styles.widget}>
             {/* Spotify Widget */}
             {/* <iframe

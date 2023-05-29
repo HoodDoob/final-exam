@@ -1,6 +1,5 @@
 import styles from "../styles/page.module.scss";
 import { useRef, useState } from "react";
-
 import { sendGloryHole } from "./database";
 
 export default function GloryHole() {

@@ -1,12 +1,22 @@
 import styles from "../styles/page.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import YouTubeEmbed from "./youtube";
 import SingleVideo from "./singlevideo";
 
 export default function Clips(props) {
+  const [clips, setClips] = useState([]);
 
-  const mcGonagall = "1dDwdhgxZ8M";
-  const stringTheory = "n7cOlBxtKSo";
+  useEffect(() => {
+    function handleVideos() {
+      props.videos.filter((item) => {
+        if (item.categories[0] === 8) {
+          setClips(clips => [...clips, item]);
+        }
+      });
+    }
+    handleVideos();
+  }, []);
+  console.log(clips);
 
   function closePopup() {
     props.setPopupState(false);
@@ -20,27 +30,11 @@ export default function Clips(props) {
         <button onClick={() => props.changePage(5)}>back</button>
       </div>
 
-      <div>
-        {props.videos.map((video, i) => (
-          <SingleVideo 
-          video={video}
-          key={i}
-          openVideo={props.openVideo}
-          />
+      <div className={styles.videoGrid}>
+        {clips.map((video, i) => (
+          <SingleVideo video={video} key={i} openVideo={props.openVideo} />
         ))}
       </div>
-
- {/*      <div
-        onClick={() => openPopup(mcGonagall)}
-        className={styles.thumbnailCont}>
-        <p>open video here</p>
-      </div>
-
-      <div
-        onClick={() => openPopup(stringTheory)}
-        className={styles.thumbnailCont}>
-        <p>open video here</p>
-      </div> */}
 
       {props.popupState && (
         <div className={styles.popupCont} onClick={() => closePopup()}>

@@ -10,10 +10,9 @@ import GloryHole from "@/components/gloryhole";
 import Clips from "@/components/clips";
 import Liveshows from "@/components/liveshows";
 import SillyStuff from "@/components/sillystuff";
-import Wordpress from "@/components/wordpress";
 import Flying from "../components/flying_chairs";
 
-export default function Home(props) {
+export default function Home({ imagedata, videodata }) {
   const [pageState, setPageState] = useState(1);
   const [burgerState, setBurgerState] = useState(false);
   const [images, setImages] = useState([]);
@@ -21,6 +20,7 @@ export default function Home(props) {
   const [openedVideo, setOpenedVideo] = useState();
   const [popupState, setPopupState] = useState(false);
   const [videoState, setVideoState] = useState();
+
 
   function changePage(x) {
     setBurgerState(false);
@@ -31,11 +31,10 @@ export default function Home(props) {
     console.log("burger menu is open " + burgerState);
   }
 
-  // const url = `https://lucaszago.dk/vlp/wp-json/wp/v2/artworks`;
   useEffect(() => {
     function getData() {
-      setImages(props.dataImg);
-      setVideos(props.videodata);
+      setImages(imagedata);
+      setVideos(videodata);
     }
     getData();
   }, []);
@@ -43,11 +42,11 @@ export default function Home(props) {
   function openVideo(video) {
     setPopupState(true);
     videos.map((item) => {
-      if (item.name === video) setOpenedVideo(item);
+      if (item.title.rendered === video) setOpenedVideo(item);
     });
 
     setVideoState(video);
-    console.log(video);
+    console.log(openedVideo);
     setPopupState(true);
   }
 
@@ -62,8 +61,7 @@ export default function Home(props) {
     >
       <Flying />
       <div
-        className={pageState == 1 ? "background" : "background bckDark"}
-      ></div>
+        className={pageState == 1 ? "background" : "background bckDark"}></div>
       {/* className={
             !singleBandState ? "NavBarCont navBar1" : "NavBarCont navBar2"
           } */}
@@ -76,7 +74,11 @@ export default function Home(props) {
       {pageState == 2 ? <AboutUs images={images} /> : ""}
       {pageState == 3 ? <Shows /> : ""}
       {pageState == 4 ? <Contact /> : ""}
-      {pageState == 5 ? <ChairTV changePage={changePage} /> : ""}
+      {pageState == 5 ? (
+        <ChairTV changePage={changePage} videos={videos} />
+      ) : (
+        ""
+      )}
       {pageState == 6 ? <GloryHole /> : ""}
       {pageState == 7 ? (
         <Clips
@@ -92,8 +94,34 @@ export default function Home(props) {
       ) : (
         ""
       )}
-      {pageState == 8 ? <Liveshows changePage={changePage} /> : ""}
-      {pageState == 9 ? <SillyStuff changePage={changePage} /> : ""}
+      {pageState == 8 ? (
+        <Liveshows
+          changePage={changePage}
+          openVideo={openVideo}
+          openedVideo={openedVideo}
+          videos={videos}
+          popupState={popupState}
+          setPopupState={setPopupState}
+          videoState={videoState}
+          setVideoState={setVideoState}
+        />
+      ) : (
+        ""
+      )}
+      {pageState == 9 ? (
+        <SillyStuff
+          changePage={changePage}
+          openVideo={openVideo}
+          openedVideo={openedVideo}
+          videos={videos}
+          popupState={popupState}
+          setPopupState={setPopupState}
+          videoState={videoState}
+          setVideoState={setVideoState}
+        />
+      ) : (
+        ""
+      )}
     </Layout>
   );
 }
@@ -103,30 +131,17 @@ export async function getStaticProps() {
   const resImg = await fetch(
     "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
   );
-  const dataImg = await resImg.json();
+  const imagedata = await resImg.json();
 
-  // test
-  const resImg2 = await fetch(
-    "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
-  );
-  const dataImg2 = await resImg2.json();
+  const resVid = await fetch("https://chair.band/wp-json/wp/v2/video?per_page=100&_embed");
+  const videodata = await resVid.json();
 
   // Return the data inside props
   return {
     props: {
-      dataImg,
-      dataImg2,
+      imagedata,
+      videodata,
     },
   };
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch("https://bitter-grass-7071.fly.dev/bands");
-//   const data = await res.json();
-
-//   return {
-//       props: {
-//           videodata: data
-//       }
-//   }
-// }
