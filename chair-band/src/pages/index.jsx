@@ -11,6 +11,7 @@ import Clips from "@/components/clips";
 import Liveshows from "@/components/liveshows";
 import SillyStuff from "@/components/sillystuff";
 import Wordpress from "@/components/wordpress";
+import Flying from "../components/flying_chairs";
 
 export default function Home(props) {
   const [pageState, setPageState] = useState(1);
@@ -59,6 +60,7 @@ export default function Home(props) {
       setPageState={setPageState}
       changePage={changePage}
     >
+      <Flying />
       <div
         className={pageState == 1 ? "background" : "background bckDark"}
       ></div>

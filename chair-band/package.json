@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "isomorphic-fetch": "^3.0.0",

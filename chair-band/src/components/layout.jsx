@@ -11,26 +11,47 @@ import arrow from "../public/icons/icon_arrow.svg";
 import burger_icon from "../public/icons/burger_icon.png";
 import closed_burger from "../public/icons/closed_burger.png";
 import { sendNewsletter } from "./database";
+// npm install @mailchimp/mailchimp_marketing
 
 export default function Layout(props) {
   const [footerState, setFooterState] = useState(true);
   const [navbarState, setNavbarState] = useState(true);
   const { width, height } = useWindowDimensions();
   const [isVisible, setIsVisible] = useState(false);
+
+  // newsletter stuff
+  // const mailchimp = require("@mailchimp/mailchimp_marketing");
+
+  // mailchimp.setConfig({
+  //   apiKey: "262d32fa10e9042d62ba9bec75589ca9",
+  //   server: "us13",
+  // });
+
+  // async function run() {
+  //   const response = await mailchimp.ping.get();
+  //   console.log(response);
+  // }
+
+  // async function run() {
+  //   const response = await mailchimp.ping.get();
+  //   console.log(response);
+  // }
+
   const newsletter = useRef(null);
   function prepareData(e) {
     e.preventDefault();
     sendNewsletter({
       email: newsletter.current.elements.newsemail.value,
     });
+    // run();
   }
 
   useEffect(() => {
     if (width <= 600) {
-      console.log(width);
+      // console.log(width);
       if (props.pageState == 1) {
         setFooterState(false);
-        console.log(footerState);
+        // console.log(footerState);
       } else {
         setFooterState(true);
       }
@@ -42,7 +63,7 @@ export default function Layout(props) {
   useEffect(() => {
     if (width <= 1040) {
       setNavbarState(false);
-      console.log("burger menu open");
+      // console.log("burger menu open");
     } else {
       setNavbarState(true);
       if (props.burgerState == true) {
@@ -247,16 +268,17 @@ export default function Layout(props) {
                 id="form-newsEmail"
                 placeholder="Your email..."
                 // onInput={popNumber}
-              />
-            </div>{" "}
-            <button>
-              <Image priority src={arrow} alt="FB" />
-            </button>
+              />{" "}
+              <button>
+                <Image priority src={arrow} alt="FB" />
+              </button>
+            </div>
+
             {/* <button id={styles.ghButt}>Send</button> */}
           </form>
           <div className={styles.widget}>
             {/* Spotify Widget */}
-            <iframe
+            {/* <iframe
               title="myFrame"
               src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
               width="100%"
@@ -265,7 +287,7 @@ export default function Layout(props) {
               allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
-            ></iframe>
+            ></iframe> */}
           </div>
         </footer>
       )}

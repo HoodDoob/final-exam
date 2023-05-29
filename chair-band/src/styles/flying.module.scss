@@ -1,0 +1,22 @@
+.floatingElement {
+  z-index: 0;
+  scale: 0.3;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatAnimation 20s infinite linear;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translate(500%, -30%);
+  }
+  50% {
+    transform: translate(-150%, 50%);
+  }
+
+  100% {
+    transform: translate(-800%, -30%);
+  }
+}
