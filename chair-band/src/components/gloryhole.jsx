@@ -4,7 +4,6 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 
 export default function GloryHole() {
-
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       {/* <div className={styles.ghLine}></div> */}
@@ -34,7 +33,7 @@ export default function GloryHole() {
           <label htmlFor="form-name">Your name (fake one, please)</label>
           <input
             // defaultValue="hello"
-            ref={nameInput}
+
             type="text"
             name="name"
             id="form-name"
@@ -45,14 +44,9 @@ export default function GloryHole() {
 
         <div className="form-control">
           <label htmlFor="form-email">Your anonymous message to Chair</label>
-          <textarea
-            ref={textInput}
-            className={styles.ghMessage}
-            name="obs"></textarea>
+          <textarea className={styles.ghMessage} name="obs"></textarea>
         </div>
-        <button id={styles.ghButt} onClick={() => confirmMessage()}>
-          Send
-        </button>
+        <button id={styles.ghButt}>Send</button>
       </form>
 
       {/* <div className={styles.imgcont} id={styles.ghImg}>
