@@ -1,12 +1,5 @@
 import styles from "../styles/page.module.scss";
 import Image from "next/image";
-import aboutus_1 from "../public/images/aboutus_1.jpg";
-import aboutus_2 from "../public/images/aboutus_2.jpg";
-import aboutus_3 from "../public/images/aboutus_3.jpg";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Wordpress from "./wordpress";
-import fetchPosts from "./wordpress";
 require("isomorphic-fetch");
 // npm install --save isomorphic-fetch
 
