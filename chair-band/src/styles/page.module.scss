@@ -90,9 +90,10 @@
 
 .gridSetup {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   background-color: rgba(17, 17, 17, 0.8);
-  box-shadow: inset -1px -1px 0 0 var(--color-black), 5px 5px 0 #0003;
+  box-shadow: inset -2px -2px 0 0 var(--color-black),
+    5px 5px 0 rgba(0, 0, 0, 0.35);
   padding-left: 5vw;
   padding-right: 5vw;
   padding-top: 2vw;

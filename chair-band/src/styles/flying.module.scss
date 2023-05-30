@@ -1,16 +1,17 @@
 .floatingElement {
-  z-index: 0;
+  z-index: 1;
   scale: 0.3;
   position: absolute;
+  cursor: pointer;
 
   // animation: floatAnimation1 2s infinite linear;
 }
 .pos1 {
-  animation: floatAnimation1 22s infinite linear;
-  top: -10%;
+  animation: floatAnimation1 14s infinite linear;
+  top: 0%;
 }
 .pos2 {
-  animation: floatAnimation2 20s infinite linear;
+  animation: floatAnimation2 10s infinite linear;
   top: 20%;
 }
 .pos3 {
@@ -24,6 +25,20 @@
 .pos5 {
   animation: floatAnimation5 28s infinite linear;
   top: 75%;
+}
+.disappear {
+  animation: disappear 5s linear;
+}
+@keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.1);
+  }
+  99% {
+    transform: scale(1);
+  }
 }
 
 @keyframes floatAnimation1 {

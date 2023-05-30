@@ -14,7 +14,7 @@ ul {
   background: linear-gradient(180deg, #000000eb 0%, rgba(0, 0, 0, 0) 100%);
   /* background-color: rgba(26, 26, 26, 0); /* Set the background color with transparency */
   /* backdrop-filter: blur(5px); /* Apply a blur effect to the background */
-  z-index: 9;
+  z-index: 4;
 }
 .visible {
   opacity: 1;
@@ -49,7 +49,7 @@ footer {
   margin-top: auto;
   padding-bottom: 25px;
   padding-top: 25px;
-  z-index: 2;
+  z-index: 0;
 }
 .hidden {
   display: none;
@@ -193,7 +193,7 @@ footer {
     display: flex;
     position: fixed;
     width: 95vw;
-    z-index: 10;
+    z-index: 5;
     //   list-style-type: none;
     color: var(--color-red);
     justify-content: space-between;
