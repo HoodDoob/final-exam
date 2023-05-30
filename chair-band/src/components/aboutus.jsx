@@ -3,7 +3,7 @@ import Image from "next/image";
 require("isomorphic-fetch");
 // npm install --save isomorphic-fetch
 
-export default function AboutUs({ images }) {
+export default function AboutUs({ images, chairMode }) {
   console.log(
     images[0]._embedded["wp:featuredmedia"][0].media_details.sizes.full
       .source_url
@@ -85,17 +85,10 @@ export default function AboutUs({ images }) {
           Granie, Soundrive, Great September).
         </p>
       </div>
+      <div>
+      <button onClick={() => chairMode}>Chair Mode</button>
+    </div>
     </div>
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch("https://lucaszago.dk/vlp/wp-json/wp/v2/artworks");
-//   const data = await res.json();
-//   console.log(data);
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
