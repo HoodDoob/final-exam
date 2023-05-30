@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { sendGloryHole } from "./database";
 
 export default function GloryHole() {
-  const [confirmation, setConfirmation] = useState(false);
+  const [confirmation, setConfirmation] = useState(true);
   const theForm = useRef(null);
 
   function confirmMessage() {
@@ -36,14 +36,19 @@ export default function GloryHole() {
             <li>Are you feeling bored, lonely and it’s after 10pm?</li>
           </div>
           <br></br>
-          <span>Let us know what you’re up for.</span>
+          <span>Let us know what you’re up for.</span>{" "}
         </p>
       </div>
 
       {confirmation ? (
         <div className={styles.confirmationCont}>
-          <h2>Thank you for your message. It has been sent to our servers and will be evaluated very soon</h2>
-          <button className={styles.ghButt} onClick={() => confirmMessage()}>Send another</button>
+          <h2>
+            Thank you for your message. It has been sent to our servers and will
+            be evaluated very soon
+          </h2>
+          <button className={styles.ghButt} onClick={() => confirmMessage()}>
+            Send another
+          </button>
         </div>
       ) : (
         <form
@@ -57,7 +62,8 @@ export default function GloryHole() {
             //     name: "next",
             //   },
             // });
-          }}>
+          }}
+        >
           <div className="form-control">
             <label htmlFor="form-nickname">Your name (fake one, please)</label>
             <input
@@ -77,7 +83,8 @@ export default function GloryHole() {
               className={styles.ghMessage}
               name="message"
               id="form-message"
-              required></textarea>
+              required
+            ></textarea>
           </div>
           <button className={styles.ghButt} onClick={() => confirmMessage()}>
             Send
