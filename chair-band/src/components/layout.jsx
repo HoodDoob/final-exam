@@ -248,7 +248,13 @@ export default function Layout(props) {
               </div>
             </div>
           ) : (
-            <div className={styles.newsletter}>
+            <form
+              className={styles.newsletter}
+              ref={newsletter}
+              onSubmit={(e) => {
+                prepareData(e);
+              }}
+            >
               <div>
                 Don't miss out on <br></br> <span> Chair </span> drama.
               </div>
@@ -257,19 +263,17 @@ export default function Layout(props) {
                 <input
                   className={styles.input}
                   type="email"
-                  name="newsEmail"
+                  name="newsemail"
                   id="form-newsEmail"
                   placeholder="Your email..."
                   // onInput={popNumber}
                 />
-                <Image
-                  priority
-                  src={arrow}
-                  alt="FB"
-                  onClick={() => confirmMessage()}
-                />
-              </div>
-            </div>
+              </div>{" "}
+              <button>
+                <Image priority src={arrow} alt="FB" />
+              </button>
+              {/* <button id={styles.ghButt}>Send</button> */}
+            </form>
           )}
 
           <div className={styles.widget}>
