@@ -1,10 +1,10 @@
-.contOver {
-  overflow: hidden;
-}
+// .contOver {
+//   overflow: hidden;
+// }
 .floatingElement {
   z-index: 1;
   scale: 0.3;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
 
   // animation: floatAnimation1 2s infinite linear;

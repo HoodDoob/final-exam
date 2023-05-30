@@ -59,7 +59,7 @@ export default function Home({ imagedata, videodata }) {
       setPageState={setPageState}
       changePage={changePage}
     >
-      {/* <Flying /> */}
+      <Flying />
       <div
         className={pageState == 1 ? "background" : "background bckDark"}
       ></div>
@@ -74,7 +74,7 @@ export default function Home({ imagedata, videodata }) {
         <motion.div
           initial={{ opacity: 1, x: 1500 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 1.5 }}
         >
           <Landing />
         </motion.div>
