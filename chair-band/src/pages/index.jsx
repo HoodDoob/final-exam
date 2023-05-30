@@ -11,8 +11,6 @@ import Clips from "@/components/clips";
 import Liveshows from "@/components/liveshows";
 import SillyStuff from "@/components/sillystuff";
 import Flying from "../components/flying_chairs";
-import { TextModifierContext } from '../components/TextModifier';
-import { useContext } from "react";
 
 
 export default function Home({ imagedata, videodata }) {
@@ -23,7 +21,6 @@ export default function Home({ imagedata, videodata }) {
   const [openedVideo, setOpenedVideo] = useState();
   const [popupState, setPopupState] = useState(false);
   const [videoState, setVideoState] = useState();
-  const modifyText = useContext(TextModifierContext);
 
 
   function changePage(x) {
@@ -54,12 +51,6 @@ export default function Home({ imagedata, videodata }) {
     setPopupState(true);
   }
 
-  function chairMode() {
-    const text = '🪑';
-    modifyText(text);
-    console.log("chair mode")
-  };
-
   return (
     <Layout
       burgerState={burgerState}
@@ -69,7 +60,7 @@ export default function Home({ imagedata, videodata }) {
       setPageState={setPageState}
       changePage={changePage}
     >
-      <Flying />
+      {/* <Flying /> */}
       <div
         className={pageState == 1 ? "background" : "background bckDark"}></div>
       {/* className={
@@ -81,7 +72,7 @@ export default function Home({ imagedata, videodata }) {
       </Head>
 
       {pageState == 1 ? <Landing /> : ""}
-      {pageState == 2 ? <AboutUs images={images} chairMode={chairMode}/> : ""}
+      {pageState == 2 ? <AboutUs images={images}/> : ""}
       {pageState == 3 ? <Shows /> : ""}
       {pageState == 4 ? <Contact /> : ""}
       {pageState == 5 ? (

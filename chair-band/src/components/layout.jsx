@@ -11,6 +11,7 @@ import arrow from "../public/icons/icon_arrow.svg";
 import burger_icon from "../public/icons/burger_icon.png";
 import closed_burger from "../public/icons/closed_burger.png";
 import { sendNewsletter } from "./database";
+
 // npm install @mailchimp/mailchimp_marketing
 
 export default function Layout(props) {

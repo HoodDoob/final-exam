@@ -1,9 +1,11 @@
 import styles from "../styles/page.module.scss";
 import Image from "next/image";
+import ChairModeButton from "../components/chairmodeButton";
 require("isomorphic-fetch");
+
 // npm install --save isomorphic-fetch
 
-export default function AboutUs({ images, chairMode }) {
+export default function AboutUs({ images }) {
   console.log(
     images[0]._embedded["wp:featuredmedia"][0].media_details.sizes.full
       .source_url
@@ -86,7 +88,7 @@ export default function AboutUs({ images, chairMode }) {
         </p>
       </div>
       <div>
-      <button onClick={() => chairMode}>Chair Mode</button>
+     <ChairModeButton />
     </div>
     </div>
   );
