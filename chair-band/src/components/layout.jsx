@@ -270,7 +270,7 @@ export default function Layout(props) {
                 />
               </div>{" "}
               <button>
-                <Image priority src={arrow} alt="FB" />
+                <Image priority src={arrow} alt="FB" onClick={() => confirmMessage()}/>
               </button>
               {/* <button id={styles.ghButt}>Send</button> */}
             </form>
