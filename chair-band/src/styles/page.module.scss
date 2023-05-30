@@ -357,7 +357,7 @@
   }
 
   .popupCont {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -376,6 +376,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 1em;
   }
+
 }
 
 .singlevideoCont {
@@ -413,14 +414,17 @@
       text-align: center;
     }
   }
-}
 
-.youtubeEmbed {
-  iframe {
-    width: 900px;
-    height: 504px;
+  .youtubeEmbed {
+    position: absolute;
+    iframe {
+      width: 900px;
+      height: 504px;
+    }
   }
 }
+
+
 
 //*? GloryHole *//
 .gridGH {
