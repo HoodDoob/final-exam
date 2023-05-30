@@ -11,7 +11,7 @@ import Clips from "@/components/clips";
 import Liveshows from "@/components/liveshows";
 import SillyStuff from "@/components/sillystuff";
 import Flying from "../components/flying_chairs";
-
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home({ imagedata, videodata }) {
   const [pageState, setPageState] = useState(1);
@@ -21,7 +21,6 @@ export default function Home({ imagedata, videodata }) {
   const [openedVideo, setOpenedVideo] = useState();
   const [popupState, setPopupState] = useState(false);
   const [videoState, setVideoState] = useState();
-
 
   function changePage(x) {
     setBurgerState(false);
@@ -60,9 +59,10 @@ export default function Home({ imagedata, videodata }) {
       setPageState={setPageState}
       changePage={changePage}
     >
-      {/* <Flying /> */}
+      <Flying />
       <div
-        className={pageState == 1 ? "background" : "background bckDark"}></div>
+        className={pageState == 1 ? "background" : "background bckDark"}
+      ></div>
       {/* className={
             !singleBandState ? "NavBarCont navBar1" : "NavBarCont navBar2"
           } */}
@@ -70,10 +70,36 @@ export default function Home({ imagedata, videodata }) {
         <title>Chair Website</title>
         <link rel="icon" href="../public/images/chair.webp" />
       </Head>
-
       {pageState == 1 ? <Landing /> : ""}
-      {pageState == 2 ? <AboutUs images={images}/> : ""}
-      {pageState == 3 ? <Shows /> : ""}
+      <AnimatePresence>
+        {pageState == 2 ? (
+          <motion.div
+            initial={{ opacity: 1, x: 1500 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 1, x: -2500 }}
+            transition={{ duration: 1 }}
+          >
+            <AboutUs images={images} />
+          </motion.div>
+        ) : (
+          ""
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {pageState == 3 ? (
+          <motion.div
+            initial={{ opacity: 1, x: 1500 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 1, x: -2500 }}
+            transition={{ duration: 1 }}
+            // transition={{ ease: "easeOut", duration: 4 }}
+          >
+            <Shows />
+          </motion.div>
+        ) : (
+          ""
+        )}
+      </AnimatePresence>
       {pageState == 4 ? <Contact /> : ""}
       {pageState == 5 ? (
         <ChairTV changePage={changePage} videos={videos} />
@@ -122,7 +148,7 @@ export default function Home({ imagedata, videodata }) {
         />
       ) : (
         ""
-      )}
+      )}{" "}
     </Layout>
   );
 }
@@ -134,7 +160,9 @@ export async function getStaticProps() {
   );
   const imagedata = await resImg.json();
 
-  const resVid = await fetch("https://chair.band/wp-json/wp/v2/video?per_page=100&_embed");
+  const resVid = await fetch(
+    "https://chair.band/wp-json/wp/v2/video?per_page=100&_embed"
+  );
   const videodata = await resVid.json();
 
   // Return the data inside props
@@ -145,4 +173,3 @@ export async function getStaticProps() {
     },
   };
 }
-
