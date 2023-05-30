@@ -205,7 +205,7 @@ export default function Home({ imagedata, videodata }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Get data from api
   const resImg = await fetch(
     "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
