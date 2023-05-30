@@ -49,6 +49,10 @@ export default function Layout(props) {
     // run();
   }
 
+  const handleButtonClick = () => {
+    setConfirmation(false);
+  };
+
   useEffect(() => {
     if (width <= 610) {
       console.log(width);
@@ -74,7 +78,6 @@ export default function Layout(props) {
       }
     }
   });
-
 
   return (
     <div className="layout">
@@ -163,7 +166,7 @@ export default function Layout(props) {
                           className={props.pageState == 6 ? "weAreHere" : ""}>
                           GloryHole®
                         </li>
-                        <li>ChairGame</li>
+                        <li><Link href="/ChairGame">ChairGame</Link></li>
                         <li>store</li>
                         <li>BOOK US!</li>
                       </ul>
@@ -261,6 +264,11 @@ export default function Layout(props) {
                 <div>
                   <h3>Thank you for subscribing.</h3>
                   <h2>All the drama is coming your way now.</h2>
+                {confirmation && (
+                  <button onClick={handleButtonClick} className={styles.ghButt}>
+                    Perfect, thank you
+                  </button>
+                )}
                 </div>
               </div>
             ) : (

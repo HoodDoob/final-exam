@@ -3,42 +3,36 @@ import { useRef } from "react";
 import Image from "next/image";
 import arrow from "../public/icons/icon_arrow.svg";
 
-
 export default function Newsletter(props) {
-    const newsletter = useRef(null);
+  const newsletter = useRef(null);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.setEmail(newsletter.current.elements.newsemail.value);
+    props.prepareData();
+  }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        props.setEmail(newsletter.current.elements.newsemail.value);
-        // Call the onSubmit function with the input value
-        props.prepareData();
-      }
-
-    return (
-        <form
-        className={styles.newsletter}
-        ref={newsletter}
-        onSubmit={handleSubmit}>
-        <div>
-          Don't miss out on <br></br> <span> Chair </span> drama.
-        </div>
-        <p className={styles.p}>Subscribe to our newsletter</p>
-        <div className={styles.inputCont}>
-          <input
-            className={styles.input}
-            type="email"
-            name="newsemail"
-            id="form-newsEmail"
-            placeholder="Your email..."
-            // onInput={popNumber}
-          />
-        </div>{" "}
+  return (
+    <form
+      className={styles.newsletter}
+      ref={newsletter}
+      onSubmit={handleSubmit}>
+      <div>
+        Don't miss out on <br></br> <span> Chair </span> drama.
+      </div>
+      <p className={styles.p}>Subscribe to our newsletter</p>
+      <div className={styles.inputCont}>
+        <input
+          className={styles.input}
+          type="email"
+          name="newsemail"
+          id="form-newsEmail"
+          placeholder="Your email..."
+        />
         <button>
           <Image priority src={arrow} alt="FB" />
         </button>
-        {/* <button id={styles.ghButt}>Send</button> */}
-      </form>
-    )
- 
+      </div>
+    </form>
+  );
 }
