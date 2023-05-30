@@ -11,6 +11,8 @@ import arrow from "../public/icons/icon_arrow.svg";
 import burger_icon from "../public/icons/burger_icon.png";
 import closed_burger from "../public/icons/closed_burger.png";
 import { sendNewsletter } from "./database";
+import { motion, AnimatePresence } from "framer-motion";
+
 // npm install @mailchimp/mailchimp_marketing
 
 export default function Layout(props) {
@@ -81,12 +83,19 @@ export default function Layout(props) {
   return (
     <div className="layout">
       <header>
-        <div className="nav_gradient"></div>
-        <div className="fixed">
-          <nav>
-            <div>
+        <motion.div
+          initial={{ opacity: 1, y: -100, zIndex: 10 }}
+          animate={{ opacity: 1, y: 0, zIndex: 50 }}
+          transition={{ duration: 1.5 }}
+        >
+          <div className="fixed">
+            <nav>
+              {/* <motion.div
+              initial={{ y: -200 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1 }}
+            > */}
               <div className="navSocials">
-                {" "}
                 <a
                   href="https://www.facebook.com/Chair.The.Band"
                   target="_blank"
@@ -112,169 +121,208 @@ export default function Layout(props) {
                   <Image priority src={ttIcon} alt="Tik Tok" />
                 </a>
               </div>
-            </div>
 
-            {/* Burger menu switch */}
-            {navbarState == true ? (
-              <>
-                <div
-                  className={`navLogo ${
-                    props.pageState == 1 ? "invisible" : ""
-                  }`}
-                  onClick={() => props.changePage(1)}
-                >
-                  Chair
-                </div>
-                <div id="navbarCont" className="">
-                  <div id="anotherCont">
-                    <ul id="navbar">
-                      <li
-                        onClick={() => props.changePage(1)}
-                        className={props.pageState == 1 ? "weAreHere" : ""}
-                      >
-                        home
-                      </li>
-                      <li
-                        onClick={() => props.changePage(2)}
-                        className={props.pageState == 2 ? "weAreHere" : ""}
-                      >
-                        about us
-                      </li>
-                      <li
-                        onClick={() => props.changePage(3)}
-                        className={props.pageState == 3 ? "weAreHere" : ""}
-                      >
-                        shows
-                      </li>
-                      <li
-                        onClick={() => props.changePage(4)}
-                        className={props.pageState == 4 ? "weAreHere" : ""}
-                      >
-                        contact
-                      </li>
-                      <li
-                        onClick={() => props.changePage(5)}
-                        className={
-                          props.pageState == 5 ||
-                          props.pageState == 7 ||
-                          props.pageState == 8 ||
-                          props.pageState == 9
-                            ? "weAreHere"
-                            : ""
-                        }
-                      >
-                        ChairTV
-                      </li>
-                      <li
-                        onClick={() => props.changePage(6)}
-                        className={props.pageState == 6 ? "weAreHere" : ""}
-                      >
-                        GloryHole®
-                      </li>
-                      <li>ChairGame</li>
-                      <li>store</li>
-                      <li>BOOK US!</li>
-                    </ul>
-                    <hr />
+              {/* Burger menu switch */}
+              {navbarState == true ? (
+                <>
+                  <div
+                    className={`navLogo ${
+                      props.pageState == 1 ? "invisible" : ""
+                    }`}
+                    onClick={() => props.changePage(1)}
+                  >
+                    Chair
                   </div>
-                </div>
-                {/* Language switch */}
-                <div className="navLang">
-                  <div className="greyedOut">PL /</div>
-                  <div>/ ENG</div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div
-                  className={`navLogo ${props.pageState == 1 ? "hidden" : ""}`}
-                  onClick={() => props.changePage(1)}
-                >
-                  Chair
-                </div>
-                <button
-                  onClick={() => props.openBurger()}
-                  className={props.burgerState ? "hidden" : "navBurger"}
-                  button-name="klosburg"
-                >
-                  <Image priority src={burger_icon} alt="" />
-                </button>
-
-                {props.burgerState && (
-                  <>
-                    {/* Language switch */}
-                    <div className="navLang">
-                      <div className="greyedOut">PL /</div>
-                      <div>/ ENG</div>
-                    </div>
-                    <button
-                      onClick={() => props.openBurger()}
-                      className="navBurger"
-                      button-name="klosburg"
-                    >
-                      <Image priority src={closed_burger} alt="" />
-                    </button>
-                    <div id="burgerMenuCont" className="">
-                      <ul id="burgerMenu">
-                        <li onClick={() => props.changePage(1)}>home</li>
-                        <li onClick={() => props.changePage(2)}>about us</li>
-                        <li onClick={() => props.changePage(3)}>shows</li>
-                        <li onClick={() => props.changePage(4)}>contact</li>
-                        <li onClick={() => props.changePage(5)}>ChairTV</li>
-                        <li onClick={() => props.changePage(6)}>GloryHole®</li>
+                  <div id="navbarCont" className="">
+                    <div id="anotherCont">
+                      <ul id="navbar">
+                        <li
+                          onClick={() => props.changePage(1)}
+                          className={props.pageState == 1 ? "weAreHere" : ""}
+                        >
+                          home
+                        </li>
+                        <li
+                          onClick={() => props.changePage(2)}
+                          className={props.pageState == 2 ? "weAreHere" : ""}
+                        >
+                          about us
+                        </li>
+                        <li
+                          onClick={() => props.changePage(3)}
+                          className={props.pageState == 3 ? "weAreHere" : ""}
+                        >
+                          shows
+                        </li>
+                        <li
+                          onClick={() => props.changePage(4)}
+                          className={props.pageState == 4 ? "weAreHere" : ""}
+                        >
+                          contact
+                        </li>
+                        <li
+                          onClick={() => props.changePage(5)}
+                          className={
+                            props.pageState == 5 ||
+                            props.pageState == 7 ||
+                            props.pageState == 8 ||
+                            props.pageState == 9
+                              ? "weAreHere"
+                              : ""
+                          }
+                        >
+                          ChairTV
+                        </li>
+                        <li
+                          onClick={() => props.changePage(6)}
+                          className={props.pageState == 6 ? "weAreHere" : ""}
+                        >
+                          GloryHole®
+                        </li>
                         <li>ChairGame</li>
                         <li>store</li>
                         <li>BOOK US!</li>
                       </ul>
+                      <hr />
                     </div>
-                  </>
-                )}
-              </>
-            )}
-          </nav>
-        </div>
+                  </div>
+                  {/* Language switch */}
+                  <div className="navLang">
+                    <div className="greyedOut">PL /</div>
+                    <div>/ ENG</div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div
+                    className={`navLogo ${
+                      props.pageState == 1 ? "hidden" : ""
+                    }`}
+                    onClick={() => props.changePage(1)}
+                  >
+                    Chair
+                  </div>
+                  <button
+                    onClick={() => props.openBurger()}
+                    className={props.burgerState ? "hidden" : "navBurger"}
+                    button-name="klosburg"
+                  >
+                    <Image priority src={burger_icon} alt="" />
+                  </button>
+
+                  <AnimatePresence>
+                    {props.burgerState && (
+                      <>
+                        {/* Language switch */}
+                        <div className="navLang">
+                          <div className="greyedOut">PL /</div>
+                          <div>/ ENG</div>
+                        </div>
+                        <button
+                          onClick={() => props.openBurger()}
+                          className="navBurger"
+                          button-name="klosburg"
+                        >
+                          <Image priority src={closed_burger} alt="" />
+                        </button>
+                        {/* BURGER MENU */}
+
+                        <motion.div
+                          initial={{ y: -1000 }}
+                          animate={{ y: 0 }}
+                          exit={{ y: 1000 }}
+                          transition={{ duration: 0.3 }}
+                          id="burgerMenuCont"
+                          className=""
+                        >
+                          <ul id="burgerMenu">
+                            <li onClick={() => props.changePage(1)}>home</li>
+                            <li onClick={() => props.changePage(2)}>
+                              about us
+                            </li>
+                            <li onClick={() => props.changePage(3)}>shows</li>
+                            <li onClick={() => props.changePage(4)}>contact</li>
+                            <li onClick={() => props.changePage(5)}>ChairTV</li>
+                            <li onClick={() => props.changePage(6)}>
+                              GloryHole®
+                            </li>
+                            <li>ChairGame</li>
+                            <li>store</li>
+                            <li>BOOK US!</li>
+                          </ul>
+                        </motion.div>
+                      </>
+                    )}
+                  </AnimatePresence>
+                </>
+              )}
+            </nav>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -100, zIndex: 0 }}
+          animate={{ opacity: 1, y: 0, zIndex: 4 }}
+          transition={{ duration: 2.5 }}
+          className="nav_gradient"
+        ></motion.div>
       </header>
 
       <main>{props.children}</main>
+
       <div className="footer_gradient"> </div>
 
       {footerState == true && (
         <footer>
-          {confirmation ? (
-            <div className={styles.confirmationCont}>
-              <div>
-                <h3>Thank you for subscribing.</h3>
-                <h2>All the drama is coming your way now.</h2>
+          <motion.div
+            initial={{ y: 200 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1.5 }}
+          >
+            {confirmation ? (
+              <div className={styles.confirmationCont}>
+                <div>
+                  <h3>Thank you for subscribing.</h3>
+                  <h2>All the drama is coming your way now.</h2>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className={styles.newsletter}>
-              <div>
-                Don't miss out on <br></br> <span> Chair </span> drama.
+            ) : (
+              <div className={styles.newsletter}>
+                <div>
+                  Don't miss out on <br></br> <span> Chair </span> drama.
+                </div>
+                <p className={styles.p}>Subscribe to our newsletter</p>
+                <div className={styles.inputCont}>
+                  <input
+                    className={styles.input}
+                    type="email"
+                    name="newsEmail"
+                    id="form-newsEmail"
+                    placeholder="Your email..."
+                    // onInput={popNumber}
+                  />
+                  <Image
+                    priority
+                    src={arrow}
+                    alt="FB"
+                    onClick={() => confirmMessage()}
+                  />
+                </div>
               </div>
-              <p className={styles.p}>Subscribe to our newsletter</p>
-              <div className={styles.inputCont}>
-                <input
-                  className={styles.input}
-                  type="email"
-                  name="newsEmail"
-                  id="form-newsEmail"
-                  placeholder="Your email..."
-                  // onInput={popNumber}
-                />
-                <Image
-                  priority
-                  src={arrow}
-                  alt="FB"
-                  onClick={() => confirmMessage()}
-                />
-              </div>
-            </div>
-          )}
-
-          <div className={styles.widget}>
+            )}{" "}
+          </motion.div>
+          {/* <motion.dev
+            initial={{ y: 200 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1.5 }}
+          > */}
+          <motion.div
+            initial={{ y: 200 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1.5 }}
+            className={styles.widget}
+          >
             {/* Spotify Widget */}
-            {/* <iframe
+            <iframe
               title="myFrame"
               src="https://open.spotify.com/embed/track/3DbNbqXt0IogTMuK7oWzQd?utm_source=generator"
               width="100%"
@@ -283,8 +331,8 @@ export default function Layout(props) {
               allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
-            ></iframe> */}
-          </div>
+            ></iframe>
+          </motion.div>
         </footer>
       )}
     </div>

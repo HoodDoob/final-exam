@@ -40,7 +40,7 @@ export default function GloryHole() {
             <li>Are you feeling bored, lonely and it’s after 10pm?</li>
           </div>
           <br></br>
-          <span>Let us know what you’re up for.</span>{" "}
+          <span>Let us know what you’re up for.</span>
         </p>
       </div>
 
