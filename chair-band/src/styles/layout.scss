@@ -135,11 +135,12 @@ footer {
 
   .weAreHere {
     font-weight: var(--medium);
+    text-decoration: underline;
   }
 
   hr {
     border: solid var(--color-red) 0.5px;
-    margin-top: 5px;
+    margin-top: 10px;
     width: 105%;
   }
 }

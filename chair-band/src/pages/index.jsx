@@ -59,7 +59,7 @@ export default function Home({ imagedata, videodata }) {
       setPageState={setPageState}
       changePage={changePage}
     >
-      <Flying />
+      {/* <Flying /> */}
       <div
         className={pageState == 1 ? "background" : "background bckDark"}
       ></div>
