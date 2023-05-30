@@ -23,7 +23,7 @@ export default function FlyingChairs() {
   };
 
   return (
-    <div>
+    <div className={styles.contOver}>
       {/* <div className={styles.contTest}> */}
       <div className={`${styles.floatingElement} ${styles.pos1}`}>
         <Image
