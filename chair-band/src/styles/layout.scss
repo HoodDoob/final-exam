@@ -6,10 +6,10 @@ ul {
   position: absolute;
 }
 .nav_gradient {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 10vh;
+  height: 100px;
   width: 100vw;
   background: linear-gradient(180deg, #000000eb 0%, rgba(0, 0, 0, 0) 100%);
   /* background-color: rgba(26, 26, 26, 0); /* Set the background color with transparency */
@@ -113,6 +113,7 @@ footer {
 }
 
 #navbarCont {
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;

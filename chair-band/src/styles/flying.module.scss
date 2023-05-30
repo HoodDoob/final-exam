@@ -1,10 +1,10 @@
-.contOver {
-  overflow: hidden;
-}
+// .contOver {
+//   overflow: hidden;
+// }
 .floatingElement {
   z-index: 1;
   scale: 0.3;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
 
   // animation: floatAnimation1 2s infinite linear;
@@ -30,16 +30,16 @@
   top: 75%;
 }
 .disappear {
-  animation: disappear 5s linear;
+  animation: disappear 3s linear;
 }
 @keyframes disappear {
-  0% {
-    transform: scale(1);
-  }
-  30% {
+  // 0% {
+  //   transform: scale(1);
+  // }
+  25% {
     transform: scale(0.1);
   }
-  99% {
+  100% {
     transform: scale(1);
   }
 }
