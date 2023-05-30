@@ -10,10 +10,12 @@ export const TextModifierProvider = ({ children }) => {
     const textNodes = document.querySelectorAll('*');
     console.log(textNodes)
     textNodes.forEach((node) => {
-      if (node.nodeName === Node.TEXT_NODE) {
+      if (node.nodeName == "P" || node.nodeName == "H1" || node.nodeName == "LI") {
+
+        console.log("we're here now")
         // Replace all characters in the text node with "*"
-        const replacedText = node.textContent.replace(/./g, '*');
-        node.textContent = replacedText;
+        const replacedText = node.innerText.replace(/./g, '🪑');
+        node.innerText = replacedText;
       }
     });
   };
