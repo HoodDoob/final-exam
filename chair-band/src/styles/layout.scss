@@ -70,6 +70,10 @@ footer {
   justify-content: space-between;
   gap: 10px;
   z-index: 12;
+
+  a {
+    display: flex;
+  }
 }
 .navLang {
   display: flex;
