@@ -31,8 +31,7 @@ export default function GloryHole() {
       <div className={styles.ghText}>
         <p>
           GloryHole® is a system of anonymous messages that you can send
-          directly to our band. It sdiujk sdsdgjjsdg sdjsdgkjsd gou asofiuafd .
-          avpifuipuaf ipiudfg i ipu.<br></br>
+          directly to our band. <br></br>
           <br></br>
           <div id={styles.ghList}>
             <li>Did you hate our last performance?</li>

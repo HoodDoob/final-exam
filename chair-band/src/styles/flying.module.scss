@@ -11,7 +11,7 @@
 }
 .pos1 {
   animation: floatAnimation1 24s infinite linear;
-  top: 85%;
+  top: 65%;
 }
 .pos2 {
   animation: floatAnimation2 25s infinite linear;
@@ -27,11 +27,11 @@
 }
 .pos5 {
   animation: floatAnimation5 34s infinite linear;
-  top: 55%;
+  top: 45%;
 }
 .pos6 {
   animation: floatAnimation6 33s infinite linear;
-  top: 60%;
+  top: 50%;
 }
 .pos7 {
   animation: floatAnimation7 29s infinite linear;
@@ -55,12 +55,12 @@
 @keyframes floatAnimation1 {
   0% {
     transform: rotate(230deg);
-    transform: translate(350vw, -10vh);
+    transform: translate(350vw, 0vh);
   }
 
   100% {
     transform: rotate(230deg);
-    transform: translate(-150vw, 30vh);
+    transform: translate(-150vw, -20vh);
   }
 }
 @keyframes floatAnimation2 {

@@ -11,6 +11,8 @@
   }
   h2 {
     position: relative;
+    // i addedd the margin top to that the h2 stays closer to the header
+    margin-top: -10px;
   }
 }
 
@@ -32,7 +34,7 @@
   }
   h2 {
     font-size: 35px;
-    line-height: 30px;
+    // line-height: 30px;
   }
 }
 
@@ -431,7 +433,7 @@
 
 p {
   #ghList {
-    font-weight: var(--bold);
+    // font-weight: var(--bold);
   }
 }
 .ghText {
