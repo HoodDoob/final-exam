@@ -6,11 +6,11 @@ export default function NewRelease() {
   return (
     <>
       <Head>
-        <title>Chair New Release</title>
+        <title>Chair Game</title>
       </Head>
 
         <div className={styles.newrelCont}>
-          <h1>Not yet, actually</h1>
+          <h1>Coming soon</h1>
           <h2>
             <Link href="/">Back to home</Link>
           </h2>

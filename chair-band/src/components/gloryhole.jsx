@@ -1,22 +1,26 @@
 import styles from "../styles/page.module.scss";
 import { useRef, useState } from "react";
 import { sendGloryHole } from "./database";
+import Form from "./form";
 
 export default function GloryHole() {
   const [confirmation, setConfirmation] = useState(false);
-  const theForm = useRef(null);
+  const [nameInput, setNameInput] = useState();
+  const [messageInput, setMessageInput] = useState();
 
-  function confirmMessage() {
-    setConfirmation(!confirmation);
-  }
-
-  function prepareData(e) {
-    e.preventDefault();
+  function prepareData() {
+    console.log("sending", nameInput, messageInput);
     sendGloryHole({
-      nickname: theForm.current.elements.nickname.value,
-      message: theForm.current.elements.message.value,
+      nickname: nameInput,
+      message: messageInput,
     });
+    setConfirmation(true);
   }
+
+  const handleButtonClick = () => {
+    setConfirmation(false);
+  };
+
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       {/* <div className={styles.ghLine}></div> */}
@@ -42,47 +46,24 @@ export default function GloryHole() {
 
       {confirmation ? (
         <div className={styles.confirmationCont}>
-          <h2>Thank you for your message. It has been sent to our servers and will be evaluated very soon</h2>
-          <button className={styles.ghButt} onClick={() => confirmMessage()}>Send another</button>
+          <h2>
+            Thank you for your message. It has been sent to our servers and will
+            be evaluated very soon
+          </h2>
+          {confirmation && (
+            <button onClick={handleButtonClick} className={styles.ghButt}>
+              Send another
+            </button>
+          )}
         </div>
       ) : (
-        <form
-          className={styles.ghInputForm}
-          ref={theForm}
-          onSubmit={(e) => {
-            prepareData(e);
-            // props.changePage({
-            //   preventDefault: () => {},
-            //   target: {
-            //     name: "next",
-            //   },
-            // });
-          }}>
-          <div className="form-control">
-            <label htmlFor="form-nickname">Your name (fake one, please)</label>
-            <input
-              defaultValue={""}
-              type="text"
-              name="nickname"
-              id="form-nickname"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label htmlFor="form-message">
-              Your anonymous message to Chair
-            </label>
-            <textarea
-              defaultValue={""}
-              className={styles.ghMessage}
-              name="message"
-              id="form-message"
-              required></textarea>
-          </div>
-          <button className={styles.ghButt} onClick={() => confirmMessage()}>
-            Send
-          </button>
-        </form>
+        <Form
+          prepareData={prepareData}
+          nameInput={nameInput}
+          setNameInput={setNameInput}
+          messageInput={messageInput}
+          setMessageInput={setMessageInput}
+        />
       )}
     </div>
   );

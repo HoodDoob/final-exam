@@ -69,55 +69,107 @@ export default function Home({ imagedata, videodata }) {
       <Head>
         <title>Chair Website</title>
         <link rel="icon" href="../public/images/chair.webp" />
+        <meta name="theme-color" content="#07070f"></meta>
+        <meta name="msapplication-navbutton-color" content="#07070f"></meta>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="#07070f"
+        ></meta>
       </Head>
-      {pageState == 1 ? <Landing /> : ""}
-      <AnimatePresence>
-        {pageState == 2 ? (
-          <motion.div
-            initial={{ opacity: 1, x: 1500 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 1, x: -2500 }}
-            transition={{ duration: 1 }}
-          >
-            <AboutUs images={images} />
-          </motion.div>
-        ) : (
-          ""
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {pageState == 3 ? (
-          <motion.div
-            initial={{ opacity: 1, x: 1500 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 1, x: -2500 }}
-            transition={{ duration: 1 }}
-            // transition={{ ease: "easeOut", duration: 4 }}
-          >
-            <Shows />
-          </motion.div>
-        ) : (
-          ""
-        )}
-      </AnimatePresence>
-      {pageState == 4 ? <Contact /> : ""}
-      {pageState == 5 ? (
-        <ChairTV changePage={changePage} videos={videos} />
+      {pageState == 1 ? (
+        <motion.div
+          initial={{ opacity: 1, x: 1500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5 }}
+        >
+          <Landing />
+        </motion.div>
+      ) : (
+        ""
+      )}{" "}
+      {pageState == 2 ? (
+        <motion.div
+          initial={{ opacity: 1, x: 1500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <AboutUs images={images} />
+        </motion.div>
       ) : (
         ""
       )}
-      {pageState == 6 ? <GloryHole /> : ""}
+      {pageState == 3 ? (
+        <motion.div
+          initial={{ opacity: 1, x: 1500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Shows />
+        </motion.div>
+      ) : (
+        ""
+      )}
+      <motion.div
+        initial={{ opacity: 1, x: 1500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <AnimatePresence>
+          {pageState == 4 ? (
+            <motion.div
+              initial={{ opacity: 1, x: 1500 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Contact />
+            </motion.div>
+          ) : (
+            ""
+          )}
+        </AnimatePresence>
+      </motion.div>
+      {pageState == 5 ? (
+        <motion.div
+          initial={{ opacity: 1, x: 1500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ChairTV changePage={changePage} videos={videos} />
+        </motion.div>
+      ) : (
+        ""
+      )}
+      {pageState == 6 ? (
+        <motion.div
+          initial={{ opacity: 1, x: 1500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {" "}
+          <GloryHole />
+        </motion.div>
+      ) : (
+        ""
+      )}
       {pageState == 7 ? (
-        <Clips
-          changePage={changePage}
-          openVideo={openVideo}
-          openedVideo={openedVideo}
-          videos={videos}
-          popupState={popupState}
-          setPopupState={setPopupState}
-          videoState={videoState}
-          setVideoState={setVideoState}
-        />
+        <motion.div
+          initial={{ opacity: 1, x: 1500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Clips
+            changePage={changePage}
+            openVideo={openVideo}
+            openedVideo={openedVideo}
+            videos={videos}
+            popupState={popupState}
+            setPopupState={setPopupState}
+            videoState={videoState}
+            setVideoState={setVideoState}
+          />{" "}
+        </motion.div>
       ) : (
         ""
       )}
@@ -153,7 +205,7 @@ export default function Home({ imagedata, videodata }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // Get data from api
   const resImg = await fetch(
     "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"

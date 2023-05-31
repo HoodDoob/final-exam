@@ -4,11 +4,15 @@
   flex-direction: column;
   font-family: var(--font-primary2);
 
-  background-color: rgba(17, 17, 17, 0.592); /* Set the background color with transparency */
+  background-color: rgba(
+    17,
+    17,
+    17,
+    0.592
+  ); /* Set the background color with transparency */
   border-radius: 20px;
   border: 1px solid #000;
-  box-shadow: inset -1px -1px 0 0 var(--color-black),
-    5px 5px 0 #0003;
+  box-shadow: inset -1px -1px 0 0 var(--color-black), 5px 5px 0 #0003;
   padding: 1em;
 
   div {
@@ -69,6 +73,10 @@
   h4 {
     font-size: 20px;
   }
+
+  button {
+    padding-left: 0.5em;
+  }
 }
 .widget {
   margin-top: auto;
@@ -80,18 +88,28 @@
   flex-direction: column;
   font-family: var(--font-primary2);
 
-  background-color: rgba(17, 17, 17, 0.592); /* Set the background color with transparency */
+  background-color: rgba(
+    17,
+    17,
+    17,
+    0.592
+  ); /* Set the background color with transparency */
   border-radius: 20px;
   border: 1px solid #000;
-  box-shadow: inset -1px -1px 0 0 var(--color-black),
-    5px 5px 0 #0003;
+  box-shadow: inset -1px -1px 0 0 var(--color-black), 5px 5px 0 #0003;
   padding: 1em;
-h3 {
-  color: var(--color-red);
-}
+  h3 {
+    color: var(--color-red);
+  }
   h2 {
     font-size: 16px;
     color: var(--color-white);
+  }
+
+  button {
+    font-size: 16px;
+    padding-top: 1em;
+    text-decoration: underline;
   }
 }
 
