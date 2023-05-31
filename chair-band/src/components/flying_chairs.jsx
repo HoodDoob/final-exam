@@ -9,6 +9,8 @@ import chair2 from "../public/flying_chairs/flying_2.png";
 import chair3 from "../public/flying_chairs/flying_3.png";
 import chair4 from "../public/flying_chairs/flying_4.png";
 import chair5 from "../public/flying_chairs/flying_5.png";
+import chair6 from "../public/flying_chairs/flying_6.png";
+import chair7 from "../public/flying_chairs/flying_7.png";
 
 export default function FlyingChairs() {
   const elementRefs = useRef([]);
@@ -63,6 +65,22 @@ export default function FlyingChairs() {
           onClick={() => handleClick(4)}
           ref={(el) => (elementRefs.current[4] = el)}
           src={chair5}
+          alt="Facebook"
+        />{" "}
+      </div>
+      <div className={`${styles.floatingElement} ${styles.pos6}`}>
+        <Image
+          onClick={() => handleClick(5)}
+          ref={(el) => (elementRefs.current[5] = el)}
+          src={chair6}
+          alt="Facebook"
+        />{" "}
+      </div>
+      <div className={`${styles.floatingElement} ${styles.pos7}`}>
+        <Image
+          onClick={() => handleClick(6)}
+          ref={(el) => (elementRefs.current[6] = el)}
+          src={chair7}
           alt="Facebook"
         />{" "}
       </div>
