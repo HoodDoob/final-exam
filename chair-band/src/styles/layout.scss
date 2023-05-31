@@ -132,6 +132,11 @@ footer {
     li:hover {
       scale: 1.1;
     }
+
+    a {
+      color: var(--color-red);
+      text-decoration: none;
+    }
   }
 
   .weAreHere {

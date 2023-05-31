@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/newsletter.module.scss";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import useWindowDimensions from "../hooks/window";
 import fbIcon from "../public/icons/icon_FB.svg";
