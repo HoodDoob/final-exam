@@ -3,9 +3,18 @@ import Image from "next/image";
 import tv_1 from "../public/images/tv_1.png";
 import tv_2 from "../public/images/tv_2.png";
 import tv_3 from "../public/images/tv_3.png";
-import Link from "next/link";
+import { TextModifierContext } from './TextModifier';
+import { useEffect, useContext } from "react";
 
 export default function ChairTV(props) {
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
+
   return (
     <div className={styles.chairTV}>
       <div className={styles.title}>

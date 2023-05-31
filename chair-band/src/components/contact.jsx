@@ -1,9 +1,18 @@
 import styles from "../styles/page.module.scss";
 import aboutus_1 from "../public/images/aboutus_1.jpg";
 import Image from "next/image";
-import Link from "next/link";
+import { TextModifierContext } from './TextModifier';
+import { useEffect, useContext } from "react";
+
 
 export default function Contact() {
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       <div className={styles.imgcont} id={styles.contImg}>

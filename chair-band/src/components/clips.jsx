@@ -1,10 +1,14 @@
 import styles from "../styles/page.module.scss";
 import { useState, useEffect } from "react";
+import { TextModifierContext } from './TextModifier';
+import { useContext } from "react";
 import YouTubeEmbed from "./youtube";
 import SingleVideo from "./singlevideo";
 
 export default function Clips(props) {
   const [clips, setClips] = useState([]);
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
+
 
   useEffect(() => {
     function handleVideos() {
@@ -22,6 +26,12 @@ export default function Clips(props) {
     props.setPopupState(false);
     console.log("popup closed");
   }
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
 
   return (
     <div className={`${styles.gridSetup} ${styles.gridVideos}`}>

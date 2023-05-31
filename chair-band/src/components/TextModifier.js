@@ -8,20 +8,20 @@ export const TextModifierProvider = ({ children }) => {
   function modifyAllText() {
     // Get all text nodes in the document
     const textNodes = document.querySelectorAll('*');
-    console.log(textNodes)
+    console.log(textNodes);
     textNodes.forEach((node) => {
       if (node.nodeName == "P" || node.nodeName == "H1" || node.nodeName == "LI") {
 
         console.log("we're here now")
         // Replace all characters in the text node with "*"
-        const replacedText = node.innerText.replace(/./g, '🪑');
+        const replacedText = node.innerText.replace(/[a-zA-Z]/g, '🪑');
         node.innerText = replacedText;
       }
     });
   };
 
   function handleButtonClick() {
-    setModifyEnabled(true);
+    setModifyEnabled(!modifyEnabled);
     console.log("hi")
   };
 
@@ -33,7 +33,7 @@ export const TextModifierProvider = ({ children }) => {
 
 
   return (
-    <TextModifierContext.Provider value={{ modifyEnabled, handleButtonClick }}>
+    <TextModifierContext.Provider value={{ modifyEnabled, handleButtonClick, modifyEnabled, modifyAllText }}>
       {children}
     </TextModifierContext.Provider>
   );

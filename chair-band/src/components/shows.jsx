@@ -2,13 +2,21 @@ import styles from "../styles/page.module.scss";
 import Image from "next/image";
 import shows_1 from "../public/images/shows.png";
 import { useState } from "react";
-// import Slider from "../components/shows_slider";
-import Link from "next/link";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import { TextModifierContext } from './TextModifier';
+import { useEffect, useContext } from "react";
 
 export default function Shows() {
   const [showState, setShowState] = useState(1);
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
+
 
   function changeShowState(x) {
     setShowState(x);
