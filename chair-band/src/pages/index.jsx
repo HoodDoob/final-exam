@@ -82,8 +82,13 @@ export default function Home({ imagedata, videodata }) {
           href="../public/favicon.ico"
           type="image/svg+xml"
         ></link> */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="../public/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/faviconTest.png" type="image/png" />
+        <link
+          rel="icon"
+          href="../public/images/faviconTest.png"
+          type="image/png"
+        />
+        <link rel="icon" href="/src/public/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link
           rel="icon"
