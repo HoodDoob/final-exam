@@ -1,8 +1,18 @@
 import styles from "../styles/page.module.scss";
 import { useRef, useState } from "react";
+import { TextModifierContext } from './TextModifier';
+import { useEffect, useContext } from "react";
+
 
 export default function Form(props) {
   const theForm = useRef(null);
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();

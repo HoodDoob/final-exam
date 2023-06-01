@@ -10,23 +10,31 @@
   // animation: floatAnimation1 2s infinite linear;
 }
 .pos1 {
-  animation: floatAnimation1 14s infinite linear;
-  top: 0%;
+  animation: floatAnimation1 24s infinite linear;
+  top: 65%;
 }
 .pos2 {
-  animation: floatAnimation2 10s infinite linear;
-  top: 20%;
+  animation: floatAnimation2 25s infinite linear;
+  top: 15%;
 }
 .pos3 {
-  animation: floatAnimation3 24s infinite linear;
-  top: 50%;
+  animation: floatAnimation3 26s infinite linear;
+  top: 25%;
 }
 .pos4 {
-  animation: floatAnimation4 26s infinite linear;
-  top: 60%;
+  animation: floatAnimation4 27s infinite linear;
+  top: 35%;
 }
 .pos5 {
-  animation: floatAnimation5 28s infinite linear;
+  animation: floatAnimation5 34s infinite linear;
+  top: 45%;
+}
+.pos6 {
+  animation: floatAnimation6 33s infinite linear;
+  top: 50%;
+}
+.pos7 {
+  animation: floatAnimation7 29s infinite linear;
   top: 75%;
 }
 .disappear {
@@ -46,11 +54,13 @@
 
 @keyframes floatAnimation1 {
   0% {
-    transform: translate(350vw, -10vh);
+    transform: rotate(230deg);
+    transform: translate(350vw, 0vh);
   }
 
   100% {
-    transform: translate(-150vw, 30vh);
+    transform: rotate(230deg);
+    transform: translate(-150vw, -20vh);
   }
 }
 @keyframes floatAnimation2 {
@@ -82,10 +92,34 @@
 }
 @keyframes floatAnimation5 {
   0% {
+    transform: rotate(310deg);
     transform: translate(600vw, 0vh);
   }
 
   100% {
+    transform: rotate(310deg);
     transform: translate(-180vw, -100vh);
+  }
+}
+@keyframes floatAnimation6 {
+  0% {
+    transform: rotate(140deg);
+    transform: translate(500vw, 0vh);
+  }
+
+  100% {
+    transform: rotate(140deg);
+    transform: translate(-200vw, -100vh);
+  }
+}
+@keyframes floatAnimation7 {
+  0% {
+    transform: rotate(230deg);
+    transform: translate(650vw, 0vh);
+  }
+
+  100% {
+    transform: rotate(230deg);
+    transform: translate(-220vw, -100vh);
   }
 }

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import styles from "../styles/newsletter.module.scss";
+import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useRef } from "react";
 import useWindowDimensions from "../hooks/window";
 import fbIcon from "../public/icons/icon_FB.svg";
 import igIcon from "../public/icons/icon_IG.svg";
 import spIcon from "../public/icons/icon_SP.svg";
 import ttIcon from "../public/icons/icon_TT.svg";
-import arrow from "../public/icons/icon_arrow.svg";
 import burger_icon from "../public/icons/burger_icon.png";
 import closed_burger from "../public/icons/closed_burger.png";
 import { sendNewsletter } from "./database";
 import { motion, AnimatePresence } from "framer-motion";
+import Newsletter from "./newsletter";
 
 // npm install @mailchimp/mailchimp_marketing
 
@@ -19,6 +19,7 @@ export default function Layout(props) {
   const [footerState, setFooterState] = useState(true);
   const [navbarState, setNavbarState] = useState(true);
   const [confirmation, setConfirmation] = useState(false);
+  const [email, setEmail] = useState();
   const { width, height } = useWindowDimensions();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -40,15 +41,18 @@ export default function Layout(props) {
   //   console.log(response);
   // }
 
-  const newsletter = useRef(null);
-
-  function prepareData(e) {
-    e.preventDefault();
+  function prepareData() {
+    console.log(email);
     sendNewsletter({
-      email: newsletter.current.elements.newsemail.value,
+      email: email,
     });
+    setConfirmation(true);
     // run();
   }
+
+  const handleButtonClick = () => {
+    setConfirmation(false);
+  };
 
   useEffect(() => {
     if (width <= 610) {
@@ -75,10 +79,6 @@ export default function Layout(props) {
       }
     }
   });
-
-  function confirmMessage() {
-    setConfirmation(true);
-  }
 
   return (
     <div className="layout">
@@ -179,9 +179,24 @@ export default function Layout(props) {
                         >
                           GloryHole®
                         </li>
-                        <li>ChairGame</li>
-                        <li>store</li>
-                        <li>BOOK US!</li>
+                        <li>
+                          <Link href="/ChairGame" target="_blank">
+                            ChairGame
+                          </Link>
+                        </li>
+                        <li>
+                          <a
+                            href="https://art2musicshop.pl/pl/p/Chair-Po-Co-Muzyka-CD/239"
+                            target="_blank"
+                          >
+                            store
+                          </a>
+                        </li>
+                        <li>
+                          <a href="mailto: asia@art2.pl?subject=Chair Booking">
+                            BOOK US!
+                          </a>
+                        </li>
                       </ul>
                       <hr />
                     </div>
@@ -283,36 +298,23 @@ export default function Layout(props) {
                 <div>
                   <h3>Thank you for subscribing.</h3>
                   <h2>All the drama is coming your way now.</h2>
+                  {confirmation && (
+                    <button
+                      onClick={handleButtonClick}
+                      className={styles.ghButt}
+                    >
+                      Perfect, thank you
+                    </button>
+                  )}
                 </div>
               </div>
             ) : (
-              <form
-                className={styles.newsletter}
-                ref={newsletter}
-                onSubmit={(e) => {
-                  prepareData(e);
-                }}
-              >
-                <div>
-                  Don't miss out on <br></br> <span> Chair </span> drama.
-                </div>
-                <p className={styles.p}>Subscribe to our newsletter</p>
-                <div className={styles.inputCont}>
-                  <input
-                    className={styles.input}
-                    type="email"
-                    name="newsemail"
-                    id="form-newsEmail"
-                    placeholder="Your email..."
-                    // onInput={popNumber}
-                  />
-                </div>{" "}
-                <button>
-                  <Image priority src={arrow} alt="FB" />
-                </button>
-                {/* <button id={styles.ghButt}>Send</button> */}
-              </form>
-            )}{" "}
+              <Newsletter
+                email={email}
+                setEmail={setEmail}
+                prepareData={prepareData}
+              />
+            )}
           </motion.div>
           {/* <motion.dev
             initial={{ y: 200 }}

@@ -1,12 +1,15 @@
 import styles from "../styles/page.module.scss";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import { sendGloryHole } from "./database";
 import Form from "./form";
+import { TextModifierContext } from './TextModifier';
+
 
 export default function GloryHole() {
   const [confirmation, setConfirmation] = useState(false);
   const [nameInput, setNameInput] = useState();
   const [messageInput, setMessageInput] = useState();
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
 
   function prepareData() {
     console.log("sending", nameInput, messageInput);
@@ -21,6 +24,12 @@ export default function GloryHole() {
     setConfirmation(false);
   };
 
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
+
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       {/* <div className={styles.ghLine}></div> */}
@@ -31,8 +40,7 @@ export default function GloryHole() {
       <div className={styles.ghText}>
         <p>
           GloryHole® is a system of anonymous messages that you can send
-          directly to our band. It sdiujk sdsdgjjsdg sdjsdgkjsd gou asofiuafd .
-          avpifuipuaf ipiudfg i ipu.<br></br>
+          directly to our band. <br></br>
           <br></br>
           <div id={styles.ghList}>
             <li>Did you hate our last performance?</li>
