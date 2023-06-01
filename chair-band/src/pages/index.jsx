@@ -12,6 +12,9 @@ import Liveshows from "@/components/liveshows";
 import SillyStuff from "@/components/sillystuff";
 import Flying from "../components/flying_chairs";
 import { motion, AnimatePresence } from "framer-motion";
+// import Icon1 from "../public/images/favicon-16x16.png";
+// import Icon2 from "../public/images/favicon-32x32.png";
+// import Icon3 from "../public/images/favicon.ico";
 
 export default function Home({ imagedata, videodata }) {
   const [pageState, setPageState] = useState(1);
@@ -69,23 +72,8 @@ export default function Home({ imagedata, videodata }) {
       <Head>
         <title>Chair Website</title>
 
-        {/* <link
-          rel="shortcut icon"
-          href="../public/favicon.ico"
-          type="image/x-icon"
-        ></link> */}
-        {/* <link
-          rel="icon"
-          href="../public/favicon.ico"
-          type="image/svg+xml"
-        ></link> */}
-        <link rel="icon" href="../public/favicon.ico" type="image/svg+xml" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="../public/favicon-32x32.png"
-          sizes="32x32"
-        />
+        <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
+        {/* <link rel="icon" type="image/png" href={Icon2} sizes="32x32" /> */}
         <link
           rel="icon"
           type="image/png"
