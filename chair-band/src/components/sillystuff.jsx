@@ -2,9 +2,18 @@ import styles from "../styles/page.module.scss";
 import { useState, useEffect } from "react";
 import YouTubeEmbed from "./youtube";
 import SingleVideo from "./singlevideo";
+import { TextModifierContext } from './TextModifier';
+import { useContext } from "react";
 
 export default function SillyStuff(props) {
   const [sillystuff, setSillystuff] = useState([]);
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
 
   useEffect(() => {
     function handleVideos() {

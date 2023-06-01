@@ -1,18 +1,25 @@
 import styles from "../styles/page.module.scss";
 import aboutus_1 from "../public/images/aboutus_1.jpg";
 import Image from "next/image";
-import Link from "next/link";
 import manager from "../public/images/manager.png";
 import managerText from "../public/images/managerText.gif";
-import { useState, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
+import { TextModifierContext } from './TextModifier';
 
 export default function Contact() {
   const elementRef = useRef(null);
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
 
   const handleClick = () => {
     elementRef.current.classList.add(`${styles.asiaPopDown}`);
   };
   // const [managerState, setManagerState] = useState(true);
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
       <div className={styles.imgcont} id={styles.contImg}>
@@ -23,8 +30,8 @@ export default function Contact() {
         <h2>(speak to the manager pls)</h2>
       </div>
       <div className={styles.contText}>
-        <div className={styles.cont1}>Chair Manager</div>
-        <div className={styles.cont2}>Asia Babiel</div>
+        <div className={styles.cont1}><h2>Chair Manager</h2></div>
+        <div className={styles.cont2}><h2>Asia Babiel</h2></div>
         <div className={styles.cont3}>
           <a href="mailto: asia@art2.pl?subject=I Love Chair">asia@art2.pl</a>
         </div>
