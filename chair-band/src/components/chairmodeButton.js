@@ -17,5 +17,5 @@ export default function Button(props) {
     }
   }
 
-  return <button onClick={() => chairButtonClick()}>Chair Mode</button>;
+  return <button onClick={() => chairButtonClick()}>{props.children}</button>;
 }

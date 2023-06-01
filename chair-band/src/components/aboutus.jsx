@@ -38,6 +38,7 @@ export default function AboutUs({ images, pageState, setPageState }) {
             // height={100}
             layout="fill"
             loading="eager"
+
             // objectFit="contain"
           />
         </div>
@@ -81,7 +82,7 @@ export default function AboutUs({ images, pageState, setPageState }) {
             vulnerabilities.
           </p>
         </div>
-        <div className={styles.imgcont} id={styles.thirdimage}>
+        <div className={styles.imgcont} id={styles.thirdimage1}>
           <Image
             src={
               images[0]._embedded["wp:featuredmedia"][0].media_details.sizes
@@ -91,7 +92,29 @@ export default function AboutUs({ images, pageState, setPageState }) {
             layout="fill"
             loading="eager"
           />{" "}
-        </div>{" "}
+        </div>
+        <div className={styles.babyImgCont}>
+          <ChairModeButton pageState={pageState} setPageState={setPageState}>
+            <Image
+              id={styles.babyHubert2}
+              className={`${styles.baby} `}
+              src={babyHubert}
+              alt="baby hubert"
+              loading="eager"
+            />{" "}
+          </ChairModeButton>
+          <div className={styles.imgcont} id={styles.thirdimage2}>
+            <Image
+              src={
+                images[0]._embedded["wp:featuredmedia"][0].media_details.sizes
+                  .full.source_url
+              }
+              alt=""
+              layout="fill"
+              loading="eager"
+            />{" "}
+          </div>
+        </div>
         <div className={styles.text_div} id={styles.thirdtext}>
           <p>
             In June 2022, just a year after our band's formation, we released
@@ -108,23 +131,32 @@ export default function AboutUs({ images, pageState, setPageState }) {
             of creativity and share our passion for authentic expression.
           </p>
           <div className={styles.imgcont2}>
-            <Image
-              className={styles.baby}
-              src={babyCura}
-              alt="baby cura"
-              loading="eager"
-            />
-            <Image
-              className={styles.baby}
-              src={babyHubert}
-              alt="baby cura"
-              loading="eager"
-            />
+            <ChairModeButton pageState={pageState} setPageState={setPageState}>
+              <Image
+                id={styles.babyCura}
+                className={styles.baby}
+                src={babyCura}
+                alt="baby cura"
+                loading="eager"
+              />
+            </ChairModeButton>
+            <ChairModeButton pageState={pageState} setPageState={setPageState}>
+              <Image
+                id={styles.babyHubert1}
+                className={styles.baby}
+                src={babyHubert}
+                alt="baby hubert"
+                loading="eager"
+              />
+            </ChairModeButton>
           </div>
         </div>
       </div>
       <div>
-        <ChairModeButton pageState={pageState} setPageState={setPageState} />
+        {/* <ChairModeButton
+          pageState={pageState}
+          setPageState={setPageState}
+        ></ChairModeButton> */}
       </div>
     </div>
   );
