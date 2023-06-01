@@ -37,7 +37,7 @@ export default function AboutUs({ images, pageState, setPageState }) {
             // width={`100`}
             // height={100}
             layout="fill"
-            loading="lazy"
+            loading="eager"
             // objectFit="contain"
           />
         </div>
@@ -69,7 +69,7 @@ export default function AboutUs({ images, pageState, setPageState }) {
             // width={`100`}
             // height={100}
             layout="fill"
-            loading="lazy"
+            loading="eager"
             // objectFit="contain"
           />
         </div>
@@ -89,7 +89,7 @@ export default function AboutUs({ images, pageState, setPageState }) {
             }
             alt=""
             layout="fill"
-            loading="lazy"
+            loading="eager"
           />{" "}
         </div>{" "}
         <div className={styles.text_div} id={styles.thirdtext}>
@@ -112,13 +112,13 @@ export default function AboutUs({ images, pageState, setPageState }) {
               className={styles.baby}
               src={babyCura}
               alt="baby cura"
-              loading="lazy"
+              loading="eager"
             />
             <Image
               className={styles.baby}
               src={babyHubert}
               alt="baby cura"
-              loading="lazy"
+              loading="eager"
             />
           </div>
         </div>

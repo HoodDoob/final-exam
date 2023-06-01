@@ -2,27 +2,12 @@ import styles from "../styles/page.module.scss";
 import { useRef, useState, useEffect, useContext } from "react";
 import { sendGloryHole } from "./database";
 import Form from "./form";
-import { TextModifierContext } from './TextModifier';
-
+import { TextModifierContext } from "./TextModifier";
 
 export default function GloryHole() {
-  const [confirmation, setConfirmation] = useState(false);
-  const [nameInput, setNameInput] = useState();
-  const [messageInput, setMessageInput] = useState();
+  // const [nameInput, setNameInput] = useState();
+  // const [messageInput, setMessageInput] = useState();
   const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
-
-  function prepareData() {
-    console.log("sending", nameInput, messageInput);
-    sendGloryHole({
-      nickname: nameInput,
-      message: messageInput,
-    });
-    setConfirmation(true);
-  }
-
-  const handleButtonClick = () => {
-    setConfirmation(false);
-  };
 
   useEffect(() => {
     if (modifyEnabled) {
@@ -51,8 +36,8 @@ export default function GloryHole() {
           <span>Let us know what you’re up for.</span>
         </p>
       </div>
-
-      {confirmation ? (
+      <Form />
+      {/* {confirmation ? (
         <div className={styles.confirmationCont}>
           <h2>
             Thank you for your message. It has been sent to our servers and will
@@ -72,7 +57,7 @@ export default function GloryHole() {
           messageInput={messageInput}
           setMessageInput={setMessageInput}
         />
-      )}
+      )} */}
     </div>
   );
 }

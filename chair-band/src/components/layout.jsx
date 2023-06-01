@@ -18,7 +18,7 @@ import Newsletter from "./newsletter";
 export default function Layout(props) {
   const [footerState, setFooterState] = useState(true);
   const [navbarState, setNavbarState] = useState(true);
-  const [confirmation, setConfirmation] = useState(false);
+  // const [confirmation, setConfirmation] = useState(false);
   const [email, setEmail] = useState();
   const { width, height } = useWindowDimensions();
 
@@ -40,18 +40,18 @@ export default function Layout(props) {
   //   console.log(response);
   // }
 
-  function prepareData() {
-    console.log(email);
-    sendNewsletter({
-      email: email,
-    });
-    setConfirmation(true);
-    // run();
-  }
+  // function prepareData() {
+  //   console.log(email);
+  //   sendNewsletter({
+  //     email: email,
+  //   });
+  //   // setConfirmation(true);
+  //   // run();
+  // }
 
-  const handleButtonClick = () => {
-    setConfirmation(false);
-  };
+  // const handleButtonClick = () => {
+  //   setConfirmation(false);
+  // };
 
   useEffect(() => {
     if (width <= 610) {
@@ -305,36 +305,9 @@ export default function Layout(props) {
             animate={{ y: 0 }}
             transition={{ duration: 1.5 }}
           >
-            {confirmation ? (
-              <div className={styles.confirmationCont}>
-                <div>
-                  <h3>Thank you for subscribing.</h3>
-                  <h2>All the drama is coming your way now.</h2>
-                  {confirmation && (
-                    <button
-                      onClick={handleButtonClick}
-                      className={styles.ghButt}
-                      button-name="message sending button"
-                      aria-label="message sending button"
-                    >
-                      Perfect, thank you
-                    </button>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <Newsletter
-                email={email}
-                setEmail={setEmail}
-                prepareData={prepareData}
-              />
-            )}
+            <Newsletter />
           </motion.div>
-          {/* <motion.dev
-            initial={{ y: 200 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.5 }}
-          > */}
+
           <motion.div
             initial={{ y: 200 }}
             animate={{ y: 0 }}
