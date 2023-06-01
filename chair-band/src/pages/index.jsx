@@ -79,7 +79,7 @@ export default function Home({ imagedata, videodata }) {
           href="../public/favicon.ico"
           type="image/svg+xml"
         ></link> */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        {/* <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="../public/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link
@@ -93,7 +93,7 @@ export default function Home({ imagedata, videodata }) {
           type="image/png"
           href="../public/images/favicon16x16.png"
           sizes="16x16"
-        />
+        /> */}
 
         <meta name="theme-color" content="#07070f"></meta>
         <meta name="msapplication-navbutton-color" content="#07070f"></meta>

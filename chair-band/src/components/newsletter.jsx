@@ -1,7 +1,7 @@
 import styles from "../styles/newsletter.module.scss";
 import { useRef } from "react";
 import Image from "next/image";
-import arrow from "../public/icons/icon_arrow.svg";
+import arrow from "../../public/icons/icon_arrow.svg";
 
 export default function Newsletter(props) {
   const newsletter = useRef(null);
@@ -16,9 +16,12 @@ export default function Newsletter(props) {
     <form
       className={styles.newsletter}
       ref={newsletter}
-      onSubmit={handleSubmit}>
+      onSubmit={handleSubmit}
+    >
       <div>
-        <h4>Don't miss out on <br></br> <span> Chair </span> drama.</h4>
+        <h4>
+          Don't miss out on <br></br> <span> Chair </span> drama.
+        </h4>
       </div>
       <p className={styles.p}>Subscribe to our newsletter</p>
       <div className={styles.inputCont}>

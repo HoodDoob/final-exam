@@ -5,18 +5,10 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <link
-                        rel="icon"
-                        type="image/png"
-                        href="../public/favicon32x32.png"
-                        sizes="32x32"
-                    />
-                    <link
-                        rel="icon"
-                        type="image/png"
-                        href="../public/images/favicon16x16.png"
-                        sizes="16x16"
-                    />
+                    <link rel="shortcut icon" href="/favicon.ico" type='image/x-icon' />
+                    <link rel="apple-touch-icon" sizes="192x192" href="/android-chrome-192x192.png" />
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
                 </Head>
                 <body>
                     <Main />
@@ -28,3 +20,4 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
+
