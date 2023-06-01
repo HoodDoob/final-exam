@@ -69,6 +69,7 @@ export default function Home({ imagedata, videodata }) {
       <Head>
         <title>Chair Website</title>
         <link rel="icon" href="../public/images/chair.webp" />
+        <link rel="preconnect"></link>
         <meta name="theme-color" content="#07070f"></meta>
         <meta name="msapplication-navbutton-color" content="#07070f"></meta>
         <meta name="apple-mobile-web-app-capable" content="yes" />
