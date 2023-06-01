@@ -257,7 +257,8 @@ export default function Layout(props) {
                   <button
                     onClick={() => props.openBurger()}
                     className="navBurger"
-                    button-name="klosburg"
+                    button-name="burger menu icon"
+                    aria-label="burger menu icon"
                   >
                     {props.burgerState ? (
                       <Image priority src={closed_burger} alt="" />
@@ -298,6 +299,8 @@ export default function Layout(props) {
                     <button
                       onClick={handleButtonClick}
                       className={styles.ghButt}
+                      button-name="message sending button"
+                      aria-label="message sending button"
                     >
                       Perfect, thank you
                     </button>
