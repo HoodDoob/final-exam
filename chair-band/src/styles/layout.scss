@@ -184,6 +184,10 @@ footer {
   color: var(--color-red);
   font-weight: 300;
   font-size: 26px;
+  a {
+    color: var(--color-red);
+    text-decoration: none;
+  }
 }
 
 .navLogo {

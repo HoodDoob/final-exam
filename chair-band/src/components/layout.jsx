@@ -241,9 +241,24 @@ export default function Layout(props) {
                             <li onClick={() => props.changePage(6)}>
                               GloryHole®
                             </li>
-                            <li>ChairGame</li>
-                            <li>store</li>
-                            <li>BOOK US!</li>
+                            <li>
+                              <Link href="/ChairGame" target="_blank">
+                                ChairGame
+                              </Link>
+                            </li>
+                            <li>
+                              <a
+                                href="https://art2musicshop.pl/pl/p/Chair-Po-Co-Muzyka-CD/239"
+                                target="_blank"
+                              >
+                                store
+                              </a>
+                            </li>
+                            <li>
+                              <a href="mailto: asia@art2.pl?subject=Chair Booking">
+                                BOOK US!
+                              </a>
+                            </li>
                             {/* Language switch */}
                             <div className="navLang">
                               <div className="greyedOut">PL /</div>
