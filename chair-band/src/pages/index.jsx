@@ -68,8 +68,31 @@ export default function Home({ imagedata, videodata }) {
           } */}
       <Head>
         <title>Chair Website</title>
-        <link rel="icon" href="../public/images/chair.webp" />
-        <link rel="preconnect"></link>
+
+        {/* <link
+          rel="shortcut icon"
+          href="../public/favicon.ico"
+          type="image/x-icon"
+        ></link> */}
+        {/* <link
+          rel="icon"
+          href="../public/favicon.ico"
+          type="image/svg+xml"
+        ></link> */}
+        <link rel="icon" href="../public/favicon.ico" type="image/svg+xml" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="../public/favicon-32x32.png"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="../public/favicon-16x16.png"
+          sizes="16x16"
+        />
+
         <meta name="theme-color" content="#07070f"></meta>
         <meta name="msapplication-navbutton-color" content="#07070f"></meta>
         <meta name="apple-mobile-web-app-capable" content="yes" />
