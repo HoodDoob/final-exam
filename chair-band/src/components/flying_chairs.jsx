@@ -30,7 +30,7 @@ export default function FlyingChairs() {
       <div className={`${styles.floatingElement} ${styles.pos1}`}>
         <Image
           placeholder="empty"
-          priority={false}
+          priority={true}
           onClick={() => handleClick(0)}
           ref={(el) => (elementRefs.current[0] = el)}
           src={chair1}
@@ -51,7 +51,7 @@ export default function FlyingChairs() {
       <div className={`${styles.floatingElement} ${styles.pos3}`}>
         <Image
           placeholder="empty"
-          priority={false}
+          priority={true}
           onClick={() => handleClick(2)}
           ref={(el) => (elementRefs.current[2] = el)}
           src={chair3}
@@ -61,7 +61,7 @@ export default function FlyingChairs() {
       <div className={`${styles.floatingElement} ${styles.pos4}`}>
         <Image
           placeholder="empty"
-          priority={false}
+          priority={true}
           onClick={() => handleClick(3)}
           ref={(el) => (elementRefs.current[3] = el)}
           src={chair4}
@@ -70,7 +70,7 @@ export default function FlyingChairs() {
       </div>
       <div className={`${styles.floatingElement} ${styles.pos5}`}>
         <Image
-          priority={false}
+          priority={true}
           onClick={() => handleClick(4)}
           ref={(el) => (elementRefs.current[4] = el)}
           src={chair5}
@@ -79,7 +79,7 @@ export default function FlyingChairs() {
       </div>
       <div className={`${styles.floatingElement} ${styles.pos6}`}>
         <Image
-          priority={false}
+          priority={true}
           onClick={() => handleClick(5)}
           ref={(el) => (elementRefs.current[5] = el)}
           src={chair6}
@@ -88,7 +88,7 @@ export default function FlyingChairs() {
       </div>
       <div className={`${styles.floatingElement} ${styles.pos7}`}>
         <Image
-          priority={false}
+          priority={true}
           onClick={() => handleClick(6)}
           ref={(el) => (elementRefs.current[6] = el)}
           src={chair7}
