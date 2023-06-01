@@ -202,6 +202,14 @@ export default function Layout(props) {
                     onClick={() => props.changePage(1)}>
                     Chair
                   </div>
+                  <button
+                    onClick={() => props.openBurger()}
+                    className={props.burgerState ? "hidden" : "navBurger"}
+                    button-name="burger menu"
+                    aria-label="burger menu"
+                  >
+                    <Image priority src={burger_icon} alt="" />
+                  </button>
 
                   <AnimatePresence>
                     {props.burgerState && (
