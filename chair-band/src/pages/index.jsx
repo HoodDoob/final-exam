@@ -72,8 +72,25 @@ export default function Home({ imagedata, videodata }) {
       <Head>
         <title>Chair Website</title>
 
-        <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
-        {/* <link rel="icon" type="image/png" href={Icon2} sizes="32x32" /> */}
+        {/* <link
+          rel="shortcut icon"
+          href="../public/favicon.ico"
+          type="image/x-icon"
+        ></link> */}
+        {/* <link
+          rel="icon"
+          href="../public/favicon.ico"
+          type="image/svg+xml"
+        ></link> */}
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../public/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="../public/favicon-32x32.png"
+          sizes="32x32"
+        />
         <link
           rel="icon"
           type="image/png"
