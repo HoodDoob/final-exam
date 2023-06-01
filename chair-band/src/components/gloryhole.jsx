@@ -1,12 +1,15 @@
 import styles from "../styles/page.module.scss";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import { sendGloryHole } from "./database";
 import Form from "./form";
+import { TextModifierContext } from './TextModifier';
+
 
 export default function GloryHole() {
   const [confirmation, setConfirmation] = useState(false);
   const [nameInput, setNameInput] = useState();
   const [messageInput, setMessageInput] = useState();
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
 
   function prepareData() {
     console.log("sending", nameInput, messageInput);
@@ -20,6 +23,12 @@ export default function GloryHole() {
   const handleButtonClick = () => {
     setConfirmation(false);
   };
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
 
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>

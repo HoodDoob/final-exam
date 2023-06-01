@@ -18,7 +18,7 @@ export default function Newsletter(props) {
       ref={newsletter}
       onSubmit={handleSubmit}>
       <div>
-        Don't miss out on <br></br> <span> Chair </span> drama.
+        <h4>Don't miss out on <br></br> <span> Chair </span> drama.</h4>
       </div>
       <p className={styles.p}>Subscribe to our newsletter</p>
       <div className={styles.inputCont}>

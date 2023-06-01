@@ -1,7 +1,16 @@
 import styles from "../styles/page.module.scss";
 import Link from "next/link";
+import { TextModifierContext } from './TextModifier';
+import { useContext, useEffect } from "react";
 
 export default function Outnow() {
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
   return (
     <div className={styles.newrelbox}>
       <h4>Our new song</h4>

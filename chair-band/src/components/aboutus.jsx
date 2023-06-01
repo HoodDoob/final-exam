@@ -1,9 +1,22 @@
 import styles from "../styles/page.module.scss";
 import Image from "next/image";
+import ChairModeButton from "../components/chairmodeButton";
+import { TextModifierContext } from './TextModifier';
+import { useEffect, useContext } from "react";
+
 require("isomorphic-fetch");
+
 // npm install --save isomorphic-fetch
 
 export default function AboutUs({ images }) {
+  const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
+
+  useEffect(() => {
+    if (modifyEnabled) {
+      modifyAllText();
+    }
+  }, []);
+
   console.log(
     images[0]._embedded["wp:featuredmedia"][0].media_details.sizes.full
       .source_url
@@ -97,17 +110,10 @@ export default function AboutUs({ images }) {
           </p>
         </div>
       </div>
+      <div>
+     <ChairModeButton />
+    </div>
     </div>
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch("https://lucaszago.dk/vlp/wp-json/wp/v2/artworks");
-//   const data = await res.json();
-//   console.log(data);
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
