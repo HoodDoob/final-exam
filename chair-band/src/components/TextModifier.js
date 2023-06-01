@@ -10,7 +10,7 @@ export const TextModifierProvider = ({ children }) => {
     const textNodes = document.querySelectorAll('*');
     console.log(textNodes);
     textNodes.forEach((node) => {
-      if (node.nodeName == "P" || node.nodeName == "H1" || node.nodeName == "LI") {
+      if (node.nodeName == "P" || node.nodeName == "H1" || node.nodeName == "H2" || node.nodeName == "H3" || node.nodeName == "H4" || node.nodeName == "LI" || node.nodeName == "A" || node.nodeName == "BUTTON" || node.nodeName == "LABEL") {
 
         console.log("we're here now")
         // Replace all characters in the text node with "*"

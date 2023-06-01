@@ -16,14 +16,17 @@
   padding: 1em;
 
   div {
-    font-size: 20px;
-    font-weight: 600;
-
-    color: var(--color-red);
     flex-direction: row;
-
     align-items: center;
+    h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-red);
+    }
+
   }
+
+
   input {
     display: block;
     background-color: rgba(213, 211, 211, 0);
@@ -36,6 +39,7 @@
     border-left: 0;
     border-right: 0;
     outline: 0;
+    width: 75vw;
   }
 
   ::placeholder {
@@ -134,7 +138,11 @@
         border-left: 0;
         border-right: 0;
         outline: 0;
-        width: 80vw;
+        width: 70vw;
+
+        button {
+          padding: 0;
+        }
       }
     }
   }
