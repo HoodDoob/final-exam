@@ -220,7 +220,8 @@ export default function Layout(props) {
                   <button
                     onClick={() => props.openBurger()}
                     className={props.burgerState ? "hidden" : "navBurger"}
-                    button-name="klosburg"
+                    button-name="burger menu"
+                    aria-label="burger menu"
                   >
                     <Image priority src={burger_icon} alt="" />
                   </button>

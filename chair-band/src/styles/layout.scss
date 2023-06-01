@@ -188,6 +188,14 @@ footer {
 //* TABLET VERSION *//
 
 @media screen and (max-width: 1200px) {
+  #navbarCont {
+    padding-left: 2em;
+    #navbar {
+      li {
+        font-size: 16px;
+      }
+    }
+  }
   #anotherCont {
     position: relative;
     display: flex;
@@ -216,6 +224,11 @@ footer {
     font-weight: var(--regular);
     padding-bottom: 7vh;
     padding-top: 0.5em;
+  }
+
+  .navLogo {
+    flex-grow: 1;
+    margin-left: 2em;
   }
 }
 
