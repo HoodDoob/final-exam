@@ -202,14 +202,7 @@ export default function Layout(props) {
                     onClick={() => props.changePage(1)}>
                     Chair
                   </div>
-                  <button
-                    onClick={() => props.openBurger()}
-                    className={props.burgerState ? "hidden" : "navBurger"}
-                    button-name="burger menu"
-                    aria-label="burger menu"
-                  >
-                    <Image priority src={burger_icon} alt="" />
-                  </button>
+
 
                   <AnimatePresence>
                     {props.burgerState && (
@@ -251,10 +244,10 @@ export default function Layout(props) {
                     onClick={() => props.openBurger()}
                     className="navBurger"
                     button-name="klosburg">
-                    {props.openBurger ? (
-                      <Image src={burger_icon} alt="" />
+                    {props.burgerState ? (
+                      <Image priority src={closed_burger} alt="" />
                     ) : (
-                      <Image src={closed_burger} alt="" />
+                      <Image priority src={burger_icon} alt="" />
                     )}
                   </button>
                 </>
