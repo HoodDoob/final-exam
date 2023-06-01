@@ -41,8 +41,8 @@ export default function Contact() {
           <a href="mailto: asia@art2.pl?subject=Chair Booking">Book us now!</a>
         </div>
       </div>
-      <div className={styles.asiaPopup}>
-        <div ref={elementRef} className={styles.managerCont}>
+      <div ref={elementRef} className={styles.managerCont}>
+        <div className={styles.asiaPopup}>
           <Image
             src={managerText}
             alt="the manager text"
