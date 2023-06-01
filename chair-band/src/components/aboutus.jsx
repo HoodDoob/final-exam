@@ -1,9 +1,10 @@
 import styles from "../styles/page.module.scss";
 import Image from "next/image";
 import ChairModeButton from "../components/chairmodeButton";
-import { TextModifierContext } from './TextModifier';
+import { TextModifierContext } from "./TextModifier";
 import { useEffect, useContext } from "react";
-
+import babyCura from "../../public/images/babyCura.png";
+import babyHubert from "../../public/images/babyHubert.png";
 
 require("isomorphic-fetch");
 
@@ -87,12 +88,9 @@ export default function AboutUs({ images, pageState, setPageState }) {
                 .full.source_url
             }
             alt=""
-            // width={`100`}
-            // height={100}
             layout="fill"
             loading="lazy"
-            // objectFit="contain"
-          />
+          />{" "}
         </div>{" "}
         <div className={styles.text_div} id={styles.thirdtext}>
           <p>
@@ -109,12 +107,25 @@ export default function AboutUs({ images, pageState, setPageState }) {
             defies expectations. Join us as we continue to push the boundaries
             of creativity and share our passion for authentic expression.
           </p>
+          <div className={styles.imgcont2}>
+            <Image
+              className={styles.baby}
+              src={babyCura}
+              alt="baby cura"
+              loading="lazy"
+            />
+            <Image
+              className={styles.baby}
+              src={babyHubert}
+              alt="baby cura"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
       <div>
-     <ChairModeButton pageState={pageState} setPageState={setPageState}/>
-    </div>
+        <ChairModeButton pageState={pageState} setPageState={setPageState} />
+      </div>
     </div>
   );
 }
-
