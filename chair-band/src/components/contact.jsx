@@ -24,8 +24,8 @@ export default function Contact() {
         <h2>(speak to the manager pls)</h2>
       </div>
       <div className={styles.contText}>
-        <div className={styles.cont1}>Chair Manager</div>
-        <div className={styles.cont2}>Asia Babiel</div>
+        <div className={styles.cont1}><h2>Chair Manager</h2></div>
+        <div className={styles.cont2}><h2>Asia Babiel</h2></div>
         <div className={styles.cont3}>
           <a href="mailto: asia@art2.pl?subject=I Love Chair">asia@art2.pl</a>
         </div>
