@@ -7,4 +7,8 @@ module.exports = {
     images: {
         domains: ['chair.band', 'i.ytimg.com'],
     },
+    i18n: {
+        locales: ["en", "pl"],
+        defaultLocale: "en",
+    },
 }
