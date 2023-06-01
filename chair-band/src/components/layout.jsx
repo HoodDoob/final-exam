@@ -3,12 +3,12 @@ import styles from "../styles/newsletter.module.scss";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import useWindowDimensions from "../hooks/window";
-import fbIcon from "../public/icons/icon_FB.svg";
-import igIcon from "../public/icons/icon_IG.svg";
-import spIcon from "../public/icons/icon_SP.svg";
-import ttIcon from "../public/icons/icon_TT.svg";
-import burger_icon from "../public/icons/burger_icon.png";
-import closed_burger from "../public/icons/closed_burger.png";
+import fbIcon from "../../public/icons/icon_FB.svg";
+import igIcon from "../../public/icons/icon_IG.svg";
+import spIcon from "../../public/icons/icon_SP.svg";
+import ttIcon from "../../public/icons/icon_TT.svg";
+import burger_icon from "../../public/icons/burger_icon.png";
+import closed_burger from "../../public/icons/closed_burger.png";
 import { sendNewsletter } from "./database";
 import { motion, AnimatePresence } from "framer-motion";
 import Newsletter from "./newsletter";
@@ -257,7 +257,8 @@ export default function Layout(props) {
                   <button
                     onClick={() => props.openBurger()}
                     className="navBurger"
-                    button-name="klosburg"
+                    button-name="burger menu icon"
+                    aria-label="burger menu icon"
                   >
                     {props.burgerState ? (
                       <Image priority src={closed_burger} alt="" />
@@ -298,6 +299,8 @@ export default function Layout(props) {
                     <button
                       onClick={handleButtonClick}
                       className={styles.ghButt}
+                      button-name="message sending button"
+                      aria-label="message sending button"
                     >
                       Perfect, thank you
                     </button>

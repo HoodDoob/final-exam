@@ -1,10 +1,10 @@
 import styles from "../styles/page.module.scss";
-import aboutus_1 from "../public/images/aboutus_1.jpg";
 import Image from "next/image";
-import manager from "../public/images/manager.png";
-import managerText from "../public/images/managerText.gif";
+import aboutus_1 from "../../public/images/aboutus_1.jpg";
+import manager from "../../public/images/manager.png";
+import managerText from "../../public/images/managerText.gif";
 import { useContext, useEffect, useRef } from "react";
-import { TextModifierContext } from './TextModifier';
+import { TextModifierContext } from "./TextModifier";
 
 export default function Contact() {
   const elementRef = useRef(null);
@@ -30,8 +30,12 @@ export default function Contact() {
         <h2>(speak to the manager pls)</h2>
       </div>
       <div className={styles.contText}>
-        <div className={styles.cont1}><h2>Chair Manager</h2></div>
-        <div className={styles.cont2}><h2>Asia Babiel</h2></div>
+        <div className={styles.cont1}>
+          <h2>Chair Manager</h2>
+        </div>
+        <div className={styles.cont2}>
+          <h2>Asia Babiel</h2>
+        </div>
         <div className={styles.cont3}>
           <a href="mailto: asia@art2.pl?subject=I Love Chair">asia@art2.pl</a>
         </div>

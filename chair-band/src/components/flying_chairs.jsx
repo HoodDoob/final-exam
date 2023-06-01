@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 
 import { useRef } from "react";
 
-import chair1 from "../public/flying_chairs/flying_1.png";
-import chair2 from "../public/flying_chairs/flying_2.png";
-import chair3 from "../public/flying_chairs/flying_3.png";
-import chair4 from "../public/flying_chairs/flying_4.png";
-import chair5 from "../public/flying_chairs/flying_5.png";
-import chair6 from "../public/flying_chairs/flying_6.png";
-import chair7 from "../public/flying_chairs/flying_7.png";
+import chair1 from "../../public/flying_chairs/flying_1.png";
+import chair2 from "../../public/flying_chairs/flying_2.png";
+import chair3 from "../../public/flying_chairs/flying_3.png";
+import chair4 from "../../public/flying_chairs/flying_4.png";
+import chair5 from "../../public/flying_chairs/flying_5.png";
+import chair6 from "../../public/flying_chairs/flying_6.png";
+import chair7 from "../../public/flying_chairs/flying_7.png";
 
 export default function FlyingChairs() {
   const elementRefs = useRef([]);
