@@ -57,10 +57,12 @@ export default function Home({ imagedata, videodata }) {
       openBurger={openBurger}
       pageState={pageState}
       setPageState={setPageState}
-      changePage={changePage}>
+      changePage={changePage}
+    >
       <Flying />
       <div
-        className={pageState == 1 ? "background" : "background bckDark"}></div>
+        className={pageState == 1 ? "background" : "background bckDark"}
+      ></div>
       {/* className={
             !singleBandState ? "NavBarCont navBar1" : "NavBarCont navBar2"
           } */}
@@ -70,16 +72,21 @@ export default function Home({ imagedata, videodata }) {
         <meta name="theme-color" content="#07070f"></meta>
         <meta name="msapplication-navbutton-color" content="#07070f"></meta>
         <meta name="apple-mobile-web-app-capable" content="yes" />
-
+        <meta
+          name="description"
+          content="Polish band called Chair that plays inde rock and post punk. The band is a Polish multimedia artist duo consiting of Cura and Hubert Kurkiewicz"
+        ></meta>
         <meta
           name="apple-mobile-web-app-status-bar-style"
-          content="#07070f"></meta>
+          content="#07070f"
+        ></meta>
       </Head>
       {pageState == 1 ? (
         <motion.div
           initial={{ opacity: 1, x: 1500 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.5 }}>
+          transition={{ duration: 1.5 }}
+        >
           <Landing />
         </motion.div>
       ) : (
@@ -89,7 +96,8 @@ export default function Home({ imagedata, videodata }) {
         <motion.div
           initial={{ opacity: 1, x: 1500 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}>
+          transition={{ duration: 0.3 }}
+        >
           <AboutUs
             images={images}
             pageState={pageState}
@@ -103,7 +111,8 @@ export default function Home({ imagedata, videodata }) {
         <motion.div
           initial={{ opacity: 1, x: 1500 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}>
+          transition={{ duration: 0.3 }}
+        >
           <Shows />
         </motion.div>
       ) : (
@@ -112,13 +121,15 @@ export default function Home({ imagedata, videodata }) {
       <motion.div
         initial={{ opacity: 1, x: 1500 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.3 }}>
+        transition={{ duration: 0.3 }}
+      >
         <AnimatePresence>
           {pageState == 4 ? (
             <motion.div
               initial={{ opacity: 1, x: 1500 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3 }}>
+              transition={{ duration: 0.3 }}
+            >
               <Contact />
             </motion.div>
           ) : (
@@ -130,7 +141,8 @@ export default function Home({ imagedata, videodata }) {
         <motion.div
           initial={{ opacity: 1, x: 1500 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}>
+          transition={{ duration: 0.3 }}
+        >
           <ChairTV changePage={changePage} videos={videos} />
         </motion.div>
       ) : (
@@ -140,7 +152,8 @@ export default function Home({ imagedata, videodata }) {
         <motion.div
           initial={{ opacity: 1, x: 1500 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}>
+          transition={{ duration: 0.3 }}
+        >
           {" "}
           <GloryHole />
         </motion.div>
@@ -151,7 +164,8 @@ export default function Home({ imagedata, videodata }) {
         <motion.div
           initial={{ opacity: 1, x: 1500 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}>
+          transition={{ duration: 0.3 }}
+        >
           <Clips
             changePage={changePage}
             openVideo={openVideo}
