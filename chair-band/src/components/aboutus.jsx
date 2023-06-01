@@ -4,11 +4,12 @@ import ChairModeButton from "../components/chairmodeButton";
 import { TextModifierContext } from './TextModifier';
 import { useEffect, useContext } from "react";
 
+
 require("isomorphic-fetch");
 
 // npm install --save isomorphic-fetch
 
-export default function AboutUs({ images }) {
+export default function AboutUs({ images, pageState, setPageState }) {
   const { modifyEnabled, modifyAllText } = useContext(TextModifierContext);
 
   useEffect(() => {
@@ -111,7 +112,7 @@ export default function AboutUs({ images }) {
         </div>
       </div>
       <div>
-     <ChairModeButton />
+     <ChairModeButton pageState={pageState} setPageState={setPageState}/>
     </div>
     </div>
   );

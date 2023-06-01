@@ -1,10 +1,21 @@
-import { useContext } from 'react';
-import { TextModifierContext } from './TextModifier';
+import { useContext } from "react";
+import { TextModifierContext } from "./TextModifier";
+import { useRouter } from "next/router";
 
-export default function Button() {
-  const { handleButtonClick } = useContext(TextModifierContext);
+export default function Button(props) {
+  const router = useRouter();
 
-  return (
-    <button onClick={handleButtonClick}>Chair Mode</button>
-  );
+  const { handleButtonClick, modifyEnabled } = useContext(TextModifierContext);
+
+  function chairButtonClick() {
+    if (modifyEnabled == false) {
+      handleButtonClick();
+    } else if (modifyEnabled) {
+      handleButtonClick();
+      router.replace(router.asPath);
+      console.log("current page");
+    }
+  }
+
+  return <button onClick={() => chairButtonClick()}>Chair Mode</button>;
 }
