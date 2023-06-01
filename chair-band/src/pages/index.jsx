@@ -71,14 +71,15 @@ export default function Home({ imagedata, videodata }) {
 
         {/* <link
           rel="shortcut icon"
-          href="../public/icons/favicon.ico"
+          href="../public/favicon.ico"
           type="image/x-icon"
         ></link> */}
-        <link
+        {/* <link
           rel="icon"
-          href="../public/icons/favicon.ico"
-          type="image/x-icon"
-        ></link>
+          href="../public/favicon.ico"
+          type="image/svg+xml"
+        ></link> */}
+        <link rel="icon" href="../public/favicon.svg" type="image/svg+xml" />
         <meta name="theme-color" content="#07070f"></meta>
         <meta name="msapplication-navbutton-color" content="#07070f"></meta>
         <meta name="apple-mobile-web-app-capable" content="yes" />
