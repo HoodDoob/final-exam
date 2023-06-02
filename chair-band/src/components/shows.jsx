@@ -31,7 +31,7 @@ export default function Shows() {
   return (
     <div className={styles.animationCont}>
       <div className={`${styles.gridSetup} ${styles.gridShows}`}>
-        <div className={styles.imgcont} id={styles.showsimage}>
+        <div className={styles.imgcont3} id={styles.showsimage}>
           <Image priority src={shows_1} alt="" />
           {/* <Slide>
           <div className="each-slide-effect">

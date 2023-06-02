@@ -1,6 +1,6 @@
 import styles from "../styles/page.module.scss";
 import Image from "next/image";
-import aboutus_1 from "../../public/images/aboutus_1.jpg";
+import aboutus_1 from "../../public/images/contact.jpg";
 import manager from "../../public/images/manager.png";
 import managerText from "../../public/images/managerText.gif";
 import { useContext, useEffect, useRef } from "react";
@@ -22,7 +22,7 @@ export default function Contact() {
   }, []);
   return (
     <div className={`${styles.gridSetup} ${styles.gridGH}`}>
-      <div className={styles.imgcont} id={styles.contImg}>
+      <div className={styles.imgcont2} id={styles.contImg}>
         <Image priority src={aboutus_1} alt="" />
       </div>
       <div className={styles.title}>
