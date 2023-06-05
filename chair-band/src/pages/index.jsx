@@ -217,12 +217,12 @@ export default function Home({ imagedata, videodata }) {
 export async function getStaticProps() {
   // Get data from api
   const resImg = await fetch(
-    "https://chair.band/wp-json/wp/v2/image?per_page=100&_embed"
+    "https://chair.band/database/wp-json/wp/v2/image?per_page=100&_embed"
   );
   const imagedata = await resImg.json();
 
   const resVid = await fetch(
-    "https://chair.band/wp-json/wp/v2/video?per_page=100&_embed"
+    "https://chair.band/database/wp-json/wp/v2/video?per_page=100&_embed"
   );
   const videodata = await resVid.json();
 
